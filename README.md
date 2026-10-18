@@ -132,6 +132,6 @@ Historical documentation referenced from Library of Congress HABS records, the I
 
 ## License
 
-- **Source code**: MIT, see [LICENSE](LICENSE).
+- **Source code and the app's artwork** (hero image, app icon, intro video): MIT, see [LICENSE](LICENSE).
 - **Lore pack** (`app/src/main/assets/lorepacks/`): CC BY-SA 4.0, as declared in [`licenses.json`](app/src/main/assets/lorepacks/southern_indiana/licenses.json).
-- **Fonts, artwork and the intro video** have their own terms. The hero image, app icon, and intro video are **not** under MIT. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+- **Bundled fonts** (Cinzel, Plus Jakarta Sans) are under the SIL Open Font License. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).

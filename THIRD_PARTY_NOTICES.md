@@ -1,13 +1,12 @@
 # Licensing Scope and Third-Party Notices
 
-The repository's [LICENSE](LICENSE) (MIT) covers the **source code and build files**. Some things in the repository are deliberately under different terms:
+The repository's [LICENSE](LICENSE) (MIT) covers the **source code, build files, and the app's own artwork**. Some things in the repository are deliberately under different terms:
 
 | What | Where | License |
 | :--- | :--- | :--- |
-| Source code, build scripts, docs | everything not listed below | MIT, see [LICENSE](LICENSE) |
+| Source code, build scripts, docs, and the app's own artwork (hero image, app icon, intro video) | everything not listed below | MIT, see [LICENSE](LICENSE) |
 | Lore pack (site stories, geofences, sources) | `app/src/main/assets/lorepacks/` | CC BY-SA 4.0, as declared in [`licenses.json`](app/src/main/assets/lorepacks/southern_indiana/licenses.json) |
 | Fonts: Cinzel, Plus Jakarta Sans | `app/src/main/res/font/` | SIL Open Font License 1.1 (see below) |
-| Artwork and video: hero image, app icon, intro video | `app/src/main/res/drawable/hero_southern_indiana.jpg`, `ic_app_icon_asset.jpg`, `app/src/main/res/raw/startup_intro.mp4` | **Not covered by MIT.** All rights reserved by Alex Shade Productions. They are included so the app builds and runs; do not reuse them elsewhere without permission. |
 
 ## Fonts (SIL Open Font License 1.1)
 
