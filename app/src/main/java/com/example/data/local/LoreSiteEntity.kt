@@ -26,7 +26,7 @@ data class LoreSiteEntity(
     val fullStory: String,
     val verifiedHistory: String = "",
     val folkloreTradition: String = "",
-    val confidenceLevel: String = ConfidenceLevel.VERIFIED.name,
+    val confidenceLevel: String = ConfidenceLevel.UNVERIFIED.name,
     val sources: String = "",
     val sourceNotes: String,
     val verificationGrade: String,
