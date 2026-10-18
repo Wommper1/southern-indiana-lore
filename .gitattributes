@@ -1,0 +1,10 @@
+# Normalize line endings in the repository.
+* text=auto
+
+# The lore pack is verified against SHA-256 hashes in pack_manifest.json, so its bytes must be
+# identical on every checkout. Never let Git rewrite its line endings.
+app/src/main/assets/lorepacks/** text eol=lf
+
+# Shell wrapper must keep LF to run on Linux/macOS (and in CI); Windows batch files need CRLF.
+gradlew text eol=lf
+*.bat text eol=crlf
