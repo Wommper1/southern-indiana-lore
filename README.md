@@ -4,7 +4,7 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-purple.svg)](https://kotlinlang.org)
 [![Compose](https://img.shields.io/badge/Jetpack_Compose-Material_3-blue.svg)](https://developer.android.com/jetpack/compose)
 [![Database](https://img.shields.io/badge/Database-Room_SQLite-orange.svg)](https://developer.android.com/training/data-storage/room)
-[![License](https://img.shields.io/badge/License-Proprietary%20%2F%20Alex%20Shade%20Productions-red.svg)](#license)
+[![License](https://img.shields.io/badge/License-MIT%20code%20%2F%20CC%20BY--SA%204.0%20content-blue.svg)](#license)
 
 A location-aware, offline-first native Android application by **Alex Shade Productions**. 
 
@@ -132,4 +132,6 @@ Historical documentation referenced from Library of Congress HABS records, the I
 
 ## License
 
-The app source is proprietary to Alex Shade Productions (see the badge above). The bundled lore pack declares its own license in [`licenses.json`](app/src/main/assets/lorepacks/southern_indiana/licenses.json) (CC BY-SA 4.0 for the pack). No `LICENSE` file has been added yet; until one is, nothing here is licensed for reuse beyond viewing and building from source for personal use.
+- **Source code**: MIT, see [LICENSE](LICENSE).
+- **Lore pack** (`app/src/main/assets/lorepacks/`): CC BY-SA 4.0, as declared in [`licenses.json`](app/src/main/assets/lorepacks/southern_indiana/licenses.json).
+- **Fonts, artwork and the intro video** have their own terms. The hero image, app icon, and intro video are **not** under MIT. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
