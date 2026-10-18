@@ -39,7 +39,7 @@
     "folkloreTradition": { "type": "string" },
     "confidenceLevel": {
       "type": "string",
-      "enum": ["VERIFIED", "OFFICIAL_SOURCE", "PROBABLE", "ORAL_HISTORY", "LEGEND"]
+      "enum": ["OFFICIAL_SOURCE", "VERIFIED", "WELL_SUPPORTED", "PLAUSIBLE", "PROBABLE", "ORAL_HISTORY", "FOLKLORE", "LEGEND", "DISPUTED", "DEBUNKED", "UNVERIFIED"]
     },
     "sources": { "type": "string" },
     "sourceNotes": { "type": "string" },
