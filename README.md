@@ -30,7 +30,7 @@ Southern Indiana Lore brings folklore, haunted legends, Underground Railroad rou
   - Bundled lore pack of Southern Indiana historical sites with coordinates, per-site source citations, and a confidence level on every entry (from official records down to unverified legend).
   - User Field Journal: add personal field notes, coordinates, and custom sites offline.
 - **On-Device Map**:
-  - Pan/zoom map drawn entirely on the device. The base layer is a procedurally rendered, stylized basemap (Ohio River, creeks, Knobstone ridgelines, major rail and road corridors), not real street data, with historical overlays on top.
+  - Pan/zoom map drawn entirely on the device, with your position, site markers, and historical overlays on top. The base layer is deliberately minimal: a dark schematic with the Ohio River, Silver Creek, a Knobstone ridgeline, and one historic road/rail corridor. It has no street data, place names, or hill shading, so use the "Navigate" buttons for directions.
 - **Oral History Tape Deck**:
   - Record voice memos on the device and tag them to sites. Recording starts only when you press Record.
 - **Field Expedition Dossier & GPX 1.1 Exporter**:
@@ -100,7 +100,7 @@ southern-indiana-lore/
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/<your-username>/southern-indiana-lore.git
+   git clone https://github.com/Wommper1/southern-indiana-lore.git
    cd southern-indiana-lore
    ```
 

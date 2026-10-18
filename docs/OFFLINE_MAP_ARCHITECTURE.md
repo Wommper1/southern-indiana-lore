@@ -4,11 +4,11 @@
 `InteractiveLoreMap` makes no network requests, and the app declares no `INTERNET` permission.
 
 - **Tile protocol**: Standard Web Mercator (EPSG:3857) 256x256 px tiles, generated on demand.
-- **Base layer**: `OfflineBasemapRenderer` draws a procedural, stylized basemap (Ohio River corridor, creeks, Knobstone ridgelines and hill shading, major rail and road corridors, a tile grid). It is an illustration of the region, **not** surveyed street, water, or parcel data. Do not use it for navigation; the "Navigate" buttons hand off to Google Maps.
+- **Base layer**: `OfflineBasemapRenderer` draws a minimal schematic from a few hand-placed polylines: the Ohio River, Silver Creek, a Knobstone ridgeline, and one historic road/rail corridor (Monon / Paoli Pike), on a dark background with a tile grid and a `z/x/y [OFFLINE]` label on each tile. It has no place names, street data, or hill shading, and it is **not** surveyed data. Do not use it for navigation; the "Navigate" buttons hand off to Google Maps.
 - **Historical overlays**: `UsgsHistoricalTopoRasterGenerator` (1955 topo) and `SanbornRasterTileGenerator` (1886/1905 Sanborn conventions) render on-device as well.
 - **Caching**: in-memory `LruCache<String, Bitmap>(128)`.
 
-An earlier prototype streamed CARTO "Dark Matter" raster tiles with OkHttp. That was removed so that the "fully offline" and "no network access" claims are true, and to avoid depending on a third-party tile service that has its own usage terms.
+An earlier prototype streamed CARTO "Dark Matter" raster tiles with OkHttp when a connection was available. That was removed so that the "fully offline" and "no network access" claims are true, and to avoid depending on a third-party tile service that has its own usage terms. The trade-off is that the base map is now the minimal schematic above everywhere, not just when offline. A real offline basemap is the next step (section 2).
 
 ---
 
