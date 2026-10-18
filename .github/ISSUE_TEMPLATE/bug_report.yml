@@ -1,0 +1,46 @@
+name: Bug report
+description: Something in the app is broken or behaves unexpectedly
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping. Please do not paste recordings or precise personal locations into an issue.
+  - type: input
+    id: version
+    attributes:
+      label: App version
+      description: Shown on the main screen (for example v1.0.0), or the release you installed.
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Phone and Android version
+      placeholder: "Pixel 8, Android 15"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: What did you do?
+      description: Step by step, starting from opening the app.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else
+      description: Screenshots, which permissions you granted (location, background location, microphone, notifications), and whether you were using the built-in route simulation.

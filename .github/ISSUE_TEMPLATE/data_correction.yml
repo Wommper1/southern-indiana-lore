@@ -1,0 +1,46 @@
+name: Data correction
+description: A site's history, date, number, or label in the app is wrong or unsourced
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Corrections with a source are the most useful thing you can send. About half the lore pack is still
+        labeled Unverified; see `docs/VERIFICATION_LOG.md` for what has and has not been checked.
+  - type: input
+    id: site
+    attributes:
+      label: Site name
+      description: As shown in the app, for example "Duncan Tunnel".
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: Quote the text shown in the app, and say which screen it appears on.
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: What the correct information is
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: A link or full citation. Historical marker pages, National Register records, and period newspapers are best.
+    validations:
+      required: true
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: How sure are you?
+      options:
+        - The source states this directly
+        - The sources disagree
+        - I think it is wrong but have no source yet
+    validations:
+      required: true
