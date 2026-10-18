@@ -8,7 +8,7 @@
 
 A location-aware, offline-first native Android application by **Alex Shade Productions**. 
 
-Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 52 sourced sites across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
+Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 52 sites across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. About half have been fact-checked so far; the rest are labeled Unverified in the app (see [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md)). As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
 
 ---
 
@@ -27,7 +27,7 @@ Southern Indiana Lore brings folklore, haunted legends, Underground Railroad rou
   - **Karst Alchemist & Lore Wizard**: Arcane, geological perspective of Indiana limestone caves.
   - **Retro Radio (1948)**: Nostalgic, vintage Mid-Century AM broadcast style.
 - **Offline-First SQLite Architecture**:
-  - Bundled lore pack of Southern Indiana historical sites with coordinates, per-site source citations, and a confidence level on every entry (from official records down to unverified legend).
+  - Bundled lore pack of Southern Indiana historical sites with coordinates, per-site source citations, and a confidence badge on every entry that says how thoroughly it has been verified (Official Source, Plausible, Unverified, Folk Legend, and so on).
   - User Field Journal: add personal field notes, coordinates, and custom sites offline.
 - **On-Device Map**:
   - Pan/zoom map drawn entirely on the device, with your position, site markers, and historical overlays on top. The base layer is deliberately minimal: a dark schematic with the Ohio River, Silver Creek, a Knobstone ridgeline, and one historic road/rail corridor. It has no street data, place names, or hill shading, so use the "Navigate" buttons for directions.

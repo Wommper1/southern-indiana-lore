@@ -27,7 +27,7 @@ Step off the highway and into the forgotten legends of Floyd County, the Knobsto
 Southern Indiana Lore is an offline-first geospatial field companion for history fans, folklore hunters, and road-trippers exploring the historic Ohio River Valley. Built with reverence for local memory, archival research, and architectural history, this app transforms your device into an antiquarian researcher's field deck.
 
 🧭 HISTORIC EXPLORATION & GEOFENCING
-• 52 sourced sites, from landmarks and rail tunnels to legends and limestone ruins, across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford.
+• 52 sites, from landmarks and rail tunnels to legends and limestone ruins, across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. Each site shows how thoroughly its history has been verified.
 • Intelligent multi-tier geofencing alerts you as you approach historical POIs while driving or hiking.
 • 1800s vintage cartographic overlays and topographic survey styles.
 
@@ -41,7 +41,7 @@ Southern Indiana Lore is an offline-first geospatial field companion for history
 • Export standard GPX 1.1 waypoints for Garmin GPS units, OsmAnd, QGIS, and Google Earth.
 
 🔍 EPISTEMIC CONFIDENCE & ARCHIVAL RIGOR
-• Every entry is classified by evidence tier: Official Primary Records, Verified Local Histories, Oral Traditions, and Unverified Folklore.
+• Every entry carries a confidence badge, from Official Source and Plausible to Unverified, Oral History, and Folk Legend.
 • Examine visible aboveground remains, what lies underground, and historical timeline slices from 1800 to present day.
 
 🔒 PRIVACY & ZERO TELEMETRY COMMITMENT

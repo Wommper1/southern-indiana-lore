@@ -11,6 +11,7 @@
 - [ ] **Store graphics.** 512 px icon PNG, 1024x500 feature graphic, and phone screenshots (none exist yet).
 - [ ] **Developer account requirements.** Check Google's current rules for new personal accounts, which have required a closed test with a minimum number of testers for a minimum period before production access.
 - [ ] **Content rating questionnaire** and the Data Safety form (draft answers below and in `PLAY_STORE_LISTING.md`).
+- [ ] **Finish fact-checking the lore pack.** About half the entries are still labeled Unverified (see [VERIFICATION_LOG.md](VERIFICATION_LOG.md)); check more of them before describing the content as researched in the store listing.
 
 ## Application Overview
 * **App Name**: `Southern Indiana Lore` (21 characters — compliant with Google Play's 30-character limit)
@@ -36,9 +37,9 @@ Explore the forgotten history, ghost towns, underground railroad sanctuaries, ri
   * Real-time distance and ETA countdowns for upcoming subterranean crossings, abandoned rail cuts, and historic bridge spans.
   * One-tap turn-by-turn navigation links directly to Google Maps.
 
-* **52 Sourced Sites**:
+* **52 Sites**:
   * Curated across 17 Southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford.
-  * Each site includes historical documentation, local folklore traditions where they exist, a confidence rating, and source citations.
+  * Each site includes a history summary, local folklore traditions where they exist, source citations, and a confidence badge showing how thoroughly it has been verified.
 
 * **Interactive Historical Cartography**:
   * On-device stylized map canvas (not surveyed street data) with Knobstone Escarpment elevation contours (600ft, 800ft, 950ft).

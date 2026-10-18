@@ -126,3 +126,15 @@ When users log custom lore in the field via `AddCustomLoreDialog`:
 - The UI displays a warning:
   > *"FIELD LOG TRUTH LAYER: Custom sites are recorded as Unverified Field Reports. They will remain marked as 'Not Independently Verified' until corroborated with historical deed records or public archives."*
 - On list cards (`LoreCard`), user sites receive the prominent amber tag **`USER REPORT`** alongside the `UNVERIFIED` badge.
+
+---
+
+## 6. Verification status of the bundled pack
+
+The labels above describe how the app *treats* a record. They are only as honest as the data behind them. In
+October 2026 the bundled pack was spot-checked against public sources, and many entries that were labeled
+`OFFICIAL_SOURCE` or `VERIFIED` turned out to contain details the sources do not support. Entries that were not
+checked are now labeled `UNVERIFIED`, and entries that were checked and corrected are labeled `PLAUSIBLE` (or kept
+at `OFFICIAL_SOURCE` where an official designation was confirmed). The emergency fallback copy in `LoreSeedData.kt`
+is always loaded as `UNVERIFIED`. See [../VERIFICATION_LOG.md](../VERIFICATION_LOG.md) for what changed and what is
+still unchecked.
