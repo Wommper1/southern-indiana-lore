@@ -35,7 +35,7 @@ class LocalArchivistService {
             qLower.contains("underground") || qLower.contains("church") || qLower.contains("freedom") || qLower.contains("clock") || sLower.contains("clock") -> {
                 """
                 🕊️ ARCHIVAL RECORD: The Town Clock Church & River Crossings (New Albany)
-                • Historical Basis: Built in 1852 by the Second Presbyterian Church (now Second Baptist). The 160-foot steeple stood directly opposite Portland (Louisville), serving as a crucial orientation point for escaping freedom seekers crossing the Ohio River. Led by abolitionist pastors including Rev. John Atterbury.
+                • Historical Basis: Built in 1852 by the Second Presbyterian Church (now Second Baptist). The steeple (150 to 160 feet, by different accounts) stood directly opposite Portland (Louisville), serving as a crucial orientation point for escaping freedom seekers crossing the Ohio River. Led by abolitionist pastors including Rev. John Atterbury.
                 • Field Documentation: Officially designated as a National Park Service 'Network to Freedom' site. Concealed sub-floor spaces beneath the choir platform provided immediate refuge.
                 • Primary Sources: National Park Service Network to Freedom; Pamela R. Peters, 'The Underground Railroad in Floyd County' (2001).
                 """.trimIndent()

@@ -92,7 +92,17 @@ class LorePackHonestyTest {
             "Thomas Harkins",
             "George Beck II",
             "Phoenix Bridge Company",
-            "Archivally Verified"
+            "Archivally Verified",
+            "Richard Powell",
+            "Public Service Company of Indiana",
+            "Whirlpool",
+            "Restored in 2004",
+            "Uriah Cummings",
+            "300,000 bricks",
+            "stagecoach pike",
+            "Managed entirely by African American staff",
+            "160-foot clock tower",
+            "pin-connected Whipple/Pratt"
         )
         for (phrase in removed) {
             assertTrue("Removed claim is back in sites.json: '$phrase' (see docs/VERIFICATION_LOG.md)", !raw.contains(phrase))
