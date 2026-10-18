@@ -45,6 +45,18 @@ jobs:
       - name: Assemble debug APK
         run: ./gradlew assembleDebug
 
+      # Lint does not fail the build (abortOnError is off); the report is there to read.
+      - name: Lint
+        run: ./gradlew lintDebug --continue
+
+      - name: Upload lint report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-report
+          path: app/build/reports/lint-results-debug.html
+          retention-days: 7
+
       - name: Upload test reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -68,5 +80,5 @@ jobs:
           name: Southern Indiana Lore ${{ github.ref_name }}
           body: |
             Debug build for sideloading and field testing.
-            A signed Play Store bundle is built locally with the maintainer's upload key; it is
-            never produced in CI.
+            The signed release APK is built locally with the maintainer's key and attached by
+            hand; it is never produced in CI. See CHANGELOG.md for what is in this version.
