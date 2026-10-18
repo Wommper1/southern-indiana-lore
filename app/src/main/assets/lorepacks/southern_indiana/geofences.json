@@ -1,0 +1,314 @@
+[
+  {
+    "siteId": "floyd_culbertson_mansion",
+    "latitude": 38.2863,
+    "longitude": -85.8145,
+    "radiusMeters": 65
+  },
+  {
+    "siteId": "floyd_town_clock_church",
+    "latitude": 38.2847,
+    "longitude": -85.8239,
+    "radiusMeters": 80
+  },
+  {
+    "siteId": "floyd_scribner_house",
+    "latitude": 38.2838,
+    "longitude": -85.8252,
+    "radiusMeters": 70
+  },
+  {
+    "siteId": "floyd_georgetown_historic_district",
+    "latitude": 38.2936,
+    "longitude": -85.9722,
+    "radiusMeters": 110
+  },
+  {
+    "siteId": "floyd_steamboat_eclipse",
+    "latitude": 38.2818,
+    "longitude": -85.8195,
+    "radiusMeters": 90
+  },
+  {
+    "siteId": "floyd_falling_run_train",
+    "latitude": 38.2932,
+    "longitude": -85.834,
+    "radiusMeters": 250
+  },
+  {
+    "siteId": "floyd_knobs_ridge_mystery",
+    "latitude": 38.3315,
+    "longitude": -85.8755,
+    "radiusMeters": 150
+  },
+  {
+    "siteId": "floyd_poor_farm_potters_field",
+    "latitude": 38.332,
+    "longitude": -85.819,
+    "radiusMeters": 110
+  },
+  {
+    "siteId": "floyd_silver_hills_hermit",
+    "latitude": 38.291,
+    "longitude": -85.845,
+    "radiusMeters": 140
+  },
+  {
+    "siteId": "floyd_greenville_mineral_springs",
+    "latitude": 38.3718,
+    "longitude": -85.986,
+    "radiusMeters": 100
+  },
+  {
+    "siteId": "lawrence_tunnelton_big_tunnel",
+    "latitude": 38.7562,
+    "longitude": -86.3421,
+    "radiusMeters": 300
+  },
+  {
+    "siteId": "clark_howard_steamboat_museum",
+    "latitude": 38.2748,
+    "longitude": -85.7335,
+    "radiusMeters": 90
+  },
+  {
+    "siteId": "clark_falls_of_the_ohio",
+    "latitude": 38.2764,
+    "longitude": -85.7628,
+    "radiusMeters": 160
+  },
+  {
+    "siteId": "harrison_corydon_capitol",
+    "latitude": 38.2119,
+    "longitude": -86.1256,
+    "radiusMeters": 85
+  },
+  {
+    "siteId": "harrison_squire_boone_caverns",
+    "latitude": 38.0772,
+    "longitude": -86.177,
+    "radiusMeters": 450
+  },
+  {
+    "siteId": "crawford_wyandotte_saltpeter",
+    "latitude": 38.2275,
+    "longitude": -86.2977,
+    "radiusMeters": 500
+  },
+  {
+    "siteId": "clark_twelve_mile_island_wrecks",
+    "latitude": 38.3562,
+    "longitude": -85.6418,
+    "radiusMeters": 140
+  },
+  {
+    "siteId": "clark_rose_island_ruins",
+    "latitude": 38.4239,
+    "longitude": -85.6268,
+    "radiusMeters": 120
+  },
+  {
+    "siteId": "floyd_duncan_tunnel",
+    "latitude": 38.3619,
+    "longitude": -85.908,
+    "radiusMeters": 350
+  },
+  {
+    "siteId": "harrison_corydon_battlefield",
+    "latitude": 38.2122,
+    "longitude": -86.1264,
+    "radiusMeters": 120
+  },
+  {
+    "siteId": "clark_george_rogers_clark_cabin",
+    "latitude": 38.2831,
+    "longitude": -85.7876,
+    "radiusMeters": 80
+  },
+  {
+    "siteId": "rose_island_resort",
+    "latitude": 38.3585,
+    "longitude": -85.6242,
+    "radiusMeters": 150
+  },
+  {
+    "siteId": "marshfield_train_robbery",
+    "latitude": 38.647,
+    "longitude": -85.776,
+    "radiusMeters": 100
+  },
+  {
+    "siteId": "lake_iola_interurban",
+    "latitude": 38.6885,
+    "longitude": -85.7802,
+    "radiusMeters": 120
+  },
+  {
+    "siteId": "freeman_field_mutiny",
+    "latitude": 38.9488,
+    "longitude": -85.9125,
+    "radiusMeters": 150
+  },
+  {
+    "siteId": "cannelton_cotton_mill",
+    "latitude": 37.9125,
+    "longitude": -86.7417,
+    "radiusMeters": 90
+  },
+  {
+    "siteId": "uss_argosy_disaster",
+    "latitude": 38.0867,
+    "longitude": -86.5167,
+    "radiusMeters": 80
+  },
+  {
+    "siteId": "new_harmony_historic_district",
+    "latitude": 38.1303,
+    "longitude": -87.9353,
+    "radiusMeters": 200
+  },
+  {
+    "siteId": "evansville_p47_factory",
+    "latitude": 38.0433,
+    "longitude": -87.525,
+    "radiusMeters": 150
+  },
+  {
+    "siteId": "evansville_lincoln_gardens",
+    "latitude": 37.9758,
+    "longitude": -87.5614,
+    "radiusMeters": 80
+  },
+  {
+    "siteId": "vincennes_fort_sackville",
+    "latitude": 38.6792,
+    "longitude": -87.5344,
+    "radiusMeters": 150
+  },
+  {
+    "siteId": "clark_big_four_bridge",
+    "latitude": 38.2678,
+    "longitude": -85.738,
+    "radiusMeters": 280
+  },
+  {
+    "siteId": "floyd_ki_bridge",
+    "latitude": 38.2805,
+    "longitude": -85.787,
+    "radiusMeters": 280
+  },
+  {
+    "siteId": "jackson_medora_covered_bridge",
+    "latitude": 38.8203,
+    "longitude": -86.1472,
+    "radiusMeters": 220
+  },
+  {
+    "siteId": "greene_tulip_trestle",
+    "latitude": 39.0831,
+    "longitude": -86.8277,
+    "radiusMeters": 320
+  },
+  {
+    "siteId": "crawford_marengo_cave",
+    "latitude": 38.3736,
+    "longitude": -86.3425,
+    "radiusMeters": 350
+  },
+  {
+    "siteId": "lawrence_bluespring_caverns",
+    "latitude": 38.7967,
+    "longitude": -86.5511,
+    "radiusMeters": 350
+  },
+  {
+    "siteId": "lawrence_spring_mill_twin_caves",
+    "latitude": 38.7335,
+    "longitude": -86.458,
+    "radiusMeters": 500
+  },
+  {
+    "siteId": "crawford_milltown_pratt_bridge",
+    "latitude": 38.3442,
+    "longitude": -86.2736,
+    "radiusMeters": 300
+  },
+  {
+    "siteId": "monon_railroad_corridor",
+    "latitude": 38.305,
+    "longitude": -85.835,
+    "radiusMeters": 300
+  },
+  {
+    "siteId": "indiana_buffalo_trace_corridor",
+    "latitude": 38.312,
+    "longitude": -85.914,
+    "radiusMeters": 350
+  },
+  {
+    "siteId": "martin_hindostan_falls_ghost_town",
+    "latitude": 38.6255,
+    "longitude": -86.8525,
+    "radiusMeters": 120
+  },
+  {
+    "siteId": "crawford_wyandotte_marengo_karst",
+    "latitude": 38.374,
+    "longitude": -86.302,
+    "radiusMeters": 500
+  },
+  {
+    "siteId": "orange_lost_river_system",
+    "latitude": 38.5684,
+    "longitude": -86.5828,
+    "radiusMeters": 500
+  },
+  {
+    "siteId": "washington_becks_mill",
+    "latitude": 38.5492,
+    "longitude": -86.1558,
+    "radiusMeters": 120
+  },
+  {
+    "siteId": "washington_salem_underground_railroad",
+    "latitude": 38.6044,
+    "longitude": -86.1017,
+    "radiusMeters": 150
+  },
+  {
+    "siteId": "dubois_st_meinrad_archabbey",
+    "latitude": 38.1678,
+    "longitude": -86.8115,
+    "radiusMeters": 350
+  },
+  {
+    "siteId": "dubois_jasper_patoka_train_depot",
+    "latitude": 38.3892,
+    "longitude": -86.9325,
+    "radiusMeters": 250
+  },
+  {
+    "siteId": "perry_rome_courthouse",
+    "latitude": 37.9238,
+    "longitude": -86.5235,
+    "radiusMeters": 140
+  },
+  {
+    "siteId": "perry_tell_city_swiss_enclave",
+    "latitude": 37.9531,
+    "longitude": -86.7622,
+    "radiusMeters": 180
+  },
+  {
+    "siteId": "jefferson_madison_incline_cut",
+    "latitude": 38.7495,
+    "longitude": -85.3885,
+    "radiusMeters": 400
+  },
+  {
+    "siteId": "jefferson_eleutherian_college",
+    "latitude": 38.8715,
+    "longitude": -85.5072,
+    "radiusMeters": 150
+  }
+]

@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Southern Indiana Lore</string>
+    <string name="notification_channel_tour_service">Southern Indiana Lore Background Tour</string>
+    <string name="notification_channel_tour_service_desc">Provides real-time proximity alerts for historic sites and subterranean features while driving.</string>
+    <string name="notification_channel_geofence">Historical Site Proximity Alerts</string>
+    <string name="notification_channel_geofence_desc">Notifies you when passing near historic markers, forgotten alignments, and karst caverns.</string>
+</resources>

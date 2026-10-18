@@ -1,0 +1,49 @@
+[
+  {
+    "sourceId": "habs_in_106",
+    "title": "Historic American Buildings Survey: Culbertson Mansion (HABS IN-106)",
+    "publisher": "Library of Congress / National Park Service",
+    "year": 1974,
+    "archiveUrl": "https://www.loc.gov/pictures/item/in0142/"
+  },
+  {
+    "sourceId": "nps_network_to_freedom",
+    "title": "National Underground Railroad Network to Freedom Register: Second Presbyterian (Town Clock) Church",
+    "publisher": "National Park Service",
+    "year": 2004,
+    "archiveUrl": "https://www.nps.gov/subjects/undergroundrailroad/"
+  },
+  {
+    "sourceId": "peters_ugrr_floyd",
+    "title": "The Underground Railroad in Floyd County, Indiana",
+    "author": "Pamela R. Peters",
+    "publisher": "McFarland & Co.",
+    "year": 2001
+  },
+  {
+    "sourceId": "baker_hovering_anvil",
+    "title": "Hovering Anvil and Other Legends of Indiana",
+    "author": "Ronald L. Baker",
+    "publisher": "Indiana University Press",
+    "year": 1982
+  },
+  {
+    "sourceId": "ways_packet_directory",
+    "title": "Way's Packet Directory, 1848–1994: Passenger Steamboats of the Mississippi River System",
+    "author": "Frederick Way Jr.",
+    "publisher": "Ohio University Press",
+    "year": 1994
+  },
+  {
+    "sourceId": "indiana_geology_1886",
+    "title": "15th Annual Report of the Indiana Department of Geology and Natural History",
+    "publisher": "State of Indiana",
+    "year": 1886
+  },
+  {
+    "sourceId": "corydon_state_historic_site",
+    "title": "Corydon Capitol State Historic Site Records",
+    "publisher": "Indiana State Museum and Historic Sites",
+    "year": 2016
+  }
+]

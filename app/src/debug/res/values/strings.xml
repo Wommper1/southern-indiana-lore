@@ -1,0 +1,4 @@
+<resources>
+    <!-- Debug builds install next to the real app, so give them a distinguishable label. -->
+    <string name="app_name">Southern Indiana Lore (debug)</string>
+</resources>

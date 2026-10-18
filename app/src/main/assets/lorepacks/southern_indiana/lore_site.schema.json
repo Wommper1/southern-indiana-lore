@@ -1,0 +1,50 @@
+{
+  "${schema}": "http://json-schema.org/draft-07/schema#",
+  "title": "LoreSite",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "subtitle",
+    "category",
+    "county",
+    "latitude",
+    "longitude",
+    "address",
+    "era",
+    "accessStatus",
+    "fullStory",
+    "verifiedHistory",
+    "folkloreTradition",
+    "confidenceLevel",
+    "sources",
+    "sourceNotes",
+    "verificationGrade",
+    "geofenceRadiusMeters",
+    "audioNarration"
+  ],
+  "properties": {
+    "id": { "type": "string" },
+    "title": { "type": "string" },
+    "subtitle": { "type": "string" },
+    "category": { "type": "string" },
+    "county": { "type": "string" },
+    "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+    "longitude": { "type": "number", "minimum": -180, "maximum": 180 },
+    "address": { "type": "string" },
+    "era": { "type": "string" },
+    "accessStatus": { "type": "string" },
+    "fullStory": { "type": "string" },
+    "verifiedHistory": { "type": "string" },
+    "folkloreTradition": { "type": "string" },
+    "confidenceLevel": {
+      "type": "string",
+      "enum": ["VERIFIED", "OFFICIAL_SOURCE", "PROBABLE", "ORAL_HISTORY", "LEGEND"]
+    },
+    "sources": { "type": "string" },
+    "sourceNotes": { "type": "string" },
+    "verificationGrade": { "type": "string" },
+    "geofenceRadiusMeters": { "type": "integer", "minimum": 10, "maximum": 5000 },
+    "audioNarration": { "type": "string" }
+  }
+}

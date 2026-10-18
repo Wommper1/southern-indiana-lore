@@ -1,0 +1,497 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 6,
+    "identityHash": "925c15a5357bba507125ffe96a06cfea",
+    "entities": [
+      {
+        "tableName": "lore_sites",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `subtitle` TEXT NOT NULL, `category` TEXT NOT NULL, `county` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `address` TEXT NOT NULL, `era` TEXT NOT NULL, `accessStatus` TEXT NOT NULL, `fullStory` TEXT NOT NULL, `verifiedHistory` TEXT NOT NULL, `folkloreTradition` TEXT NOT NULL, `confidenceLevel` TEXT NOT NULL, `sources` TEXT NOT NULL, `sourceNotes` TEXT NOT NULL, `verificationGrade` TEXT NOT NULL, `geofenceRadiusMeters` INTEGER NOT NULL, `audioNarration` TEXT NOT NULL, `isFavorite` INTEGER NOT NULL, `isVisited` INTEGER NOT NULL, `userNotes` TEXT NOT NULL, `lastVisitedTimestamp` INTEGER NOT NULL, `isCustom` INTEGER NOT NULL, `photoUri` TEXT, `alternativeNames` TEXT NOT NULL, `siteType` TEXT NOT NULL, `subType` TEXT NOT NULL, `triggerRadiusType` TEXT NOT NULL, `driveStory` TEXT NOT NULL, `whyHere` TEXT NOT NULL, `historyNerdDiscovery` TEXT NOT NULL, `aboveLayer` TEXT NOT NULL, `surfaceLayer` TEXT NOT NULL, `belowLayer` TEXT NOT NULL, `time1800` TEXT NOT NULL, `time1850` TEXT NOT NULL, `time1900` TEXT NOT NULL, `time1950` TEXT NOT NULL, `timeToday` TEXT NOT NULL, `whatMayBeUnderground` TEXT NOT NULL, `visibleRemains` TEXT NOT NULL, `relatedLocations` TEXT NOT NULL, `relatedPeople` TEXT NOT NULL, `relatedEvents` TEXT NOT NULL, `mapEvidence` TEXT NOT NULL, `unresolvedQuestions` TEXT NOT NULL, `accessLevel` TEXT NOT NULL, `isSensitiveLocation` INTEGER NOT NULL, `isExactCoordinateSafe` INTEGER NOT NULL, `radarType` TEXT NOT NULL, `youJustCrossedEvent` TEXT NOT NULL, `geometryCoordinates` TEXT NOT NULL, `undergroundConfidence` TEXT NOT NULL, `encounterCount` INTEGER NOT NULL, `firstDiscoveredTimestamp` INTEGER NOT NULL, `lastEncounterTimestamp` INTEGER NOT NULL, `hasListenedAudio` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subtitle",
+            "columnName": "subtitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "category",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "county",
+            "columnName": "county",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "era",
+            "columnName": "era",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accessStatus",
+            "columnName": "accessStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "fullStory",
+            "columnName": "fullStory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verifiedHistory",
+            "columnName": "verifiedHistory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "folkloreTradition",
+            "columnName": "folkloreTradition",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "confidenceLevel",
+            "columnName": "confidenceLevel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sources",
+            "columnName": "sources",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sourceNotes",
+            "columnName": "sourceNotes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "verificationGrade",
+            "columnName": "verificationGrade",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "geofenceRadiusMeters",
+            "columnName": "geofenceRadiusMeters",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "audioNarration",
+            "columnName": "audioNarration",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isVisited",
+            "columnName": "isVisited",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userNotes",
+            "columnName": "userNotes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastVisitedTimestamp",
+            "columnName": "lastVisitedTimestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isCustom",
+            "columnName": "isCustom",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "photoUri",
+            "columnName": "photoUri",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "alternativeNames",
+            "columnName": "alternativeNames",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "siteType",
+            "columnName": "siteType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "subType",
+            "columnName": "subType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "triggerRadiusType",
+            "columnName": "triggerRadiusType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "driveStory",
+            "columnName": "driveStory",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "whyHere",
+            "columnName": "whyHere",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "historyNerdDiscovery",
+            "columnName": "historyNerdDiscovery",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "aboveLayer",
+            "columnName": "aboveLayer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "surfaceLayer",
+            "columnName": "surfaceLayer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "belowLayer",
+            "columnName": "belowLayer",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time1800",
+            "columnName": "time1800",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time1850",
+            "columnName": "time1850",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time1900",
+            "columnName": "time1900",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "time1950",
+            "columnName": "time1950",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "timeToday",
+            "columnName": "timeToday",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "whatMayBeUnderground",
+            "columnName": "whatMayBeUnderground",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "visibleRemains",
+            "columnName": "visibleRemains",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relatedLocations",
+            "columnName": "relatedLocations",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relatedPeople",
+            "columnName": "relatedPeople",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "relatedEvents",
+            "columnName": "relatedEvents",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mapEvidence",
+            "columnName": "mapEvidence",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unresolvedQuestions",
+            "columnName": "unresolvedQuestions",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accessLevel",
+            "columnName": "accessLevel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isSensitiveLocation",
+            "columnName": "isSensitiveLocation",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isExactCoordinateSafe",
+            "columnName": "isExactCoordinateSafe",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "radarType",
+            "columnName": "radarType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "youJustCrossedEvent",
+            "columnName": "youJustCrossedEvent",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "geometryCoordinates",
+            "columnName": "geometryCoordinates",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "undergroundConfidence",
+            "columnName": "undergroundConfidence",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "encounterCount",
+            "columnName": "encounterCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstDiscoveredTimestamp",
+            "columnName": "firstDiscoveredTimestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastEncounterTimestamp",
+            "columnName": "lastEncounterTimestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hasListenedAudio",
+            "columnName": "hasListenedAudio",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        }
+      },
+      {
+        "tableName": "user_site_journal",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`siteId` TEXT NOT NULL, `isFavorite` INTEGER NOT NULL, `isVisited` INTEGER NOT NULL, `userNotes` TEXT NOT NULL, `lastVisitedTimestamp` INTEGER NOT NULL, `photoUri` TEXT, `encounterCount` INTEGER NOT NULL, `firstDiscoveredTimestamp` INTEGER NOT NULL, `lastEncounterTimestamp` INTEGER NOT NULL, `hasListenedAudio` INTEGER NOT NULL, PRIMARY KEY(`siteId`))",
+        "fields": [
+          {
+            "fieldPath": "siteId",
+            "columnName": "siteId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isFavorite",
+            "columnName": "isFavorite",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "isVisited",
+            "columnName": "isVisited",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "userNotes",
+            "columnName": "userNotes",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastVisitedTimestamp",
+            "columnName": "lastVisitedTimestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "photoUri",
+            "columnName": "photoUri",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "encounterCount",
+            "columnName": "encounterCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "firstDiscoveredTimestamp",
+            "columnName": "firstDiscoveredTimestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastEncounterTimestamp",
+            "columnName": "lastEncounterTimestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hasListenedAudio",
+            "columnName": "hasListenedAudio",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "siteId"
+          ]
+        }
+      },
+      {
+        "tableName": "installed_pack_metadata",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`packId` TEXT NOT NULL, `version` TEXT NOT NULL, `schemaVersion` TEXT NOT NULL, `contentHash` TEXT NOT NULL, `installedTimestamp` INTEGER NOT NULL, `siteCount` INTEGER NOT NULL, `status` TEXT NOT NULL, PRIMARY KEY(`packId`))",
+        "fields": [
+          {
+            "fieldPath": "packId",
+            "columnName": "packId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "version",
+            "columnName": "version",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "schemaVersion",
+            "columnName": "schemaVersion",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "contentHash",
+            "columnName": "contentHash",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "installedTimestamp",
+            "columnName": "installedTimestamp",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "siteCount",
+            "columnName": "siteCount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "status",
+            "columnName": "status",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "packId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '925c15a5357bba507125ffe96a06cfea')"
+    ]
+  }
+}

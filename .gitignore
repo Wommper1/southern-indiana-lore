@@ -1,0 +1,70 @@
+# Built application files
+*.apk
+*.aar
+*.aab
+
+# Gradle files
+.gradle/
+build/
+/build
+app/build/
+
+# Kotlin / Native
+.kotlin/
+.externalNativeBuild/
+.cxx/
+
+# Local configuration & environment secrets
+local.properties
+/local.properties
+.env
+.env.*
+*.env
+!.env.example
+
+# Android signing keys & credentials
+*.jks
+*.keystore
+my-upload-key.jks
+debug.keystore
+debug.keystore.base64
+private_key.pepk
+
+# Cloud & Service credentials
+google-services.json
+firebase_applet_config.xml
+
+# IntelliJ IDEA / Android Studio
+*.iml
+.idea/
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/gradle.xml
+.idea/dictionaries
+.idea/libraries
+
+# VS Code
+.vscode/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Profiler & captures
+/captures
+
+# Build logs and the quarantined Google AI Studio leftovers
+*.log
+/_aistudio_archive/
+/.aistudio/
