@@ -4,15 +4,13 @@ First release of an offline-first Android field companion for southern Indiana h
 17 counties, with proximity alerts, narration, a field journal, an oral-history tape deck, and dossier and GPX
 export. No account, no ads, no tracking, and no internet permission.
 
-> **Early release.** The automated tests pass, but device testing is still in progress, and about half of the
-> history entries have not been fact-checked yet (they are badged **Unverified** in the app). Please read
-> "Known limitations" below.
+> **Early release.** The automated tests pass, but device testing is still in progress, and the history is only partly checked: 46 of the 52 entries were compared with public sources and corrected where they were wrong, but most are only badged **Plausible** and six are unchecked. Please read "Known limitations" below.
 
 ## Download
 
 | File | Size | SHA-256 |
 | :--- | ---: | :--- |
-| `SouthernIndianaLore-1.0.0-release.apk` | 14.6 MB | `48f8ef711f43bcc9873eb4a1518363dfcd9875e50b6b563d27a282068ebe7494` |
+| `SouthernIndianaLore-1.0.0-release.apk` | 14.6 MB | `2813d860cf0f2077dcdb8e7ec5ced1a4bfb665d40ef4e742db2075f622046411` |
 
 Requires Android 7.0 or newer. The APK is signed by **Alex Shade Productions**; the signer certificate's SHA-256 is
 `42aa4c27c07c3afbf4e98e048d37f5e3febe061d6a34532d1fb99cecab761a41`.
@@ -62,8 +60,7 @@ your APK will have a different hash and your own signature.
 ## Known limitations
 
 - **Device testing is in progress.** Expect rough edges on real phones. The layout targets large modern phones.
-- **About half the entries are unchecked** and badged Unverified. Checked entries were compared with public sources
-  only (not archival records), and can still contain mistakes. Corrections with a source are very welcome.
+- **The history is only partly checked.** 46 of 52 entries were compared with public sources (not archival records) and corrected, but most are only badged **Plausible**: the main facts matched and other details were not confirmed. Six entries are unchecked, and two were checked without finding anything to support them (badged **Unverified**). Details can still be wrong. Corrections with a source are very welcome.
 - **The map is minimal:** a dark schematic with a river, a creek, a ridgeline, and one road/rail corridor. It is not
   a navigation map; use the "Navigate" buttons.
 - **No backup.** Journal entries, custom sites, and voice memos are lost if you uninstall the app or switch phones.
@@ -80,10 +77,10 @@ See the README for the full list.
 
 ## About this build
 
-- Built on 2026-10-18 from commit `9c3eefd` (later commits change only documentation and templates).
+- Built on 2026-10-18 from commit `7a93b94` (later commits change only documentation and templates).
 - Android Gradle Plugin 9.1.1, Gradle 9.5.0, JDK 25 (Android Studio runtime), compile SDK 36, minimum SDK 24.
-- Lore pack version 1.10.0. App version 1.0.0 (version code 1).
-- 64 automated tests passed (unit and Robolectric). Android lint reported 84 warnings and no errors.
+- Lore pack version 1.11.0. App version 1.0.0 (version code 1).
+- 64 automated tests passed (unit and Robolectric). Android lint, last run before the second fact-check, reported 84 warnings and no errors.
 - Not minified. Signed with APK signature scheme v2.
 
 ## Licenses
