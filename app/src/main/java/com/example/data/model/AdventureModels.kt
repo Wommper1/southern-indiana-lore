@@ -181,7 +181,7 @@ object CuratedMysteries {
             siteId = "crawford_wyandotte_saltpeter",
             title = "Old Indigo Cave Gunpowder Works",
             sketchType = SketchType.CAVE_MOUTH,
-            handwrittenNote = "During the War of 1812, Dr. Samuel Adams mined thousands of pounds of potassium nitrate from this cavern to supply gunpowder for General William Henry Harrison's army.",
+            handwrittenNote = "During the War of 1812, Dr. Benjamin Adams mined thousands of pounds of potassium nitrate from this cavern to supply gunpowder for General William Henry Harrison's army.",
             historicalMarginalia = "Cedar leaching vats, petrified soot torches, and hand-cut wooden trackways remain untouched deep within the twilight zone.",
             riddleQuestion = "How did 19th-century miners transport heavy powder barrels through unlit karst passages?",
             alignmentTargetDescription = "Align the reticle with the cavern mouth shadow boundary."

@@ -123,8 +123,8 @@ object RelicRegistry {
         curatorNotes = "Carved oxhorn scrimshaw etched with cavern passages and a star inspection mark. Provided black powder ingredients for American frontier troops.",
         archivalFrequencyKhz = 720,
         archivalBroadcastTitle = "Frontier Dispatch: Wyandotte Saltpeter Vats (1812)",
-        archivalDispatchTranscript = "This is Dr. Samuel Adams from the dark chambers of Wyandotte. Our ox teams have hauled five thousand pounds of potassium nitrate crystals through the forest trace to Harrison's depot at Corydon. The cavern vats burn night and day; the frontier regiments will have powder for their field pieces.",
-        speakerName = "Dr. Samuel Adams",
+        archivalDispatchTranscript = "This is Dr. Benjamin Adams from the dark chambers of Wyandotte. Our ox teams have hauled five thousand pounds of potassium nitrate crystals through the forest trace to Harrison's depot at Corydon. The cavern vats burn night and day; the frontier regiments will have powder for their field pieces.",
+        speakerName = "Dr. Benjamin Adams",
         speakerRole = "Surgeon & Ordnance Contractor, 1812 War Works",
         reliefFeatures = listOf(
             RelicReliefFeature(0.50f, 0.50f, 0.40f, 7f, RelicReliefFeature.FeatureType.HORN_OUTLINE, "Curved Horn Profile"),

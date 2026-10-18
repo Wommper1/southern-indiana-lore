@@ -17,14 +17,8 @@ object LoreSeedData {
             address = "914 E Main St, New Albany, IN 47150",
             era = "1867 – Gilded Victorian Era",
             accessStatus = "State Historic Site / Guided Tours",
-            fullStory = """
-                Completed in 1869 for William S. Culbertson, once the wealthiest financier and philanthropist in Indiana, this 20,000-square-foot French Second Empire mansion features 25 rooms, hand-painted ceilings, and imported Parisian chandeliers. 
-
-                Behind its breathtaking Gilded Age opulence lies a century of ghostly occurrences. Museum staff and night docents have documented unprompted piano melodies playing from the sealed third-floor ballroom, unexplainable cold spots along the grand walnut staircase, and the distinct sound of heavy servant footsteps traversing the back corridors when the house is empty. 
-
-                Local lore frequently ties anomalous energy to the tragic lightning strike and fire of 1888 that damaged the estate's carriage house, where historic carriage works were later converted to hospital recovery rooms during regional epidemics. Today, the Culbertson Mansion stands proudly along New Albany's historic Mansion Row as both a pinnacle of 19th-century architecture and Indiana's most famous Victorian ghost site.
-            """.trimIndent(),
-            verifiedHistory = "Completed in 1869 for dry-goods merchant and utility investor William S. Culbertson at a cost of $120,000. Architect James T. Banes designed the 25-room Second Empire residence featuring a mansard roof and hand-painted ceilings. Donated to the State of Indiana in 1976 and listed on the National Register of Historic Places.",
+            fullStory = "Completed in 1869 for William S. Culbertson, once described as the richest man in Indiana, this 20,000-square-foot French Second Empire mansion features 25 rooms, hand-painted ceilings, and imported Parisian chandeliers.\n\nBehind its Gilded Age opulence, local ghost lore tells of unprompted piano melodies playing from the sealed third-floor ballroom, unexplainable cold spots along the grand walnut staircase, and the distinct sound of heavy servant footsteps traversing the back corridors when the house is empty.",
+            verifiedHistory = "Built 1867-1869 for William S. Culbertson, once described as the richest man in Indiana, at a cost of \$120,000. Architect James T. Banes designed the 25-room Second Empire residence of about 20,000 square feet. After the Culbertson family it passed through private owners and the American Legion; Historic New Albany bought it in 1964 for \$24,000, and it became part of the Indiana State Museum and Historic Sites in 1976. Listed on the National Register of Historic Places in 1974. Its haunted-house tradition began in 1985 and is a modern attraction, not an archival record.",
             folkloreTradition = "Local lore recounts phantom waltzes echoing from the third-floor ballroom and cold spots near the carriage house, damaged by lightning in 1888.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Library of Congress HABS IN-106; Indiana State Museum archives; Floyd County Deeds Vol. 14.",
@@ -122,7 +116,7 @@ object LoreSeedData {
 
                 The riverfront was also witness to wartime tragedy when boilers forged in regional iron foundries powered transports during the Civil War, culminating in memorials for the Sultana disaster. On tranquil summer evenings at the riverfront amphitheater, river watchers claim to hear the rhythmic chug of phantom high-pressure steam boilers and the slow, heavy splash of paddlewheel paddles beating against the muddy Ohio waters.
             """.trimIndent(),
-            verifiedHistory = "In 1852, shipbuilder James Howard and local craftsmen completed the palatial steamboat Eclipse, measuring 365 feet in length with 36-foot paddle wheels. Between 1818 and 1880, New Albany shipyards constructed over 300 steamboats.",
+            verifiedHistory = "The steamboat Eclipse was built at New Albany in 1852. At 1,117 tons and with 140 staterooms, it was about three times the size of most western-river boats; one source names Dowerman's yard as its builder. New Albany shipbuilding began in 1819 and peaked in 1856, when local builders produced 22 boats; by 1860 its shipyards had turned out about \$12 million worth of rivercraft.",
             folkloreTradition = "River watchers long reported hearing phantom steam exhausts and paddle beats along the riverbank on warm August evenings.",
             confidenceLevel = ConfidenceLevel.VERIFIED.name,
             sources = "Steamboat Historical Society of America archives; New Albany Daily Ledger (1852-1860); Frederick Way Jr., 'Way's Packet Directory, 1848–1994'.",
@@ -284,13 +278,11 @@ object LoreSeedData {
             address = "1101 E Market St, Jeffersonville, IN 47130",
             era = "1834–1890 Golden Steamboat Era",
             accessStatus = "Public Museum & State Historic Landmark",
-            fullStory = """
-                Founded in 1834 by James Howard, the Howard Shipyards constructed over 3,000 steamboats and river vessels. The surviving 1890 22-room Romanesque Revival mansion features master woodwork hand-carved by shipyard craftsmen.
-            """.trimIndent(),
-            verifiedHistory = "Founded in 1834, the Howard Shipyards built famous boats like the J.M. White. The estate mansion was designed by Louisville architect Arthur Loomis and finished in 1894. Listed on the National Register of Historic Places.",
+            fullStory = "The Howard Shipyards, traditionally dated to 1834, built more than 1,100 river vessels over 107 years (published totals vary). The surviving 1890 22-room Romanesque Revival mansion features master woodwork hand-carved by shipyard craftsmen.",
+            verifiedHistory = "The Howard shipyard (traditionally dated to 1834) built famous boats like the J.M. White. The mansion was begun in 1890 for Edmonds J. Howard and designed by the New York firm Drach and Thomas, with local architect Arthur Loomis supervising construction (some accounts date its completion to 1894). Listed on the National Register of Historic Places in 1973.",
             folkloreTradition = "River workers told of phantom whistle blasts echoing across the Jeffersonville shipyard basin during high flood stages.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
-            sources = "National Register #73000028; Historic American Buildings Survey IN-142; Howard Steamboat Museum Archives.",
+            sources = "National Register #73000031 (listed 1973 as the 'Howard Home'); Historic American Buildings Survey IN-142; Howard Steamboat Museum Archives.",
             sourceNotes = "National Register #73000028; Howard Steamboat Museum Archives.",
             verificationGrade = "National Register Historic Landmark",
             geofenceRadiusMeters = 90,
@@ -333,7 +325,7 @@ object LoreSeedData {
             fullStory = """
                 Constructed 1814-1816 of native blue limestone as the Harrison County courthouse, this building served as Indiana's first state capitol from statehood in 1816 until 1825. Forty-three delegates drafted Indiana's 1816 constitution under the nearby Constitution Elm.
             """.trimIndent(),
-            verifiedHistory = "Served as the Indiana State Capitol from 1816 to 1825. In June 1816, delegates met in Corydon to draft Indiana's first state constitution, seeking shade beneath the historic 132-foot Constitution Elm.",
+            verifiedHistory = "Served as the Indiana State Capitol from 1816 to 1825. In June 1816, delegates met in Corydon to draft Indiana's first state constitution, seeking shade beneath the historic Constitution Elm (about 50 feet tall, with a branch spread of roughly 130 feet).",
             folkloreTradition = "Pioneer accounts tell of late-night debates by candlelight in the limestone hall during humid frontier summers.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "National Register #75000019; Indiana State Museum State Historic Sites; Harrison County Historical Society.",
@@ -344,7 +336,7 @@ object LoreSeedData {
         ),
         LoreSiteEntity(
             id = "harrison_squire_boone_caverns",
-            title = "Squire Boone Caverns & 1804 Grist Mill",
+            title = "Squire Boone Caverns & Pioneer Grist Mill",
             subtitle = "Pioneer Frontier Mill & Subterranean Refuge",
             category = LoreCategories.CURIOSITIES,
             county = "Harrison County",
@@ -353,17 +345,15 @@ object LoreSeedData {
             address = "100 Squire Boone Rd SW, Mauckport, IN 47142",
             era = "1790–1815 Pioneer Frontier",
             accessStatus = "Historic Landmark & Commercial Cave Tours",
-            fullStory = """
-                Discovered by frontiersman Squire Boone (brother of Daniel Boone) in 1790 while hiding from a hostile pursuit. In 1804, Boone returned to build a water-powered grist mill harnessing the spring, and was buried inside the cavern in 1815 per his dying wish.
-            """.trimIndent(),
-            verifiedHistory = "Squire Boone and his son Moses surveyed the site in 1790. Boone constructed a heavy timber grist mill powered by the spring branch in 1804. Boone died in 1815 and was entombed in the cavern.",
+            fullStory = "Frontiersman Squire Boone (brother of Daniel Boone) is said to have found the cave in the late 1700s while hiding from hostile pursuers. He later bought the land and started a water-powered grist mill harnessing the spring (sources date the mill to 1804 or 1808). He died in 1815 and was buried near the cave entrance; his remains were later moved deeper into the cavern.",
+            verifiedHistory = "Squire Boone, brother of Daniel Boone, found the cave in the late 1700s according to local accounts. Sources differ on the grist mill's date (1804 or 1808). Boone died in 1815 and was buried near the cave entrance; his remains were later moved deeper into the cavern.",
             folkloreTradition = "Frontier legends recount Boone escaping pursuing enemies by ducking into the dark crevice behind the falling water.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Harrison County Deed Records (1804); Indiana Historical Bureau Marker; Indiana Geological and Water Survey.",
             sourceNotes = "Harrison County Deed Records (1804); Indiana Historical Bureau Marker.",
             verificationGrade = "Archivally Verified Pioneer Landmark",
             geofenceRadiusMeters = 150,
-            audioNarration = "You have arrived at Squire Boone Caverns in Harrison County. In 1790, frontiersman Squire Boone found refuge in these subterranean chambers."
+            audioNarration = "You have arrived at Squire Boone Caverns. Frontiersman Squire Boone found refuge in these caves in the late 1700s and later built a water mill here, in 1804 or 1808 depending on the source."
         ),
         LoreSiteEntity(
             id = "crawford_wyandotte_saltpeter",
@@ -376,12 +366,8 @@ object LoreSeedData {
             address = "7315 Wyandotte Cave Rd, Leavenworth, IN 47137",
             era = "1812–1850s Pioneer Industry",
             accessStatus = "Indiana DNR State Forest / Guided Cave Expeditions",
-            fullStory = """
-                Deep in Crawford County along the Blue River valley, Wyandotte Cave was acquired by Dr. Samuel Adams in 1812 to mine potassium nitrate (saltpeter) for domestic gunpowder production during the War of 1812. 
-                
-                British naval blockades threatened to cripple the young United States military, making Southern Indiana's limestone caverns crucial national defense assets. In 1850, Henry P. Rothrock purchased the land and discovered the 'New Cave', containing 'Rothrock's Cathedral'—a staggering 185-foot-high underground limestone mountain that remains one of the world's largest natural underground chambers. Pre-Columbian flint torches have been found carbon-dated back millennia.
-            """.trimIndent(),
-            verifiedHistory = "Dr. Samuel Adams filed mining claims in 1812 to extract saltpeter from the cavern earth for gunpowder manufacture during the War of 1812. Explored and mapped by State Geologist E.T. Cox in 1871. Listed as a National Natural Landmark.",
+            fullStory = "Deep beneath the rugged karst hills of Crawford County lies Wyandotte Cave. During the War of 1812, Dr. Benjamin Adams acquired mining rights to extract saltpeter (potassium nitrate) from the subterranean bat guano deposits to supply desperately needed gunpowder to American troops when British blockades cut off maritime trade. Later explored by State Geologist E.T. Cox in 1871, Rothrocks Cathedral inside Wyandotte stands as one of the largest underground limestone chambers on Earth.",
+            verifiedHistory = "Dr. Benjamin Adams mined saltpeter from the cavern earth for gunpowder during the War of 1812. Wyandotte Cave was designated a National Natural Landmark in 1972.",
             folkloreTradition = "Local lore tells of lost pioneer miners following draft currents through tight crevices, guided only by flickering tallow candles.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "National Natural Landmarks Program, National Park Service; Indiana Department of Natural Resources Division of Forestry; Cox, E.T., 'Third and Fourth Annual Reports of the Geological Survey of Indiana' (1871-1872).",
@@ -431,7 +417,7 @@ object LoreSeedData {
                 
                 In January 1937, the Great Ohio River Flood struck with catastrophic fury. Swollen riverwaters crested at 85.4 feet, submerging Rose Island under more than 10 feet of churning, muddy water. The roller coaster was ripped from its pilings, the wooden cottages floated downriver, and the resort was irreparably wrecked. Today, hikers traversing State Park Trail 3 walk beneath the original concrete stone welcome arch and stand inside the haunting, algae-covered hollow basin of the swimming pool.
             """.trimIndent(),
-            verifiedHistory = "Originally developed as Fern Grove camp in the 1880s; expanded in 1923 by businessman David B.G. Rose into an amusement park. Over 135,000 visitors attended in the 1926 season. Completely destroyed during the January 1937 Ohio River Flood when floodwaters reached 85.4 feet.",
+            verifiedHistory = "Originally developed as Fern Grove, a picnic and church-outing site, in the 1880s; bought in 1923 by David Rose, who renamed it Rose Island and built an amusement park. A state marker says it drew about 135,000 visitors a year at its peak. Destroyed in the Ohio River flood that began in January 1937.",
             folkloreTradition = "Campers along Fourteen Mile Creek occasionally report hearing faint big-band jazz music drifting through the sycamore trees at dusk.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Indiana Department of Natural Resources Charlestown State Park Historical Records; Courier-Journal Archives (Jan-Feb 1937); Rose Island Promotional Prospectus (1924).",
@@ -593,12 +579,8 @@ object LoreSeedData {
             address = "7315 S Wyandotte Cave Rd, Leavenworth, IN 47137",
             era = "3000 BCE – Indigenous Mining to Gilded Tourism",
             accessStatus = "State Park / National Natural Landmark",
-            fullStory = """
-                Deep within the Crawford Upland limestone plateau lies one of North America's premier subterranean cave systems. Wyandotte Cave contains over nine miles of surveyed underground passages, culminating in 'Monument Mountain'—a massive 135-foot subterranean mountain inside Rothrock's Cathedral.
-                
-                For more than 3,000 years, Indigenous Woodland miners entered with burning hickory bark torches to quarry nodular Wyandotte chert and aragonite. During the War of 1812, Dr. Benjamin Adams mined tons of potassium nitrate (saltpeter) from the dry subterranean soil to supply gunpowder for American troops.
-            """.trimIndent(),
-            verifiedHistory = "Designated a National Natural Landmark in 1972. Archaeological surveys have confirmed indigenous flint mining dating back to 1000 BCE. Acquired by the State of Indiana in 1966 as part of O'Bannon Woods State Park.",
+            fullStory = "Deep within the Crawford Upland limestone plateau lies one of North America's premier subterranean cave systems. Wyandotte Cave contains over nine miles of surveyed underground passages, culminating in 'Monument Mountain'—a massive 135-foot subterranean mountain inside Rothrock's Cathedral.\n                \n                For roughly 4,000 years by one account, Native American miners entered with burning hickory bark torches to quarry nodular Wyandotte chert and aragonite. During the War of 1812, Dr. Benjamin Adams mined tons of potassium nitrate (saltpeter) from the dry subterranean soil to supply gunpowder for American troops.",
+            verifiedHistory = "Wyandotte Cave was designated a National Natural Landmark in 1972. Native Americans used the cave for roughly 4,000 years by one account (another suggests possibly as far back as 8000 BC), lighting their way with hickory-bark torches and mining chert and aragonite. The state bought the Wyandotte Cave property in 1966; it is now part of O'Bannon Woods State Park. Marengo Cave is a separate cave nearby.",
             folkloreTradition = "Early visitors claimed to have met hermit hunters who lived underground inside the mouth of the cavern for seasons at a time.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Indiana Department of Natural Resources Cave Management Plan; National Park Service NNL Citation; Patrick J. Munson, 'Prehistoric Chert Mining in Wyandotte Cave' (1975).",
@@ -610,14 +592,14 @@ object LoreSeedData {
             radarType = "UNDERGROUND",
             undergroundConfidence = UndergroundConfidenceLevels.CONFIRMED_PASSAGE,
             whatMayBeUnderground = "Over 9 miles of multi-level limestone cavern rooms, including Monument Mountain (a 135-foot subterranean mountain) and prehistoric chert mines mined 3,000 years ago.",
-            driveStory = "Beneath these wooded limestone hills lie miles of colossal subterranean caverns where Indigenous peoples quarried Wyandotte flint in absolute darkness 3,000 years ago.",
+            driveStory = "Beneath these wooded limestone hills lie miles of colossal subterranean caverns where Indigenous peoples quarried Wyandotte flint in absolute darkness thousands of years ago.",
             historyNerdDiscovery = "Wyandotte Cave contains saltpeter mining vats from the War of 1812 and prehistoric torch smudges preserved undisturbed on cave walls for thousands of years.",
             accessLevel = "PUBLIC ACCESS"
         ),
         LoreSiteEntity(
             id = "martin_hindostan_falls_ghost_town",
             title = "Hindostan Falls Vanished Frontier Town",
-            subtitle = "1818 County Seat Wiped Out by Sudden Mysterious Pestilence",
+            subtitle = "Frontier County Seat Emptied by Epidemic and Hard Times",
             category = LoreCategories.PIONEER,
             county = "Martin County",
             latitude = 38.6255,
@@ -625,23 +607,19 @@ object LoreSeedData {
             address = "Hindostan Falls Rd, Shoals, IN 47581",
             era = "1818–1828 Frontier Boom & Epidemic",
             accessStatus = "DNR Public Fishing & Historic Site",
-            fullStory = """
-                In 1818, visionary entrepreneurs established the bustling boomtown of Hindostan at the natural sandstone waterfall of the East Fork of the White River. Within two years, the town surged to over 1,200 residents, boasting gristmills, sawmills, taverns, and the newly designated Martin County courthouse.
-                
-                In the late summer of 1820, a horrific and sudden pestilence (likely cholera, yellow fever, or typhus) struck the settlement. Whole families died within hours. Survivors fled in sheer terror, leaving meals still sitting on tables. By 1828, the town was totally abandoned and stripped of its county seat status. Today, only square post holes drilled into the sandstone riverbed and a lonely mass grave on the ridge remain.
-            """.trimIndent(),
-            verifiedHistory = "Platted in 1818 by Caleb Fellows and partners. Designated original county seat of Martin County in 1820. Wiped out by epidemic 1820-1824; county records moved to Mt. Pleasant in 1828. State historical marker erected at the site.",
+            fullStory = "Hindostan was founded at the natural sandstone falls of the East Fork of the White River around 1816 and laid out as a town by 1818, according to the state historical marker. By 1820 about 1,200 people lived there, making it the largest community in the area, with mills, taverns, and a spot on the New Albany to Vincennes stagecoach road. It became the first county seat of Martin County, formed in 1820.\n\nAn epidemic that sources describe as yellow fever or cholera struck the settlement, and an economic depression around 1820 also drove people away. Accounts disagree on when the sickness came, and the state marker calls it the 'Great Sickness'. The county seat moved to Mount Pleasant in 1828, the post office closed in 1830, and most remaining residents moved to what became Loogootee in 1853. Today the falls and a roadside marker are what remain.",
+            verifiedHistory = "Settled around 1816 (Wikipedia) and platted by 1818 (state marker); Captain Caleb Fellows is credited with naming the town. First county seat of Martin County, formed in 1820; about 1,200 residents by 1820. An epidemic (yellow fever or cholera, per Wikipedia) and an economic depression emptied the town, and sources differ on the timing. The county seat moved to Mount Pleasant in 1828, the post office closed on December 29, 1830, and most remaining residents moved to Loogootee in 1853. A state historical marker stands near the site.",
             folkloreTradition = "River lore recounts the 'Hindostan Gold'—a chest of county tax gold allegedly buried near the falls before the clerk succumbed to the plague.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
-            sources = "Ruby Rogers, 'The Lost Town of Hindostan' (Indiana Magazine of History, 1957); Martin County Deed Book A; Indiana Historical Bureau Marker.",
+            sources = "Indiana Historical Bureau marker (in.gov/history/markers/231.htm); Ruby Stiles, 'Legend and Tradition Obscure True Story of Hindostan, Lost City of Martin County,' Evansville Press and Courier, April 29, 1954; Wikipedia, 'Hindostan Falls, Indiana'.",
             sourceNotes = "Indiana Historical Bureau Marker #51.1966.1; Martin County Historical Society.",
             verificationGrade = "State Historical Marker / Registered Vanished Townsite",
             geofenceRadiusMeters = 120,
-            audioNarration = "You are at Hindostan Falls. In 1820, over a thousand people lived in this booming county seat, until a devastating plague wiped out the town in weeks.",
+            audioNarration = "You are at Hindostan Falls. By 1820, about twelve hundred people lived in this frontier town, the first county seat of Martin County. An epidemic and hard times emptied it over the following years, and today the falls and a historical marker are what remain.",
             siteType = "POINT",
             radarType = "LOST_LANDSCAPE",
-            driveStory = "You are standing at the sandstone ledges of Hindostan Falls, where an entire bustling 1820 pioneer county seat of over 1,200 people vanished almost overnight due to a plague.",
-            whatMayBeUnderground = "Post holes cut directly into the riverbed sandstone, mill wheel sockets, and unmarked plague cemetery graves on the overlooking ridge.",
+            driveStory = "You are standing at the sandstone ledges of Hindostan Falls, where a bustling pioneer county seat of about 1,200 people in 1820 slowly emptied out after an epidemic and hard times.",
+            whatMayBeUnderground = "Post holes cut directly into the riverbed sandstone, mill wheel sockets, and possibly unmarked graves from the epidemic.",
             historyNerdDiscovery = "Square post holes drilled directly into the flat bedrock of the falls for the gristmills and whetstone manufacturing shops are still visible when the water is low.",
             accessLevel = "PUBLIC ACCESS"
         ),
@@ -656,12 +634,8 @@ object LoreSeedData {
             address = "Monon Right-of-Way, New Albany to Salem, IN",
             era = "1847–1971 Golden Age of Hoosier Rail",
             accessStatus = "Public Crossings & Historic Rail Trail",
-            fullStory = """
-                Chartered in 1847 as the New Albany and Salem Railroad, the Monon became Indiana's signature rail artery, proudly dubbed 'The Hoosier Line'. Spanning from the banks of the Ohio River north to Lake Michigan, it connected southern limestone quarries and hardwood timber tracts to northern industrial hubs.
-                
-                In May 1865, the Monon carried Abraham Lincoln's funeral train across Indiana on its solemn journey home to Springfield. For escaping enslaved people, the Monon was known as an overland branch of the Underground Railroad, with sympathetic rail crews hiding passengers in boxcars heading northward.
-            """.trimIndent(),
-            verifiedHistory = "Incorporated in 1847 by New Albany physician and promoter Dr. Nathaniel Scribner and James Brooks. Formally named Chicago, Indianapolis and Louisville Railway in 1897. Merged into the Louisville and Nashville Railroad in 1971.",
+            fullStory = "Chartered in 1847 as the New Albany and Salem Railroad, the Monon became Indiana's signature rail artery, proudly dubbed 'The Hoosier Line'. Spanning from the banks of the Ohio River north to Lake Michigan, it connected southern limestone quarries and hardwood timber tracts to northern industrial hubs.\n                \n                In May 1865, the Monon carried Abraham Lincoln's funeral train across Indiana on its solemn journey home to Springfield. Local tradition holds that the line served freedom seekers, with sympathetic rail crews hiding passengers in boxcars heading northward, though no documentation for this was found in the sources checked.",
+            verifiedHistory = "The New Albany and Salem Railroad, the line's ancestor, was organized in 1847 with New Albany merchant James Brooks as president. After reorganizations it became the Chicago, Indianapolis and Louisville Railway in 1897 (the 'Monon'), and merged into the Louisville and Nashville Railroad in 1971.",
             folkloreTradition = "Old railroaders swore that on quiet foggy autumn evenings, you could still hear the distinct chime whistle of a Monon 4-6-2 steam engine rolling along the tracks.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "George W. Hilton, 'Monon Route' (Howell-North Books, 1978); Monon Railroad Historical-Technical Society archives; Floyd County Deed Books 1847-1853.",
@@ -674,7 +648,7 @@ object LoreSeedData {
             radarType = "CROSSING",
             youJustCrossedEvent = "The Historic Monon Railroad (New Albany & Salem Railroad, chartered 1847)",
             driveStory = "You just crossed the historic Monon railbed, Indiana's beloved railway that connected the Ohio River to Lake Michigan and carried Abraham Lincoln's funeral train.",
-            historyNerdDiscovery = "Chartered in 1847 by New Albany merchants to haul Oolitic limestone and timber, the Monon Railroad served as a clandestine escape route for freedom seekers heading toward Canada.",
+            historyNerdDiscovery = "Chartered in 1847 by New Albany merchants to haul Oolitic limestone and timber, local tradition holds that the Monon served as a clandestine escape route for freedom seekers heading toward Canada (undocumented in the sources checked).",
             accessLevel = "PUBLIC ACCESS"
         ),
         LoreSiteEntity(
@@ -693,7 +667,7 @@ object LoreSeedData {
 
                 In January 1937, the Great Ohio River Flood submerged the entire resort under more than ten feet of water, tearing through wooden structures and sweeping away the bridge. The resort never reopened. During World War II, the property was condemned and absorbed into the Indiana Army Ammunition Plant reservation. Today, walking Trail 3 in Charlestown State Park reveals the eerie stone entrance pillars, concrete swimming pool basin, and brick walkways slowly reclaimed by the hardwood forest.
             """.trimIndent(),
-            verifiedHistory = "Developed in 1923 by entrepreneur David B. Rose. Destroyed by the January 1937 Ohio River flood when river crests exceeded 57 feet at Louisville. Incorporated into the Indiana Army Ammunition Plant buffer zone in 1941, transferred to the State of Indiana, and opened as Charlestown State Park in 1996.",
+            verifiedHistory = "Developed in 1923 by entrepreneur David Rose. Destroyed by the January 1937 Ohio River flood when river crests exceeded 57 feet at Louisville. Incorporated into the Indiana Army Ammunition Plant buffer zone in 1941, transferred to the State of Indiana, and opened as Charlestown State Park in 1996.",
             folkloreTradition = "Hikers along Trail 3 recount auditory echoes of jazz dance bands and children splashing near the dry, moss-covered concrete pool on humid summer afternoons.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Indiana Historical Bureau Marker 'Fern Grove and Rose Island Resorts'; Charlestown State Park Archives; Louisville Courier-Journal Jan 1937.",
@@ -721,12 +695,8 @@ object LoreSeedData {
             address = "Old Marshfield Station, near US 31 & Marshfield Rd, Scottsburg, IN 47170",
             era = "1868 – Reconstruction & Outlaw Era",
             accessStatus = "Public Right-of-Way / Historic Marker",
-            fullStory = """
-                On the moonlit night of May 22, 1868, at the remote Marshfield water station on the Jeffersonville, Madison & Indianapolis Railroad, the notorious Reno Gang executed what is recognized as one of the world's first moving train robberies. 
-
-                Led by Frank Reno, John Reno, and their confederates, the bandits boarded the locomotive while it stopped for water and wood, knocked out the engineer, decoupled the passenger cars, and sped the locomotive and Adams Express car down the tracks. They threw the express messenger from the hurtling train and broke open safes containing an estimated $96,000 in government bonds and currency. The robbery spurred a nationwide manhunt by Allan Pinkerton's National Detective Agency, which culminated in international extraditions and vigilante executions in Southern Indiana.
-            """.trimIndent(),
-            verifiedHistory = "May 22, 1868 robbery of the JM&I Railroad by the Reno Gang. Express messenger Thomas Harkins was severely injured. Investigated by Pinkerton detectives; multiple gang members were captured in Canada and later lynched by vigilante mobs at New Albany and Seymour jails in late 1868.",
+            fullStory = "On the moonlit night of May 22, 1868, at the remote Marshfield water station on the Jeffersonville, Madison & Indianapolis Railroad, the notorious Reno Gang executed what is recognized as one of the world's first moving train robberies.\n\nLed by Frank Reno, John Reno, and their confederates, the bandits boarded the locomotive while it stopped for water and wood, knocked out the engineer, decoupled the passenger cars, and sped the locomotive and Adams Express car down the tracks. They reportedly threw the express messenger from the hurtling train (accounts differ on whether he survived) and broke open safes containing an estimated \$96,000 (accounts vary slightly) in government bonds and currency. The robbery spurred a nationwide manhunt by Allan Pinkerton's National Detective Agency, which culminated in international extraditions and vigilante executions in Southern Indiana.",
+            verifiedHistory = "May 22, 1868 robbery of the Jeffersonville, Madison and Indianapolis Railroad at Marshfield by the Reno Gang; about \$96,000 was taken. Accounts differ on the express messenger's fate. The railroad hired the Pinkerton agency; Reno Gang members were captured in Indianapolis and Canada, and vigilantes lynched members of the gang at Seymour and New Albany during 1868.",
             folkloreTradition = "Tales persisted in Jackson and Scott Counties of unrecovered government bonds and gold sovereigns buried in hollow sycamore trunks along the Muscatatuck River bottoms.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Indiana Historical Bureau Marker 'Marshfield Train Robbery'; Allan Pinkerton, 'The Expressman and the Detective' (1875); Scott County Historical Society.",
@@ -846,7 +816,7 @@ object LoreSeedData {
 
                 Near the river hamlet of Magnet (then called Rono), a sudden summer violent gale drove the vessel into the rocky Indiana shore. The violent impact severed the steam lines and exploded the boilers, throwing men and burning timbers across the channel. Ten soldiers perished immediately from scalding steam and drowning, while dozens of others were maimed. Compassionate local residents gathered the fallen soldiers and interred them together in a solemn mass grave overlooking the sweeping river bend, where a granite memorial stands to this day.
             """.trimIndent(),
-            verifiedHistory = "The USS Argosy was an 1863 tinclad gunboat converted to troop transport. Destroyed August 21, 1865. The 10 deceased soldiers of the 70th Ohio Volunteer Infantry were buried in a mass grave at the Magnet Cemetery, documented by Indiana Historical Bureau Marker in 1966.",
+            verifiedHistory = "On August 21, 1865, the steamer U.S.S. Argosy (No. 3) was caught in a storm and blown aground, and its boilers exploded. Ten Union soldiers returning home were killed (at least nine from the 70th Ohio Volunteer Infantry; the tenth is uncertain) and buried in a mass grave about half a mile from Magnet (then Rono). The boat was later rebuilt and returned to service. Some accounts place the wreck at Hatfield's Landing, Kentucky. A state historical marker stands at the site.",
             folkloreTradition = "Riverboat pilots on midnight runs reported seeing a lantern slowly swaying along the Magnet shore rocks on stormy August nights, searching for fallen comrades.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Indiana Historical Bureau Marker 'Civil War Memorial Grave 1865'; Official Records of the Union and Confederate Navies Vol. 27; Perry County Deed & Cemetery Inscriptions.",
@@ -876,7 +846,7 @@ object LoreSeedData {
 
                 In 1825, Scottish industrialist Robert Owen purchased the entire town to create a 'Community of Equality.' In 1826, the steamboat Philanthropist arrived carrying the 'Boatload of Knowledge'—a dream team of world-renowned European and American scientists, educators, and artists including William Maclure, Thomas Say (the father of American entomology), and Charles-Alexandre Lesueur. Though the social utopia disbanded within years, New Harmony flourished as the scientific capital of the American West. Here, David Dale Owen conducted the first federal geological surveys, and in 1838 Maclure founded the Workingmen's Institute, which stands today as Indiana's oldest continuously operating public library.
             """.trimIndent(),
-            verifiedHistory = "Harmony Society operated 1814-1824 before selling to Robert Owen and William Maclure for $125,000. David Dale Owen established headquarters for the US Geological Survey here in 1839. Workingmen's Institute chartered in 1838. Designated a National Historic Landmark District in 1965.",
+            verifiedHistory = "The Harmony Society occupied the town from 1814 until 1825, when it sold the town and about 20,000 acres to Robert Owen for \$125,000 to \$150,000, depending on the source. David Dale Owen conducted the first official geological survey of Indiana (1837-39), followed by federal surveys in 1839-40 and 1847-51. The Workingmen's Institute was founded by William Maclure in 1838. Designated a National Historic Landmark District in 1965.",
             folkloreTradition = "Local lore surrounds Gabriel's Rock—a limestone slab bearing what resembles human footprints, which Father Rapp claimed were left by the Angel Gabriel delivering heavenly guidance.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "National Register of Historic Places Nomination #66000006; Workingmen's Institute Archives; William E. Wilson, 'The Angel and the Serpent: The Story of New Harmony' (1964).",
@@ -992,10 +962,10 @@ object LoreSeedData {
             era = "1895 – Gilded Industrial Rail Era",
             accessStatus = "Public Historic Pedestrian & Bike Skyway",
             fullStory = "Opened in September 1895 by the Cleveland, Cincinnati, Chicago and St. Louis Railway (the Big Four Railroad), this iconic six-span wrought iron and steel truss bridge spans 2,525 feet across the Ohio River between Jeffersonville, Indiana, and Louisville, Kentucky.\n\nDuring its construction, tragedy struck on December 15, 1893, when a fierce gale caused the falsework of Pier 3 to collapse, plunging 37 workers into the freezing Ohio River in one of the worst bridge disasters in American history. Abandoned by rail in 1968, the bridge was saved and transformed into a world-renowned elevated pedestrian span.",
-            verifiedHistory = "Constructed 1890–1895 by the Louisville and Jeffersonville Bridge Company. Six Pratt and Pennsylvania through-truss spans designed by engineer George S. Morison. Listed on the National Register of Historic Places.",
+            verifiedHistory = "Construction began in 1888 and the bridge opened in 1895, built by the Louisville and Jeffersonville Bridge Company and sold that year to the Big Four Railroad. It was rebuilt in 1929 on the original piers; the current six spans are Parker and Pennsylvania through trusses, the longest 547 feet. Listed on the National Register of Historic Places.",
             folkloreTradition = "Night walkers along the central river span recount hearing distant phantom steam whistles and rail clatter echoing across the water when no trains are near.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
-            sources = "National Register of Historic Places #84000301; George S. Morison Engineering Records; Indiana Historical Bureau.",
+            sources = "National Register of Historic Places #84000301; Indiana Historical Bureau.",
             sourceNotes = "National Register of Historic Places; Clark County Historical Society.",
             verificationGrade = "Archivally Verified & National Register Landmark",
             geofenceRadiusMeters = 280,
@@ -1012,7 +982,7 @@ object LoreSeedData {
         LoreSiteEntity(
             id = "floyd_ki_bridge",
             title = "Kentucky & Indiana (K&I) Bridge",
-            subtitle = "Massive 1886 Cantilever River Span & Historic Streetcar Corridor",
+            subtitle = "Massive 1886 River Bridge, Replaced 1912 & Historic Streetcar Corridor",
             category = LoreCategories.STEAM_AND_RAIL,
             county = "Floyd County",
             latitude = 38.2805,
@@ -1020,15 +990,15 @@ object LoreSeedData {
             address = "Montgomery St / Ohio River, New Albany, IN 47150",
             era = "1886 – Victorian Heavy Rail Era",
             accessStatus = "Active Freight Rail Bridge (Norfolk Southern)",
-            fullStory = "Completed in 1886 and rebuilt in 1912 into a colossal double-track steel cantilever truss, the K&I Bridge stands as one of the heaviest and most impressive engineering crossings over the Ohio River. It uniquely carried steam locomotives, interurban electric trollies, automobiles on cantilevered roadway wings, and pedestrians.\n\nOn February 1, 1979, an overloaded gravel truck punched through the highway floor deck, leading to the permanent closure of the vehicular roadway lanes. Today, its massive black steel superstructure remains an active lifeline for cross-country transcontinental freight trains.",
-            verifiedHistory = "Opened October 1886 by the Kentucky and Indiana Bridge and Railroad Company; reconstructed 1912 by the Phoenix Bridge Company into a steel cantilever span. Remains an essential Norfolk Southern railway crossing.",
+            fullStory = "Completed in 1886 and replaced in 1910-1912 by a colossal double-track steel bridge with a swing span, the K&I Bridge stands as one of the heaviest and most impressive engineering crossings over the Ohio River. It uniquely carried steam locomotives, interurban electric trollies, automobiles on cantilevered roadway wings, and pedestrians.\n\nOn February 1, 1979, an overloaded gravel truck punched through the highway floor deck, leading to the permanent closure of the vehicular roadway lanes. Today, its massive black steel superstructure remains an active lifeline for cross-country transcontinental freight trains.",
+            verifiedHistory = "Opened in 1886 (some sources say 1885) by the Kentucky and Indiana Bridge Company. Replaced in 1910-1912 by a heavier double-track bridge on new piers just upstream, built by the Kentucky and Indiana Terminal Railroad Company; the old bridge was then demolished. The current bridge has a swing span that was permanently tied down in 1955. Remains an essential Norfolk Southern railway crossing.",
             folkloreTradition = "Old New Albany rivermen tell of river beacons signaling ferry captains around the high-velocity river currents swirling past Pier 4.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Floyd County Historical Society; Louisville & New Albany Interurban Railway Archive; Norfolk Southern Engineering Records.",
             sourceNotes = "Floyd County Historical Society Rail Archive.",
             verificationGrade = "Archivally Verified Historic Rail Span",
             geofenceRadiusMeters = 280,
-            audioNarration = "Before you rises the monumental Kentucky and Indiana Bridge, connecting New Albany to Louisville across the Ohio River. First opened in 1886, its massive steel cantilever spans carried trains, trollies, and highway traffic.",
+            audioNarration = "Before you rises the monumental Kentucky and Indiana Bridge, connecting New Albany to Louisville across the Ohio River. First opened in 1886, its massive steel spans carried trains, trollies, and highway traffic.",
             siteType = "LINE",
             radarType = "BRIDGE",
             driveStory = "",
@@ -1048,16 +1018,16 @@ object LoreSeedData {
             longitude = -86.1472,
             address = "Co Rd 255 W, Medora, IN 47260",
             era = "1875 – Reconstruction Timber Engineering",
-            accessStatus = "National Historic Landmark & Pedestrian Historic Site",
-            fullStory = "Constructed in 1875 by master craftsman Joseph J. Daniels, the Medora Covered Bridge spans 434 feet across the East Fork of the White River in three magnificent Burr Arch Truss spans. It holds the proud title of the longest historic clear-span covered wooden bridge in the entire United States.\n\nBuilt entirely from local yellow poplar hand-hewn timbers, the bridge carried horse wagons and early automobiles along the turnpike between Medora and Vallonia for almost a century without modern steel reinforcement, weathering immense spring river floods.",
-            verifiedHistory = "Constructed 1875 by Joseph J. Daniels for 8,100. Measures 434 feet in clear span (461 feet including roof overhangs). Declared a National Historic Landmark and listed on the National Register of Historic Places #07000977.",
+            accessStatus = "National Register Historic Site & Pedestrian Historic Site",
+            fullStory = "Constructed in 1875 by master craftsman Joseph J. Daniels, the Medora Covered Bridge spans roughly 430 feet across the East Fork of the White River in three magnificent Burr Arch Truss spans. It holds the proud title of the longest historic clear-span covered wooden bridge in the entire United States.\n\nBuilt entirely from local yellow poplar hand-hewn timbers, the bridge carried horse wagons and early automobiles along the turnpike between Medora and Vallonia for almost a century without modern steel reinforcement, weathering immense spring river floods.",
+            verifiedHistory = "Constructed in 1875 by Joseph J. Daniels at a cost of \$18,142, in about nine months. Published clear-span figures range from 431 feet 10 inches to 434 feet; the roof length is 461 feet. Listed on the National Register of Historic Places in 2007 (#07000977).",
             folkloreTradition = "Locals along the White River bottoms tell of travelers seeking shelter inside the dark wooden span during summer thunderstorms hearing the faint rhythmic thumping of pioneer carriage hooves.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "National Register of Historic Places #07000977; Historic American Engineering Record IN-107; Jackson County Commissioners Minutes (1875).",
             sourceNotes = "National Register of Historic Places; HAER IN-107.",
             verificationGrade = "Archivally Verified & National Historic Landmark",
             geofenceRadiusMeters = 220,
-            audioNarration = "You have discovered the Medora Covered Bridge, the longest clear-span covered wooden bridge in the United States. Built in 1875 from local yellow poplar timbers, this 434-foot engineering marvel spans the White River.",
+            audioNarration = "You have discovered the Medora Covered Bridge, the longest clear-span covered wooden bridge in the United States. Built in 1875 from local yellow poplar timbers, this roughly 430-foot engineering marvel spans the White River.",
             siteType = "LINE",
             radarType = "BRIDGE",
             driveStory = "",
@@ -1078,20 +1048,20 @@ object LoreSeedData {
             address = "County Rd 460 N, Bloomfield / Tulip, IN 47424",
             era = "1906 – Industrial Rail Wonder",
             accessStatus = "Active Indiana Rail Road Viaduct & Historic Observation Grounds",
-            fullStory = "Completed in December 1906 by the Indianapolis Southern Railroad, the Tulip Trestle (officially Bridge X75-6) is a staggering engineering masterpiece. Measuring 2,307 feet in length and soaring 157 feet above the Richland Creek valley, it was the second longest railroad viaduct in the world when constructed and remains the third longest steel viaduct on Earth.\n\nErected by the Strobel Steel Construction Company using 2,895 tons of steel, workers riveted the towering steel bents during bitter winter blizzards. Today, heavy freight trains still thunder across the breathtaking open steel spans.",
-            verifiedHistory = "Completed in 1906 for the Indianapolis Southern Railroad (later Illinois Central). Engineered by A.S. Baldwin. Measures 2,307 feet long and 157 feet tall. Active line operated by the Indiana Rail Road.",
+            fullStory = "Completed in December 1906 by the Indianapolis Southern Railroad, the Tulip Trestle (Bridge X76-6 or X75-6, depending on the source) is a staggering engineering masterpiece. Measuring about 2,300 feet in length (sources give 2,295 to 2,307) and soaring 157 feet above the Richland Creek valley, it was the longest railroad trestle in the United States when completed, and is often described as the third longest bridge of its kind in the world at that time.\n\nErected with roughly 2,700 short tons of steel (one source gives nearly 2,900 tons including track; a former on-site placard credited the New York Bridge Company as builder), workers riveted the towering steel bents during bitter winter blizzards. Today, heavy freight trains still thunder across the breathtaking open steel spans.",
+            verifiedHistory = "Construction began May 22, 1905 and finished in December 1906 for the Indianapolis Southern Railway; the Illinois Central, which absorbed the line in 1911, reportedly financed it in secret. The engineer is not named in the sources checked. About 157 feet tall and roughly 2,300 feet long (2,295 feet per Wikipedia; other sources give 2,307). Still in use, operated by the Indiana Rail Road.",
             folkloreTradition = "Rural folklore in Greene and Monroe counties tells of the viaduct vibrating with harmonic musical tones when autumn winds whistle through its structural cross-bracing.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Indiana Historical Marker #28.2004.1; Railway Age Gazette (1907); Indiana Rail Road Company Engineering Archives.",
             sourceNotes = "Indiana Historical Marker #28.2004.1.",
             verificationGrade = "Archivally Verified State Engineering Landmark",
             geofenceRadiusMeters = 320,
-            audioNarration = "Behold the magnificent Tulip Trestle. Completed in 1906, this colossal steel viaduct spans 2,307 feet and stands 157 feet high above the Richland Creek valley, making it one of the largest rail bridges on Earth.",
+            audioNarration = "Behold the magnificent Tulip Trestle. Completed in 1906, this colossal steel viaduct spans about 2,300 feet and stands 157 feet high above the Richland Creek valley, making it one of the largest rail bridges on Earth.",
             siteType = "LINE",
             radarType = "BRIDGE",
             driveStory = "",
             whatMayBeUnderground = "Massive concrete and cut-stone foundation footings anchored 30 feet into bedrock shale.",
-            youJustCrossedEvent = "You are scanning the legendary 2,307-foot Tulip Trestle, the third longest rail viaduct in the world.",
+            youJustCrossedEvent = "You are scanning the legendary Tulip Trestle, about 2,300 feet long and once the longest rail trestle in the United States.",
             geometryCoordinates = "39.0850,-86.8310;39.0831,-86.8277;39.0815,-86.8245",
             historyNerdDiscovery = "",
             accessLevel = "PUBLIC ACCESS"
@@ -1224,11 +1194,11 @@ object LoreSeedData {
             era = "1808 – Pioneer Settlement Era",
             accessStatus = "National Register Historic Landmark & Operational Mill",
             fullStory = "Established in 1808 by George Beck and his sons, Beck's Mill is one of Indiana's oldest continuously preserved operational grist mills. Built over a natural spring-fed limestone cavern waterfall on Mill Creek, the mill harnesses hydrostatic energy through an overshot water wheel to drive genuine French buhr millstones. During the pioneer frontier era, settlers traveled on horseback for days across the Buffalo Trace and wilderness trails to grind corn and wheat here. Restored by the Friends of Beck's Mill, the site retains its 1864 timber framing, wooden flume, and historic turbine gearing.",
-            verifiedHistory = "Originally constructed 1808 by George Beck; rebuilt 1864 by master millwright George Beck II. Added to the National Register of Historic Places in 2007. Operational water wheel powered by Mill Creek Spring.",
+            verifiedHistory = "Originally constructed in 1808 and rebuilt in 1864 after a fire. Listed on the National Register of Historic Places in 1990 (#90001789); the separate Beck's Mill Bridge was listed in 2007. Operational water wheel powered by Mill Creek Spring.",
             folkloreTradition = "Local frontier tales tell of George Beck hiding in limestone caves along Mill Creek to escape Shawnee scouts during the War of 1812.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
-            sources = "National Register of Historic Places Nomination #07001278; Washington County Historical Society; Indiana Department of Historic Preservation & Archaeology.",
-            sourceNotes = "NRHP Reference #07001278; Stevens, Warder W., 'Centennial History of Washington County, Indiana' (1916).",
+            sources = "National Register of Historic Places Nomination #90001789; Washington County Historical Society; Indiana Department of Historic Preservation & Archaeology.",
+            sourceNotes = "NRHP Reference #90001789; Stevens, Warder W., 'Centennial History of Washington County, Indiana' (1916).",
             verificationGrade = "Archivally Verified & National Register Historic Landmark",
             geofenceRadiusMeters = 120,
             audioNarration = "You are approaching Beck's Mill, founded in 1808. Listen for the sound of rushing spring water tumbling over limestone falls into the wooden mill race.",
@@ -1278,7 +1248,7 @@ object LoreSeedData {
             era = "1854 – Pioneer Monastic Era",
             accessStatus = "Active Benedictine Archabbey / Public Access to Church",
             fullStory = "Perched on a forested hilltop in southern Dubois County, Saint Meinrad Archabbey is one of only two archabbeys in the United States and nine in the world. Founded in 1854 by Benedictine monks from Einsiedeln Abbey in Switzerland, the community constructed an awe-inspiring Romanesque Revival Archabbey Church of Our Lady of Einsiedeln using local Mansfield sandstone hand-quarried from nearby hills. Beneath the towering twin spires lies a subterranean crypt chapel and monastic burial vault. For over 170 years, the monks have chanted the Gregorian Liturgy of the Hours daily and maintained an unbroken tradition of education and printing in the Southern Indiana hills.",
-            verifiedHistory = "Founded 1854 by Father Ulrich Christen and Father Bede O'Connor of Einsiedeln Abbey. Dedicated as an Archabbey in 1969 by Pope Paul VI. Built of local sandstone with a 12-bell carillon.",
+            verifiedHistory = "Founded March 21, 1854 by Benedictine monks from Einsiedeln Abbey in Switzerland. Elevated to an archabbey by the Holy See in 1954. Built of local sandstone.",
             folkloreTradition = "Locals speak of phantom Gregorian chants echoing along the forested ridge trails at twilight when the monks are resting.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Alberic Yauch, OSB, 'Saint Meinrad Archabbey: A History' (Abbey Press, 1954); National Catholic Historical Society Records; Dubois County Historic Sites Survey.",
@@ -1385,8 +1355,8 @@ object LoreSeedData {
             address = "State Rd 7 & Incline Trail, Madison, IN 47250",
             era = "1836–1841 – Early Steam Railway Era",
             accessStatus = "Public Trail / Engineering Landmark",
-            fullStory = "Constructed between 1836 and 1841 as part of the Madison and Indianapolis Railroad, the Madison Incline is the steepest non-cog standard-gauge railway grade in North America. To conquer the 411-foot elevation difference between the Ohio River wharf and the clifftop plain, Irish and Scottish laborers blasted a trench up to 100 feet deep through solid Saluda and Laurel limestone bluffs for over 7,000 feet. The cut required monumental hand-cut stone retaining walls, subterranean drainage tunnels, and massive wood-and-coal cog engines like the 'Reuben Wells' to push heavy freight cars up the terrifying 5.89% incline.",
-            verifiedHistory = "Designed in 1836 by Chief Engineer Jesse L. Williams. Completed in 1841. Operated by cog mechanism until 1868, then by Reuben Wells locomotive. Documented by Historic American Engineering Record (HAER IN-17).",
+            fullStory = "Constructed between 1836 and 1841 as part of the Madison and Indianapolis Railroad, the Madison Incline is the steepest non-cog standard-gauge railway grade in North America. To conquer the 411-foot elevation difference between the Ohio River wharf and the clifftop plain, Irish and Scottish laborers blasted a trench up to 100 feet deep through solid Saluda and Laurel limestone bluffs for over 7,000 feet. The cut required monumental hand-cut stone retaining walls, subterranean drainage tunnels, and cog-rail machinery and, later, powerful locomotives like the Reuben Wells to push heavy freight cars up the terrifying 5.89% incline.",
+            verifiedHistory = "Designed in 1836 by Chief Engineer Jesse L. Williams and opened in 1841. The incline is about 7,000 feet long at a 5.89 percent grade. Horses hauled cars up it from 1841 to 1848; a cog-rail system was used from about 1848 (accounts differ on the date) until the 56-ton locomotive Reuben Wells, built in 1868, could climb it without cog assistance. Documented by the Historic American Engineering Record (HAER IN-17).",
             folkloreTradition = "Locals warned for decades of runaway boxcars hurtling down the 5.89% grade at terrifying speeds, leaping off the tracks straight into the Ohio River.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
             sources = "Historic American Engineering Record (HAER IN-17); Madison & Indianapolis Railroad Annual Reports; Windle, John T., 'The Early Architecture of Madison, Indiana' (1986).",

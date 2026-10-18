@@ -57,10 +57,10 @@ object CuratedOralHistoryArchive {
     // 2. War of 1812 Wyandotte Cavern Gunpowder Works
     val CYLINDER_WYANDOTTE_GUNPOWDER = WaxCylinderRecording(
         id = "cylinder_wyandotte_gunpowder",
-        title = "Dr. Samuel Adams' Saltpeter Vat Ledger",
+        title = "Dr. Benjamin Adams' Saltpeter Vat Ledger",
         recordedDate = "October 1812",
         frequencyKhz = 720,
-        eyewitnessName = "Dr. Samuel Adams",
+        eyewitnessName = "Dr. Benjamin Adams",
         speakerRole = "Surgeon & Ordnance Contractor, 1812 War Works",
         siteId = "crawford_wyandotte_saltpeter",
         mysteryId = "saltpeter_1812",
