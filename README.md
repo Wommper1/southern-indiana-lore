@@ -9,7 +9,7 @@
 
 A location-aware, offline-first native Android application by **Alex Shade Productions**. 
 
-Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 52 sites across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. About half have been fact-checked so far; the rest are labeled Unverified in the app (see [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md)). As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
+Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 52 sites across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. 46 of the 52 have been checked against public sources and corrected where they were wrong; the other six are mostly folklore or not yet checked, and each site's badge says how far to trust it (see [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md)). As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
 
 ---
 
@@ -61,7 +61,7 @@ You need an Android 7.0 or newer phone. No account and no internet connection ar
 This is an early release. Please read these before judging it.
 
 - **Device testing is still in progress.** The automated tests pass, but expect rough edges on real phones. The layout was designed around a large modern phone (a Galaxy S25 Ultra); other screens, tablets, and foldables are untested.
-- **The history is only half checked.** About half the entries have been fact-checked against public sources and corrected where they were wrong. The rest are badged **Unverified**. Details can still be wrong even in checked entries. See [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md), and please report mistakes with a source.
+- **The history is only partly checked.** 46 of the 52 entries were compared with public sources (not archival records) and corrected where they were wrong, but most of them are only badged **Plausible**: the main facts matched, and other details were not confirmed. Six entries are unchecked, and two were checked without finding anything to support them (badged **Unverified**). Details can still be wrong. See [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md), and please report mistakes with a source.
 - **The map is minimal.** See "On-Device Map" above. It is not a navigation map.
 - **No backup.** Journal entries, custom sites, and voice memos stay on the phone and are lost if you uninstall the app or switch phones. Export a dossier first if you want to keep them.
 - **The Archivist is not an AI.** It looks up hand-written answers for a few well-known sites.

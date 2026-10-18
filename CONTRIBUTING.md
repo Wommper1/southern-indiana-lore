@@ -1,7 +1,6 @@
 # Contributing to Southern Indiana Lore
 
-Thanks for helping. The most valuable contribution is **fixing the history**: about half the lore pack has not been
-fact-checked yet, and every correction with a good source makes the app more trustworthy. Bug reports and small
+Thanks for helping. The most valuable contribution is **fixing the history**: the lore pack has only been spot-checked against public sources, never against archives, and every correction with a good source makes the app more trustworthy. Bug reports and small
 improvements are welcome too.
 
 ## Ground rules

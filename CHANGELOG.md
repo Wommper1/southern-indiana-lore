@@ -6,7 +6,7 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 ## [1.0.0] - 2026-10-18
 
-First release. App version 1.0.0, lore pack 1.10.0.
+First release. App version 1.0.0, lore pack 1.11.0.
 
 ### Added
 
@@ -37,10 +37,10 @@ First release. App version 1.0.0, lore pack 1.10.0.
 
 ### Fixed
 
-- Lore pack corrections from a fact-check of 25 of 52 entries, including Saint Meinrad's archabbey year, New Harmony's
+- Lore pack corrections from a fact-check of 46 of 52 entries, including Saint Meinrad's archabbey year, New Harmony's
   sale price, Medora Covered Bridge's cost, Beck's Mill's National Register year, the Constitution Elm's height,
-  Tulip Trestle's rankings, the Hindostan Falls story, the Duncan Tunnel's length and history, and three dollar
-  amounts that had lost their leading characters. Entries that were not checked are now labeled Unverified. See the
+  Tulip Trestle's rankings, the Hindostan Falls story, the Duncan Tunnel's length and history, the Freeman Field court-martial outcome, the Jasper depot (a 2005 replica, not a restored 1904 building), and three dollar
+  amounts that had lost their leading characters. Entries whose claims were not supported are labeled Unverified; most checked entries are Plausible. See the
   verification log.
 - The pack's line endings are pinned so its SHA-256 hashes hold on every checkout, including Windows clones.
 
@@ -51,5 +51,4 @@ First release. App version 1.0.0, lore pack 1.10.0.
 
 ### Known issues
 
-See "Known limitations" in the README. In short: device testing is still in progress, 27 of 52 entries are
-unchecked, the map is minimal, and there is no backup of your notes and recordings.
+See "Known limitations" in the README. In short: device testing is still in progress, 6 of 52 entries are unchecked and most of the rest are only Plausible, the map is minimal, and there is no backup of your notes and recordings.

@@ -1,19 +1,20 @@
 # Lore Pack Verification Log
 
-Last updated: October 2026. Pack version 1.10.0.
+Last updated: October 2026. Pack version 1.11.0.
 
 The lore pack in `app/src/main/assets/lorepacks/southern_indiana/` has 52 sites. The citations that came with
 the original data were never independently checked, and when we started checking, many entries turned out to
 contain details that the sources do not support. This file records what was checked, what was changed, and what
-is still unverified, so the in-app labels are honest.
+is still unverified, so the in-app labels are honest. Two rounds of checking have been done: 25 entries first, then
+21 more, so **46 of 52 entries have now been checked** against public sources.
 
 ## How the labels work
 
 | Label (in app) | Meaning in this pack | Entries |
 | :--- | :--- | ---: |
-| Official Source | An official designation (for example National Historic Landmark) was confirmed against an independent source | 2 |
-| Plausible | Checked against independent sources and corrected where they disagreed; some other details are still unconfirmed | 22 |
-| Unverified | Not yet checked. The cited sources have not been independently confirmed | 22 |
+| Official Source | An official designation (for example National Historic Landmark) was confirmed against an independent source | 3 |
+| Plausible | Checked against independent sources and corrected where they disagreed; some other details are still unconfirmed | 40 |
+| Unverified | Not confirmed: either not checked yet, or checked and no supporting source was found | 3 |
 | Folk Legend / Oral History / Probable | The entry's own nature (folklore, oral tradition) or an older label that already admitted incomplete verification. Not re-labeled | 6 |
 
 Unverified entries still appear in the app and trigger alerts, but they show an "Unverified" badge and rank slightly
@@ -23,16 +24,19 @@ verified)" for anything that is not Official Source, Archivally Verified or Well
 ## Method and limits
 
 - Each checked claim was compared with at least one public source: mostly Wikipedia, state historical marker
-  pages (in.gov), local library and newspaper material, and a few reference sites. Wikipedia is not authoritative and
-  sometimes cites nothing; where it was the only source, the log says so.
+  pages (in.gov), National Park Service pages, local library and newspaper material, and a few reference sites.
+  Wikipedia is not authoritative and sometimes cites nothing; where it was the only source, the log says so.
 - **No primary archival records (deed books, census, newspapers of the period) were consulted.**
 - Where sources disagree, the entry now says so and gives the range instead of picking one figure.
-- Citations that could not be confirmed to exist were removed from the entries that were rewritten (see Duncan
-  Tunnel), rather than left looking authoritative.
+- Citations that could not be confirmed to exist, and reference numbers that turned out to be wrong, were removed or
+  replaced with the sources actually read, rather than left looking authoritative.
 - A damaged-data finding: three dollar amounts had lost leading characters in the original data (New Harmony's
   "$125,000" became "25,000", Medora's cost became "8,100", Marshfield's "$96,000" became "6,000").
+- Many original reference numbers were wrong (National Register and historical marker numbers for Scribner House,
+  Georgetown, Rome, Corydon, Lake Iola, the P-47 factory and others); wrong numbers were fixed where the right one
+  was found and removed where it was not.
 
-## Corrections made
+## Corrections made, first round
 
 | Entry | Previously | Now | Basis |
 | :--- | :--- | :--- | :--- |
@@ -57,67 +61,82 @@ verified)" for anything that is not Official Source, Archivally Verified or Well
 | Madison Incline | "Operated by cog mechanism until 1868"; "cog engines like the Reuben Wells" | Horses 1841-1848, cog rail from about 1848, then the Reuben Wells (1868) without cog assistance | Railroad history pages |
 | Duncan Tunnel | 4,295 ft as fact; completed by the Air Line; "chief surveyor K.C. Henderson" | Length shown as a range (4,295 / 4,311 / 4,689 ft by source); begun about 1870, finished 1881 by a successor company, first used 1882; Henderson removed; chief engineer in 1881 was Marshal Morris | 1960 New Albany Valley News article, Indiana Bicentennial Commission, Wikipedia |
 
+## Corrections made, second round
+
+| Entry | Previously | Now | Basis |
+| :--- | :--- | :--- | :--- |
+| Freeman Field | Three officers court-martialed, "records formally cleared" in 1995; "over 100 officers" entered the club | **Only Roger C. Terry was convicted** (two others acquitted); in 1995 the Air Force set aside his conviction and removed reprimand letters from the files of 15 of the 104 officers charged; 61 were arrested in the club protest and 101 for refusing to sign | Wikipedia |
+| Battle of Corydon | "Harrison County Home Guard"; 2,400 Confederates; "dozens" wounded | The Indiana Legion (local Home Guard), about 400-450 men; about 1,800 Confederates at Corydon of a raiding force of about 2,500; 4 killed, 10-12 wounded, 355 captured (Confederates 11 killed, 40 wounded); National Register July 9, 1979 | Wikipedia |
+| Scribner House | Built by "Joel and Nathaniel" (and elsewhere "Joel, Nathaniel and Abner"); 826 acres; NRHP #76000021 | Built 1813-1814 by **Joel Scribner**, one of three founding brothers; sold to the DAR in 1917; NRHP November 9, 1977 (**#77000015**); the 826-acre claim removed (unconfirmed) | Wikipedia, DAR, NPS nomination |
+| Georgetown Historic District | NRHP "#13000086"; "bustling stagecoach stop" | NRHP January 9, **2013, #12001148**; platted 1833 by George W. Waltz, post office 1837; turnpike and stagecoach claims unconfirmed | Wikipedia, NPS |
+| Rome Courthouse | NRHP "#81000008"; built "1818-1822 under Uriah Cummings"; "exact replica" of the Corydon capitol; "300,000 bricks" | NRHP May 12, 1981 (**#81000006**); begun 1818 (completion date differs by source); modeled on the Corydon capitol; supervisor and brick count removed | Wikipedia, Indiana state history |
+| Tell City | Incorporated 1859; Chair Company founded 1865; 4,149 acres | Founded August 1858; first school 1859; about 4,150 acres; 392 blocks; incorporation and chair-company dates removed (unconfirmed) | Wikipedia |
+| Lake Iola | "Merged into the Public Service Company of Indiana"; marker "#72.2008.1" | Completed 1907; Indiana Railroad's last train October 31, 1939; car barn and water tower; marker **72.2002.6** | Indiana Historical Bureau marker |
+| P-47 factory (Evansville) | Production began April 1942; ran to August 1945; "later used by Whirlpool" | First Evansville P-47 flew **September 19, 1942**; plant finished August 1943; last plane left September 27, 1945; later a refrigeration plant until 2010; the 6,242 count is one source's (others say 6,000+ or 6,600+) | P-47 Foundation, Indiana History blog, Clio |
+| Lincoln Gardens | "Managed entirely by African American staff"; "Listed on the National Register" | Both removed (unconfirmed); opening 1937 or 1938 by source; PWA project on four city blocks cleared in 1937; the wartime USO story is flagged as unconfirmed | Indiana Landmarks, Clio, Evansville Living |
+| Fort Sackville (Vincennes) | (all as written) | Confirmed: captured February 25, 1779; Vincennes was territorial capital 1800-1813; Clark Memorial dedicated June 14, 1936 by FDR. The 1804 treaty boundary-road claim is flagged as unconfirmed | Wikipedia, NPS |
+| Spring Mill | "1814 village founded by Samuel Jackson and Cuthbert and Thomas Bullitt"; "Indiana Geological Survey Bulletin 8" | Jackson built a log gristmill in 1814; the Bullitts later built the mill that still stands (about 1817); the bulletin citation removed | Indiana State Library, Indiana DNR |
+| Lost River | "Designated a National Natural Landmark in 1972"; "mapped by Dr. Clyde Malott" | The 1972 landmark is **Wesley Chapel Gulf**, part of the system; the river is about 87 miles long with at least 23 miles underground; the Malott attribution removed (unconfirmed) | Wikipedia |
+| Marengo Cave | One discovery story (Orris and Blanche Hiestand, September 6, 1883) | That is the cave's own account; a county account has boys chasing a rabbit on August 18, 1883; privately owned; National Natural Landmark 1984 confirmed | Wikipedia |
+| Buffalo Trace | "Designated a State Heritage Corridor" | Part of the Indiana Historic Pathways byway (2009); Rector surveyed the treaty land in 1805; first stagecoach service 1820; the 10,000-year age and 12-20 ft width claims are flagged as unconfirmed | Wikipedia |
+| Town Clock Church | 160-foot steeple | 150 to 160 feet by different accounts; original steeple destroyed by lightning, replacement raised in 2016; building sold to Second Baptist in 1889; Network to Freedom designation 2017 confirmed | Indiana Landmarks, Clio, WDRB |
+| Falls of the Ohio | "387 million years"; "William Clark joined Meriwether Lewis"; 220-acre reef | About 390 million years; **Lewis met Clark** (October 15, 1803; departure October 26); the state park is about 165 acres within a 1,404-acre conservation area; landmark reference number removed | NPS, Indiana DNR |
+| Clark's Point and cabin | "William Clark joined Meriwether Lewis"; land granted by Virginia | Lewis met Clark at the cabin on October 15, 1803; the original home was reportedly destroyed in 1854 and a 2001 recreation burned in May 2021 | NPS, Wikipedia, AP |
+| Jasper Depot | "Built 1904 by Southern Railway; restored 2004" | One account: original depot 1879, replaced 1906, **torn down in the late 1960s**; the present depot is a **replica completed in 2005**; Spirit of Jasper cars came from Crane Naval Base in 2009; entry renamed | Evansville Living, local news |
+| Bluespring Caverns | Mapped by "Dr. Richard Powell"; "longest navigable underground river in North America" | Surveyed 1963-1969 by college student Jim Richards and friends; billed as the longest in the US (about 3 miles navigable per Wikipedia, about a mile per another source); subtitle reworded | Wikipedia, Islands.com, ShowCaves |
+| Milltown bridge | "1895 Lafayette Bridge Company Pratt truss"; National Register-style inventory citations | **No source supports this.** A Harrison County library caption says the Blue River bridge at Milltown was an 1862 wooden covered bridge, replaced in 1913 and rebuilt in the late 1970s; entry renamed and rewritten; kept Unverified | Harrison County Public Library |
+
 ## Confirmed without changes
 
 - **Cannelton Cotton Mill & Industrial Fortress**: National Register (1975) and National Historic Landmark (1991) status confirmed
 - **Eleutherian College Abolitionist Sanctuary**: National Historic Landmark (1997) status confirmed
 - **Tunnelton Big Tunnel & Spectral Watchman**: tunnel length and 1857 completion confirmed (one source); legend unverified
 
-## Not yet checked (27 entries)
+## Checked, but nothing supported the entry
 
-These are labeled **Unverified** (or keep an older label such as Folk Legend or Probable) until they are checked:
+- **Greenville Mineral Springs & Lost Resort**: no independent source found
+- **Milltown Blue River Bridge**: original claims not supported; thin sources
 
-- The Town Clock Church (Floyd County)
-- The Scribner House (Floyd County)
-- Georgetown Historic District & Tunnel Hill (Floyd County)
+For the Greenville entry, searches only turned up a Greenville Springs in Kentucky; the Floyd County resort may be a
+confusion with it. Nothing was removed from that entry yet, but it carries an "unresolved question" in the app.
+
+## Not yet checked (6 entries)
+
+These keep their existing labels (Unverified, Folk Legend, Oral History or Probable) until they are checked. Most are
+folklore or oral-history entries with few checkable facts:
+
 - Falling Run Phantom Trestle (Floyd County)
 - Floyds Knobs & The Ridge Witches Tree (Floyd County)
 - Floyd County Asylum & Potter's Field (Floyd County)
 - Silver Hills Hermit & Ghost Light (Floyd County)
-- Greenville Mineral Springs & Lost Resort (Floyd County)
-- Falls of the Ohio & Clark's Cabin Site (Clark County)
 - Twelve Mile Island Steamboat Wrecks (Clark County)
-- Battle of Corydon Civil War Site (Harrison County)
-- Clarks Point & Lewis and Clark Launch Overlook (Clark County)
-- Lake Iola & Interurban Electric Traction Site (Scott County)
-- Freeman Field & Tuskegee Airmen Civil Rights Protest (Jackson County)
-- Republic Aviation P-47 Thunderbolt Factory (Vanderburgh County)
-- Lincoln Gardens & Baptisttown Heritage (Vanderburgh County)
-- Fort Sackville & The Wabash Territorial Borderland (Knox County)
-- Marengo Cave National Landmark (Crawford County)
-- Bluespring Caverns Underground River (Lawrence County)
-- Spring Mill Twin Caves & Subterranean Karst River (Lawrence County)
-- Milltown Blue River Pratt Truss Bridge (Crawford County)
-- The Buffalo Trace (Vincennes Trace) (Floyd County)
-- The Lost River Karst System (Orange County)
 - Salem Underground Railroad & Morgan's Raid Depot (Washington County)
-- Jasper Historic Train Depot & Patoka River Span (Dubois County)
-- Historic Rome Courthouse (Perry County)
-- Tell City Swiss Colonization Enclave (Perry County)
 
 ## Known issues not fixed
 
 - **Duplicate entries:** the two Rose Island entries overlap each other, and three entries cover Wyandotte and
   Marengo Caves. They were kept so site IDs, geofences, and trails keep working.
-- **Scribner House:** the story text names three Scribner brothers; the history text names two.
-- **Underground Railroad claims** (Town Clock Church sub-floor spaces, Monon boxcars, Salem) need
-  skeptical review; Indiana DNR notes the network had no single fixed route and warns against tunnel and hidden-room
-  claims.
+- **Underground Railroad claims** (Town Clock Church hidden spaces, the Salem entry) need skeptical review; Indiana
+  DNR notes the network had no single fixed route and warns against tunnel and hidden-room claims.
 - **Relics and "oral history" recordings** in the Relic Lab and the Oral History archive are dramatized fiction.
   They are not historical documents and have not been audited.
 - **Archivist answers** (`LocalArchivistService`) are hand-written text; they no longer say "verified", but most of
   their details are unchecked.
+- **Details inside checked entries** are still only partly checked. "Plausible" means the main facts matched sources,
+  not that every sentence was confirmed. The grade text on each site says what was and was not confirmed.
 - **Emergency fallback data** (`LoreSeedData.kt`) carries the same corrections for the fields that were changed. It
   is only used if the pack fails validation on an empty database, and every entry in it is labeled Unverified.
 
 ## How to help check an entry
 
-Pick an Unverified entry, find a source that confirms or contradicts each specific claim (dates, numbers, names), and
-send the correction with the source. Prefer state historical markers, National Register records, and period
-newspapers over summaries.
+Pick an Unverified entry or a "Plausible" one with unconfirmed details, find a source that confirms or contradicts
+each specific claim (dates, numbers, names), and send the correction with the source. Prefer state historical
+markers, National Register records, and period newspapers over summaries. See CONTRIBUTING.md.
 
 ## Sources used
 
 - Wikipedia: [Duncan Tunnel](https://en.wikipedia.org/wiki/Duncan_Tunnel), [Tulip Viaduct](https://en.wikipedia.org/wiki/Tulip_Viaduct), [Hindostan Falls](https://en.wikipedia.org/wiki/Hindostan_Falls,_Indiana), [Saint Meinrad Archabbey](https://en.wikipedia.org/wiki/Saint_Meinrad_Archabbey), [Eleutherian College](https://en.wikipedia.org/wiki/Eleutherian_College), [New Harmony](https://en.wikipedia.org/wiki/New_Harmony,_Indiana), [Cannelton Cotton Mill](https://en.wikipedia.org/wiki/Cannelton_Cotton_Mill), [Medora Covered Bridge](https://en.wikipedia.org/wiki/Medora_Covered_Bridge), [Culbertson Mansion](https://en.wikipedia.org/wiki/Culbertson_Mansion), [Howard Steamboat Museum](https://en.wikipedia.org/wiki/Howard_Steamboat_Museum), [Squire Boone Caverns](https://en.wikipedia.org/wiki/Squire_Boone_Caverns), [Big Four Bridge](https://en.wikipedia.org/wiki/Big_Four_Bridge_(Louisville)), [K&I Terminal Bridge](https://en.wikipedia.org/wiki/Kentucky_%26_Indiana_Terminal_Bridge), [Beck's Mill](https://en.wikipedia.org/wiki/Beck%27s_Mill), [Tunnelton](https://en.wikipedia.org/wiki/Tunnelton,_Indiana), [Rose Island](https://en.wikipedia.org/wiki/Rose_Island_(amusement_park)), [Wyandotte Caves](https://en.wikipedia.org/wiki/Wyandotte_Caves)
-- Indiana state pages: [Hindostan marker](https://www.in.gov/history/markers/231.htm), [Argosy No. 3 marker](https://www.in.gov/history/markers/263.htm), [Duncan Tunnel (Bicentennial Commission)](https://www.in.gov/ibc/2451.htm), [New Albany shipyards](https://discoverindianahistory.org/items/show/154), [New Albany and Salem Railroad](https://discoverindianahistory.org/items/show/99), [Constitution Elm](https://indianapublicmedia.org/momentofindianahistory/tree-grew-corydon)
-- Other: [Floyd County Public Library, Edwardsville Tunnel (1960 article)](https://floydlibrary.org/wp-content/uploads/2016/07/edwardsvilletunnel.pdf), [Madison and Indianapolis Railroad history](https://www.frrandp.com/2020/06/indianas-first-railroad-madison.html), [Reno Gang and the Marshfield robbery](https://truewestmagazine.com/?p=38542)
+- Wikipedia, second round: [Freeman Field mutiny](https://en.wikipedia.org/wiki/Freeman_Field_mutiny), [Battle of Corydon](https://en.wikipedia.org/wiki/Battle_of_Corydon), [Tell City](https://en.wikipedia.org/wiki/Tell_City,_Indiana), [Spring Mill State Park](https://en.wikipedia.org/wiki/Spring_Mill_State_Park), [Lost River](https://en.wikipedia.org/wiki/Lost_River_(Indiana)), [Marengo Cave](https://en.wikipedia.org/wiki/Marengo_Cave), [Vincennes Trace](https://en.wikipedia.org/wiki/Vincennes_Trace), [George Rogers Clark National Historical Park](https://en.wikipedia.org/wiki/George_Rogers_Clark_National_Historical_Park), [Scribner House](https://en.wikipedia.org/wiki/Scribner_House_(New_Albany,_Indiana)), [Georgetown Historic District](https://en.wikipedia.org/wiki/Georgetown_Historic_District_(Georgetown,_Indiana)), [Old Perry County Courthouse](https://en.wikipedia.org/wiki/Old_Perry_County_Courthouse_(Rome,_Indiana)), [Town Clock Church](https://en.wikipedia.org/wiki/Town_Clock_Church), [Falls of the Ohio State Park](https://en.wikipedia.org/wiki/Falls_of_the_Ohio_State_Park), [Old Clarksville site](https://en.wikipedia.org/wiki/Old_Clarksville_site), [Bluespring Caverns](https://en.wikipedia.org/wiki/Bluespring_Caverns), [Indiana Territory](https://en.wikipedia.org/wiki/Indiana_Territory)
+- Indiana state pages: [Hindostan marker](https://www.in.gov/history/markers/231.htm), [Argosy No. 3 marker](https://www.in.gov/history/markers/263.htm), [Lake Iola Interurban Site marker](https://www.in.gov/history/state-historical-markers/find-a-marker/lake-iola-interurban-site), [P-47 Thunderbolt Factory marker](https://www.in.gov/history/state-historical-markers/find-a-marker/find-historical-markers-by-county/indiana-historical-markers-by-county/p-47-thunderbolt-factory/), [Duncan Tunnel (Bicentennial Commission)](https://www.in.gov/ibc/2451.htm), [New Albany shipyards](https://discoverindianahistory.org/items/show/154), [New Albany and Salem Railroad](https://discoverindianahistory.org/items/show/99), [Constitution Elm](https://indianapublicmedia.org/momentofindianahistory/tree-grew-corydon), [Old Perry County Courthouse](https://discoverindianahistory.org/items/show/326)
+- National Park Service: [George Rogers Clark home site](https://www.nps.gov/places/george-rogers-clark-home-site.htm), [Old Clarksville site](https://www.nps.gov/places/old-clarksville-site.htm)
+- Other: [Floyd County Public Library, Edwardsville Tunnel (1960 article)](https://floydlibrary.org/wp-content/uploads/2016/07/edwardsvilletunnel.pdf), [Madison and Indianapolis Railroad history](https://www.frrandp.com/2020/06/indianas-first-railroad-madison.html), [Reno Gang and the Marshfield robbery](https://truewestmagazine.com/?p=38542), [Indiana Landmarks on Lincoln Gardens](https://www.indianalandmarks.org/2020/10/evansville-marker-is-countys-first-to-recognize-african-american-history/), [Harrison County Public Library photo record (Milltown bridge)](https://digital.library.in.gov/Record/HCPL_p17251coll20-14), [Evansville Living, "All Aboard" (Spirit of Jasper)](https://www.evansvilleliving.com/all-aboard-0/), [Islands.com on Bluespring Caverns](https://www.islands.com/1723518/bluesprings-caverns-bedford-indiana-america-longest-navigable-underground-river-clear-waters-spectacular-formations), [ShowCaves: Bluespring Caverns](https://showcaves.com/english/usa/showcaves/Bluespring.html), [The Clio: Republic Aviation Corporation](https://theclio.com/entry/205631), [Indiana History Blog: The Raiderettes](https://blog.history.in.gov/tag/p-47-thunderbolt/)
