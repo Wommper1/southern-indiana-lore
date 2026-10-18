@@ -1,6 +1,6 @@
 {
   "packId": "southern_indiana_core",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "title": "Southern Indiana Historical Expeditions",
   "region": "Southern Indiana (Floyd, Clark, Harrison, Crawford, Lawrence, Jackson, Greene)",
   "schemaVersion": "1.5.0",
@@ -8,8 +8,8 @@
   "files": [
     {
       "path": "sites.json",
-      "sha256": "f10f9f939f7e3298756737799efd16791ae0eddde64e403458a48e43b9d48d0b",
-      "bytes": 127519
+      "sha256": "504752182efc31b930fc231bd449783c006e490db892d4a0ea4e63cd80e7b4d8",
+      "bytes": 128610
     },
     {
       "path": "geofences.json",

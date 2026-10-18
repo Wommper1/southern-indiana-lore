@@ -452,18 +452,18 @@ object LoreSeedData {
             era = "1881 Gilded Age Railroad Expansion",
             accessStatus = "Historic Viewpoint / Active Norfolk Southern Line",
             fullStory = """
-                Completed in 1881 by the Louisville, New Albany and St. Louis Air Line Railroad (now Norfolk Southern), Duncan Tunnel is the longest railroad tunnel in the State of Indiana, spanning an incredible 4,295 feet (nearly four-fifths of a mile) directly through the solid shale and limestone bedrock of the Knobs escarpment.
+                Begun around 1870 by the Louisville, New Albany and St. Louis Air Line Railway and finished in 1881 under its successor company (now Norfolk Southern), Duncan Tunnel is the longest railroad tunnel in the State of Indiana. Published lengths range from about 4,300 to nearly 4,700 feet, bored directly through the solid shale and limestone bedrock of the Knobs escarpment.
                 
                 Digging from both east and west portals using black powder blasting, steam drills, and hand picks, workers endured lethal conditions of falling rock, deafening concussions, and noxious carbon monoxide exhaust. Several workers were killed in cave-ins during the grueling three-year excavation. Rail crews operating night freights through the dark, damp subterranean bore have long shared tales of a phantom lantern waving trackside deep in the mountain center when no human flagman was stationed.
             """.trimIndent(),
-            verifiedHistory = "Engineered by chief surveyor K.C. Henderson and completed in 1881 for the Air Line Railroad. The tunnel measures 4,295 feet in length and eliminated severe mountain grades between New Albany and English, IN. Remains an active heavy freight rail route.",
+            verifiedHistory = "Work began around 1870 under the Louisville, New Albany and St. Louis Air Line Railway. The tunnel was completed in 1881 and first used in 1882, and remains an active Norfolk Southern freight route. Published lengths differ: 4,295 feet (Wikipedia), 4,311 feet (Indiana Bicentennial Commission), and 4,689 feet (a 1960 New Albany Valley News article citing railroad records).",
             folkloreTradition = "Track maintenance engineers have recounted seeing glowing green lantern signals in the heart of the tunnel cut.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
-            sources = "Floyd County Historical Society Rail Archives; Poor's Manual of Railroads (1882); New Albany Ledger-Standard (July 1881 construction accounts).",
-            sourceNotes = "Floyd County Historical Archives; Norfolk Southern Engineering Division records.",
+            sources = "New Albany Valley News, 'New Albany Wanted Rail Service To St. Louis, But First A Tunnel Had To Be Dynamited Through The Knobs' (Feb. 11, 1960; Floyd County Public Library local history file); Indiana Bicentennial Commission, Duncan Tunnel page (in.gov/ibc/2451.htm); Wikipedia, 'Duncan Tunnel'.",
+            sourceNotes = "Dates and company history follow the 1960 newspaper article. Length is given as a range because the three sources disagree.",
             verificationGrade = "Archivally Verified Historic Rail Feat",
             geofenceRadiusMeters = 110,
-            audioNarration = "You are near the Duncan Tunnel in Edwardsville. At 4,295 feet, this is Indiana's longest railroad tunnel, bored through the Knobs bedrock in 1881."
+            audioNarration = "You are near the Duncan Tunnel in Edwardsville, the longest railroad tunnel in Indiana. Depending on the source, it runs between about 4,300 and 4,700 feet, bored through the Knobs bedrock and finished in 1881."
         ),
         LoreSiteEntity(
             id = "harrison_corydon_battlefield",

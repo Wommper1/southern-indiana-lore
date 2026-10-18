@@ -157,7 +157,7 @@ object CuratedMysteries {
             siteId = "floyd_duncan_tunnel",
             title = "Duncan Mountain Secret Cut",
             sketchType = SketchType.RAIL_TUNNEL,
-            handwrittenNote = "The longest railroad tunnel in Indiana (4,295 ft). Legend persists that Frank Reno used the dark subterranean ventilation shafts as a clandestine cache before his capture in Canada.",
+            handwrittenNote = "The longest railroad tunnel in Indiana (about 4,300 to 4,700 ft, depending on the source). Legend persists that Frank Reno used the dark subterranean ventilation shafts as a clandestine cache before his capture in Canada.",
             historicalMarginalia = "Water seeps through Edwardsville limestone joints. Notice the hand-chiseled sandstone portals from 1881.",
             riddleQuestion = "Examine the western portal stonework for carved initials and surveyor bench marks.",
             alignmentTargetDescription = "Frame the western arched stone portal within the optical lens crosshairs."

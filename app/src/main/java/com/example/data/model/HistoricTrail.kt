@@ -122,7 +122,7 @@ object RegionalHistoricTrails {
             waypoints = listOf(
                 TrailWaypoint(
                     title = "Duncan Tunnel Portal",
-                    description = "Indiana's longest rail tunnel (4,295 ft), blasted through Knob shale in 1881.",
+                    description = "Indiana's longest rail tunnel (about 4,300 to 4,700 ft, depending on the source), blasted through Knob shale in 1881.",
                     latitude = 38.3619,
                     longitude = -85.9080,
                     siteId = "floyd_duncan_tunnel"
