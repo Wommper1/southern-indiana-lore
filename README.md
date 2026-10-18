@@ -5,10 +5,22 @@
 [![Compose](https://img.shields.io/badge/Jetpack_Compose-Material_3-blue.svg)](https://developer.android.com/jetpack/compose)
 [![Database](https://img.shields.io/badge/Database-Room_SQLite-orange.svg)](https://developer.android.com/training/data-storage/room)
 [![License](https://img.shields.io/badge/License-MIT%20code%20%2F%20CC%20BY--SA%204.0%20content-blue.svg)](#license)
+[![CI](https://github.com/Wommper1/southern-indiana-lore/actions/workflows/android-ci.yml/badge.svg)](https://github.com/Wommper1/southern-indiana-lore/actions/workflows/android-ci.yml)
 
 A location-aware, offline-first native Android application by **Alex Shade Productions**. 
 
 Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 52 sites across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. About half have been fact-checked so far; the rest are labeled Unverified in the app (see [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md)). As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
+
+---
+
+## Try it
+
+You need an Android 7.0 or newer phone. No account and no internet connection are needed.
+
+1. **Install.** Download the APK from the repository's Releases page, allow installs from your browser or file manager when Android asks, then open the file. It is not on Google Play, so Android will warn that the app is from an unknown source. To check the download, compare its SHA-256 with the one in the release notes (`Get-FileHash app.apk` in PowerShell, or `sha256sum app.apk` elsewhere).
+2. **First run.** Allow location and notifications when asked. "While using the app" is enough for a quick look; "Allow all the time" is only needed for alerts with the screen off during a tour. The microphone prompt appears only when you use the Oral History Tape Deck.
+3. **Demo without leaving your chair.** Open the **Tour** tab in the bottom dock, find **Desk & Tabletop Mode**, and tap **Simulate Route**. The app walks a pretend location through nine New Albany-area sites, about four seconds each, so nearby sites should trigger their alerts and narration as it goes. Tap **Stop Sim** to end it.
+4. **Look around.** The dock has six tabs: Desk, Radar, Tour, Library, Relics, and Pack. Tap any site to see its history, folklore, sources, and a confidence badge showing how thoroughly it has been verified.
 
 ---
 
@@ -21,7 +33,7 @@ Southern Indiana Lore brings folklore, haunted legends, Underground Railroad rou
   - Continuous location monitoring in the background while driving or walking with device in pocket.
   - Real-time notification updates with site distance, bearing, and immediate narration trigger actions.
 - **Dynamic Multi-Persona Narration Engine**:
-  - **Chief Historical Archivist**: Scholarly, verified historical analysis.
+  - **Chief Historical Archivist**: Scholarly historical analysis.
   - **Folklore Sage**: Fireside storyteller of Appalachian and Ohio Valley legends.
   - **Adventure Chronicler**: Resonant frontier documentary dispatch style.
   - **Karst Alchemist & Lore Wizard**: Arcane, geological perspective of Indiana limestone caves.
@@ -39,8 +51,22 @@ Southern Indiana Lore brings folklore, haunted legends, Underground Railroad rou
 - **Offline Archivist**:
   - Ask about a featured site or request a driving-tour route. This is a keyword lookup over hand-written entries, not an AI model: well-known sites get a curated answer, and everything else gets a general overview.
 - **Automated GitHub Actions CI/CD**:
-  - Continuous integration running automated test suites on JDK 17.
+  - Continuous integration running the automated test suites and Android lint on JDK 17, with Dependabot keeping dependencies current.
   - Version tags (`v*`) build a debug APK and attach it to a GitHub Release for sideloading.
+
+---
+
+## Known limitations
+
+This is an early release. Please read these before judging it.
+
+- **Device testing is still in progress.** The automated tests pass, but expect rough edges on real phones. The layout was designed around a large modern phone (a Galaxy S25 Ultra); other screens, tablets, and foldables are untested.
+- **The history is only half checked.** About half the entries have been fact-checked against public sources and corrected where they were wrong. The rest are badged **Unverified**. Details can still be wrong even in checked entries. See [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md), and please report mistakes with a source.
+- **The map is minimal.** See "On-Device Map" above. It is not a navigation map.
+- **No backup.** Journal entries, custom sites, and voice memos stay on the phone and are lost if you uninstall the app or switch phones. Export a dossier first if you want to keep them.
+- **The Archivist is not an AI.** It looks up hand-written answers for a few well-known sites.
+- **Battery savers can silence tours.** Some phones stop background apps aggressively. If alerts stop with the screen off, exclude the app from battery optimization.
+- **Be careful out there.** Many sites are on private land or active rail lines (the tunnels, for example). The app's alerts are not directions or permission to go anywhere; use public viewpoints and obey posted signs and the law.
 
 ---
 
@@ -79,8 +105,12 @@ southern-indiana-lore/
 │   │   │   ├── res/                      # Android resources (drawables, fonts, values)
 │   │   │   └── AndroidManifest.xml       # Least-privilege manifest declaration
 │   └── build.gradle.kts                  # App build & dependency specifications
-├── docs/                                 # Design notes, map architecture, publishing guide
-├── .github/workflows/android-ci.yml      # CI: tests + debug APK
+├── docs/                                 # Design notes, verification log, map architecture, publishing guide
+├── scripts/update_pack_manifest.py       # Regenerates the lore pack hashes after you edit it
+├── .github/                              # CI workflow, Dependabot, issue and pull request templates
+├── CHANGELOG.md                          # What changed in each release
+├── CONTRIBUTING.md                       # How to help (especially fact-checking)
+├── LICENSE                               # MIT
 ├── .gitignore                            # Ignore rules (keystores, build output, local config)
 ├── README.md                             # Repository documentation
 └── settings.gradle.kts                   # Project configuration
@@ -117,16 +147,27 @@ southern-indiana-lore/
    ./gradlew testDebugUnitTest
    ```
 
+5. **Run Android Lint** (optional; the report is written to `app/build/reports/`):
+   ```bash
+   ./gradlew lintDebug
+   ```
+
 ### Installing a Build
 
-Debug APKs for tagged versions are attached to the repository's GitHub Releases. To sideload one, allow installs from your browser or file manager in Android settings, then open the APK. Debug builds use the application ID suffix `.debug`, so they install alongside any other copy of the app.
+Each release's notes list the APK's SHA-256. The signed release APK is uploaded by hand; tagged builds from CI attach a debug APK as well. To sideload one, allow installs from your browser or file manager in Android settings, then open the APK. Debug builds use the application ID suffix `.debug`, so they install alongside the release build.
 
 ---
 
 ## Authors & Attribution
 
 Created by **Alex Shade Productions**.  
-Historical documentation referenced from Library of Congress HABS records, the Indiana Historical Bureau, and local Southern Indiana oral history archives.
+Historical details come from the sources cited on each site. The citations that shipped with the original data were not independently verified; [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md) records what has been checked since.
+
+---
+
+## Contributing
+
+Corrections with a source are the most useful contribution. See [CONTRIBUTING.md](CONTRIBUTING.md), and use the issue templates for bug reports and data corrections. Release history is in [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
