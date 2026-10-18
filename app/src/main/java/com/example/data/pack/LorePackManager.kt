@@ -376,7 +376,15 @@ object LorePackManager {
             // If database is completely empty, provide fallback seed data so app remains operable
             if (dao.getSiteCount() == 0) {
                 Log.w(TAG, "Database is empty and pack is invalid. Using emergency LoreSeedData as fallback.")
-                dao.insertAll(LoreSeedData.sites)
+                // The emergency copy is never presented as verified, whatever its older labels say.
+                dao.insertAll(
+                    LoreSeedData.sites.map {
+                        it.copy(
+                            confidenceLevel = ConfidenceLevel.UNVERIFIED.name,
+                            verificationGrade = "Offline fallback copy (not independently verified)"
+                        )
+                    }
+                )
                 dao.insertInstalledPack(
                     InstalledPackEntity(
                         packId = validation.packId.ifBlank { "fallback_seed_pack" },

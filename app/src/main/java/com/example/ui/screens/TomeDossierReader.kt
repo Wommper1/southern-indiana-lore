@@ -310,7 +310,7 @@ fun TomeDossierReader(
                             border = androidx.compose.foundation.BorderStroke(1.dp, KnobstoneForest.copy(alpha = 0.4f))
                         ) {
                             Text(
-                                text = site.verificationGrade.ifBlank { "Archivally Verified" },
+                                text = site.verificationGrade.ifBlank { "Not independently verified" },
                                 style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Medium),
                                 color = Color(0xFF065F46),
                                 modifier = Modifier.padding(horizontal = 8.dp, vertical = 4.dp)

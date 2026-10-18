@@ -955,7 +955,12 @@ fun SiteDetailDialog(
                             )
                             Spacer(modifier = Modifier.width(6.dp))
                             Text(
-                                text = "DOCUMENTED ARCHIVAL HISTORY",
+                                text = when (site.confidenceLevel) {
+                                    com.example.data.model.ConfidenceLevel.OFFICIAL_SOURCE,
+                                    com.example.data.model.ConfidenceLevel.VERIFIED,
+                                    com.example.data.model.ConfidenceLevel.WELL_SUPPORTED -> "DOCUMENTED ARCHIVAL HISTORY"
+                                    else -> "HISTORY (NOT FULLY VERIFIED)"
+                                },
                                 style = MaterialTheme.typography.labelMedium.copy(
                                     letterSpacing = 1.sp,
                                     fontWeight = FontWeight.Bold
