@@ -1,0 +1,60 @@
+name: Web atlas CI
+
+# Runs the web atlas tests (tests/site) and checks that site/data and the offline file list are in step with the
+# lore pack. It only runs when something the atlas depends on changes, so Android-only changes skip it.
+# It does not deploy anything; see docs/WEB_ATLAS.md for publishing.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "tests/site/**"
+      - "scripts/build_site_data.py"
+      - "scripts/update_pack_manifest.py"
+      - "app/src/main/assets/lorepacks/**"
+      - "app/src/main/java/com/example/data/model/ConfidenceLevel.kt"
+      - ".github/workflows/site-ci.yml"
+  pull_request:
+    paths:
+      - "site/**"
+      - "tests/site/**"
+      - "scripts/build_site_data.py"
+      - "scripts/update_pack_manifest.py"
+      - "app/src/main/assets/lorepacks/**"
+      - "app/src/main/java/com/example/data/model/ConfidenceLevel.kt"
+      - ".github/workflows/site-ci.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Verify the lore pack hashes
+        run: python scripts/update_pack_manifest.py --check
+
+      - name: Check the web atlas data is up to date
+        run: python scripts/build_site_data.py --check
+
+      - name: Run the web atlas tests
+        run: node --test tests/site/atlas.test.mjs
