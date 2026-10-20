@@ -19,8 +19,7 @@
 
 If you discover a potential security vulnerability within this repository, please report it privately:
 
-- **Contact**: Alex Shade Productions
-- **Method**: Open a private security advisory on GitHub or contact the maintainer directly.
-- **Response SLA**: Vulnerability reports will be acknowledged within 48 hours, with a remediation timeline provided following technical verification.
+- **Method**: Use GitHub's private vulnerability reporting: open the repository's **Security** tab and choose **Report a vulnerability**. Please do not open a public issue.
+- **Response**: This is a small project run by one person. I will try to reply within a few days and will say what I plan to do once I have confirmed the problem.
 
 Please do not disclose security vulnerabilities publicly until a fix has been verified and released.

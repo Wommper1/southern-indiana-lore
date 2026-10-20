@@ -60,7 +60,7 @@ You need an Android 7.0 or newer phone. No account and no internet connection ar
 
 This is an early release. Please read these before judging it.
 
-- **Device testing is still in progress.** The automated tests pass, but expect rough edges on real phones. The layout was designed around a large modern phone (a Galaxy S25 Ultra); other screens, tablets, and foldables are untested.
+- **Limited device testing.** The automated tests pass, and the owner has tried the app on one real phone, a Samsung Galaxy S25 Ultra, with no problems noted so far. Other phones, tablets, and foldables are untested, so expect rough edges. The layout was designed around that kind of large modern phone.
 - **The history is only partly checked.** 46 of the 52 entries were compared with public sources (not archival records) and corrected where they were wrong, but most of them are only badged **Plausible**: the main facts matched, and other details were not confirmed. Six entries are unchecked, and two were checked without finding anything to support them (badged **Unverified**). Details can still be wrong. See [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md), and please report mistakes with a source.
 - **The map is minimal.** See "On-Device Map" above. It is not a navigation map.
 - **No backup.** Journal entries, custom sites, and voice memos stay on the phone and are lost if you uninstall the app or switch phones. Export a dossier first if you want to keep them.
@@ -106,7 +106,9 @@ southern-indiana-lore/
 │   │   │   └── AndroidManifest.xml       # Least-privilege manifest declaration
 │   └── build.gradle.kts                  # App build & dependency specifications
 ├── docs/                                 # Design notes, verification log, map architecture, publishing guide
-├── scripts/update_pack_manifest.py       # Regenerates the lore pack hashes after you edit it
+├── scripts/                              # update_pack_manifest.py (lore pack hashes), build_site_data.py and serve_site.py (web atlas)
+├── site/                                 # Web atlas: the lore pack as a plain HTML/CSS/JS website (not hosted yet)
+├── tests/site/                           # Node tests for the web atlas
 ├── .github/                              # CI workflow, Dependabot, issue and pull request templates
 ├── CHANGELOG.md                          # What changed in each release
 ├── CONTRIBUTING.md                       # How to help (especially fact-checking)

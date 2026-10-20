@@ -62,4 +62,4 @@ First release. App version 1.0.0, lore pack 1.11.0.
 
 ### Known issues
 
-See "Known limitations" in the README. In short: device testing is still in progress, 6 of 52 entries are unchecked and most of the rest are only Plausible, the map is minimal, and there is no backup of your notes and recordings.
+See "Known limitations" in the README. In short: it has been tried on one real phone (a Samsung Galaxy S25 Ultra) and other devices are untested, 6 of 52 entries are unchecked and most of the rest are only Plausible, the map is minimal, and there is no backup of your notes and recordings.

@@ -4,7 +4,7 @@ First release of an offline-first Android field companion for southern Indiana h
 17 counties, with proximity alerts, narration, a field journal, an oral-history tape deck, and dossier and GPX
 export. No account, no ads, no tracking, and no internet permission.
 
-> **Early release.** The automated tests pass, but device testing is still in progress, and the history is only partly checked: 46 of the 52 entries were compared with public sources and corrected where they were wrong, but most are only badged **Plausible** and six are unchecked. Please read "Known limitations" below.
+> **Early release.** The automated tests pass and the owner has tried the app on one real phone (a Samsung Galaxy S25 Ultra) with no problems noted so far, but other devices are untested, and the history is only partly checked: 46 of the 52 entries were compared with public sources and corrected where they were wrong, but most are only badged **Plausible** and six are unchecked. Please read "Known limitations" below.
 
 ## Download
 
@@ -59,7 +59,7 @@ your APK will have a different hash and your own signature.
 
 ## Known limitations
 
-- **Device testing is in progress.** Expect rough edges on real phones. The layout targets large modern phones.
+- **Limited device testing.** The owner has tried the app on one real phone, a Samsung Galaxy S25 Ultra, with no problems noted so far. Other phones, tablets and foldables are untested, so expect rough edges. The layout targets large modern phones.
 - **The history is only partly checked.** 46 of 52 entries were compared with public sources (not archival records) and corrected, but most are only badged **Plausible**: the main facts matched and other details were not confirmed. Six entries are unchecked, and two were checked without finding anything to support them (badged **Unverified**). Details can still be wrong. Corrections with a source are very welcome.
 - **The map is minimal:** a dark schematic with a river, a creek, a ridgeline, and one road/rail corridor. It is not
   a navigation map; use the "Navigate" buttons.
@@ -77,7 +77,7 @@ See the README for the full list.
 
 ## About this build
 
-- Built on 2026-10-18 from commit `7a93b94` (later commits change only documentation and templates).
+- Built on 2026-10-18 from commit `7a93b94` (later commits change only documentation, templates, CI and the separate web atlas in `site/`; the app's code and build files are unchanged).
 - Android Gradle Plugin 9.1.1, Gradle 9.5.0, JDK 25 (Android Studio runtime), compile SDK 36, minimum SDK 24.
 - Lore pack version 1.11.0. App version 1.0.0 (version code 1).
 - 64 automated tests passed (unit and Robolectric). Android lint, last run before the second fact-check, reported 84 warnings and no errors.
