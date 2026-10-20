@@ -16,7 +16,7 @@ improvements are welcome too.
 
 ## Building and testing
 
-You need JDK 17 or newer and the Android SDK (compile SDK 36). Android Studio's bundled JDK works.
+You need JDK 21 or newer and the Android SDK (compile SDK 36). CI runs on JDK 21; the Robolectric unit tests failed to start on JDK 17. Android Studio's bundled JDK works if it is 21 or newer.
 
 ```bash
 ./gradlew testDebugUnitTest   # unit and Robolectric tests

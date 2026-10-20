@@ -51,7 +51,7 @@ You need an Android 7.0 or newer phone. No account and no internet connection ar
 - **Offline Archivist**:
   - Ask about a featured site or request a driving-tour route. This is a keyword lookup over hand-written entries, not an AI model: well-known sites get a curated answer, and everything else gets a general overview.
 - **Automated GitHub Actions CI/CD**:
-  - Continuous integration running the automated test suites and Android lint on JDK 17, with Dependabot keeping dependencies current.
+  - Continuous integration running the automated test suites and Android lint on JDK 21, with Dependabot keeping dependencies current.
   - Version tags (`v*`) build a debug APK and attach it to a GitHub Release for sideloading.
 
 ---
@@ -123,7 +123,7 @@ southern-indiana-lore/
 ### Prerequisites
 
 - **Android Studio**: a current stable release (the project uses Android Gradle Plugin 9.1.1)
-- **JDK**: Java 17+
+- **JDK**: Java 21+
 - **Android SDK**: Compile SDK 36, Minimum SDK 24 (Android 7.0+)
 
 ### Building Locally
