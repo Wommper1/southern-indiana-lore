@@ -12,6 +12,8 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
   Android app, with the same trust badges and wording, a schematic SVG map with no tile servers, a foreground-only
   Near me mode, and no trackers. Not published yet; see `docs/WEB_ATLAS.md`.
 - `scripts/build_site_data.py` (regenerates the web atlas data from the pack) and `scripts/serve_site.py` (local preview).
+- `Web atlas CI` workflow: runs the web atlas tests and the data-drift check on pull requests that touch the atlas, the pack, or
+  the badge definitions.
 
 ## [1.0.0] - 2026-10-18
 

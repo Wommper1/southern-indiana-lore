@@ -98,6 +98,12 @@ They check that the atlas matches the pack field-for-field and that `build_site_
 the badge/heading/fallback rules, fail-closed behaviour, distance and map math, search and filters, the privacy
 guards above, and that every site file is in the offline list.
 
+GitHub runs the same checks automatically through [`.github/workflows/site-ci.yml`](../.github/workflows/site-ci.yml)
+("Web atlas CI") on pushes to `main` and on pull requests that touch `site/`, `tests/site/`, the lore pack,
+`ConfidenceLevel.kt` or the two scripts; Android-only changes skip it. It verifies the pack hashes, runs
+`build_site_data.py --check` (so a forgotten data or offline-list rebuild fails the PR), and runs the Node tests. It
+only checks; it never deploys.
+
 ## Publishing (not done yet)
 
 GitHub Pages on a private repository needs a paid plan, so this waits until the owner makes the repository public.
@@ -150,4 +156,5 @@ unverified until someone tries it on a device.
 | `site/icons/` | Home-screen icons, cropped from the app's own icon artwork (MIT) |
 | `scripts/build_site_data.py`, `scripts/serve_site.py` | Data build and local preview |
 | `tests/site/atlas.test.mjs` | Tests |
+| `.github/workflows/site-ci.yml` | Runs the tests and the data-drift check on pull requests (never deploys) |
 | `docs/web-atlas/pages.yml` | Pages workflow template (inactive) |
