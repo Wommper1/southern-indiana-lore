@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "Southern Indiana Lore Atlas",
+  "short_name": "SI Lore Atlas",
+  "description": "An offline-capable atlas of 52 southern Indiana history and folklore sites, with trust badges on every entry.",
+  "lang": "en-US",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#090d16",
+  "theme_color": "#090d16",
+  "categories": ["education", "travel"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

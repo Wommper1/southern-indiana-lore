@@ -4,6 +4,15 @@ All notable changes are recorded here. The format follows [Keep a Changelog](htt
 app follows [Semantic Versioning](https://semver.org/). The lore pack has its own version, in
 `app/src/main/assets/lorepacks/southern_indiana/pack_manifest.json`.
 
+## [Unreleased]
+
+### Added
+
+- Web atlas (`site/`): a free, offline-capable website version of the lore pack for people who cannot install the
+  Android app, with the same trust badges and wording, a schematic SVG map with no tile servers, a foreground-only
+  Near me mode, and no trackers. Not published yet; see `docs/WEB_ATLAS.md`.
+- `scripts/build_site_data.py` (regenerates the web atlas data from the pack) and `scripts/serve_site.py` (local preview).
+
 ## [1.0.0] - 2026-10-18
 
 First release. App version 1.0.0, lore pack 1.11.0.

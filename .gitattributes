@@ -8,3 +8,14 @@ app/src/main/assets/lorepacks/** text eol=lf
 # Shell wrapper must keep LF to run on Linux/macOS (and in CI); Windows batch files need CRLF.
 gradlew text eol=lf
 *.bat text eol=crlf
+
+# The web atlas lists a fingerprint of each of these files for its offline copy, so their bytes must be identical
+# on every checkout (Windows and Linux). Images and fonts are binary.
+site/**/*.js text eol=lf
+site/**/*.css text eol=lf
+site/**/*.html text eol=lf
+site/**/*.json text eol=lf
+site/**/*.webmanifest text eol=lf
+site/**/*.txt text eol=lf
+site/**/*.png binary
+site/**/*.ttf binary

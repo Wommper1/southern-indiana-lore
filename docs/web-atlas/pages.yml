@@ -1,0 +1,75 @@
+# GitHub Pages deployment for the web atlas. THIS FILE IS NOT ACTIVE.
+#
+# It sits in docs/ on purpose, so GitHub does not run it. Do not enable it until the repository is public
+# (GitHub Pages on a private repository needs a paid plan). To switch it on, see docs/WEB_ATLAS.md, "Publishing":
+#
+#   1. Make the repository public.
+#   2. Settings > Pages > Build and deployment > Source: GitHub Actions.
+#   3. git mv docs/web-atlas/pages.yml .github/workflows/pages.yml   (then commit and push to main)
+#
+# What it does: checks the lore pack hashes, rebuilds site/data and the offline file list from the pack, runs the
+# web atlas tests, and publishes only the site/ folder. Action versions follow the repository's other workflows;
+# Dependabot (see .github/dependabot.yml) will propose newer ones.
+
+name: Deploy web atlas
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "tests/site/**"
+      - "app/src/main/assets/lorepacks/**"
+      - "app/src/main/java/com/example/data/model/ConfidenceLevel.kt"
+      - "scripts/build_site_data.py"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Verify the lore pack hashes
+        run: python scripts/update_pack_manifest.py --check
+
+      - name: Rebuild the atlas data and offline file list
+        run: python scripts/build_site_data.py
+
+      - name: Run the web atlas tests
+        run: node --test tests/site/atlas.test.mjs
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the site folder
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

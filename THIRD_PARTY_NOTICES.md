@@ -7,6 +7,9 @@ The repository's [LICENSE](LICENSE) (MIT) covers the **source code, build files,
 | Source code, build scripts, docs, and the app's own artwork (hero image, app icon, intro video) | everything not listed below | MIT, see [LICENSE](LICENSE) |
 | Lore pack (site stories, geofences, sources) | `app/src/main/assets/lorepacks/` | CC BY-SA 4.0, as declared in [`licenses.json`](app/src/main/assets/lorepacks/southern_indiana/licenses.json) |
 | Fonts: Cinzel, Plus Jakarta Sans | `app/src/main/res/font/` | SIL Open Font License 1.1 (see below) |
+| Web atlas code and icons (`site/`, `scripts/build_site_data.py`, `tests/site/`) | `site/` | MIT, see [LICENSE](LICENSE); the icons are cropped from the app icon artwork |
+| Web atlas data (a generated copy of the lore pack) | `site/data/atlas.json` | CC BY-SA 4.0, like the pack it is built from |
+| Web atlas fonts (copies of the two fonts above) | `site/fonts/` | SIL Open Font License 1.1, license text in `site/fonts/OFL.txt` |
 
 ## Fonts (SIL Open Font License 1.1)
 
