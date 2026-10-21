@@ -126,7 +126,7 @@ object LoreSeedData {
             latitude = 38.2932,
             longitude = -85.8340,
             address = "Falling Run Road & Silver Hills Base, New Albany, IN",
-            era = "1891 – Steam Era",
+            era = "Steam Era (local tale)",
             accessStatus = "Public Roadway & Nature Greenway Trail",
             fullStory = """
                 Falling Run Creek runs through New Albany, and an Indiana State Library photograph shows it in flood in March 1933. Local stories say timber railroad trestles once crossed its ravine and that an engine went into the creek during a flood in November 1891. No source found so far confirms the trestles, that flood or a derailment.
@@ -172,7 +172,7 @@ object LoreSeedData {
             latitude = 38.3320,
             longitude = -85.8190,
             address = "Grant Line Road & Old Poor Farm Grounds, New Albany, IN",
-            era = "1878 – Late 19th Century",
+            era = "Late 19th Century – 1978",
             accessStatus = "Public Historical Grounds & Commemorative Area",
             fullStory = """
                 The Floyd County poor farm, later called the County Poor Asylum and the Floyd County Home for Aged, sheltered people who had nowhere else to go. One account dates its beginnings to a log cabin in 1838, with a larger building in 1875 and additions in 1878; a fire in 1916 destroyed much of it and a new building followed.
@@ -195,7 +195,7 @@ object LoreSeedData {
             latitude = 38.2910,
             longitude = -85.8450,
             address = "Silver Hills Bluff Overlook, New Albany, IN",
-            era = "1895–1912 – Early 20th Century",
+            era = "Early 20th Century (legend)",
             accessStatus = "Public Park Trails & Scenic Residential Ridge",
             fullStory = """
                 Silver Hills is a community near New Albany. Local legend tells of Heinrich, an eccentric German clockmaker who lived in a stone hillside dugout and wandered the trails with a brass kerosene lantern. No source found confirms that he existed.
@@ -218,7 +218,7 @@ object LoreSeedData {
             latitude = 38.3718,
             longitude = -85.9860,
             address = "Highway 150 & Historic Springs Branch, Greenville, IN",
-            era = "1885 – Victorian Wellness Boom",
+            era = "Victorian Era (unconfirmed)",
             accessStatus = "Historic Roadside Marker & Country Byway",
             fullStory = """
                 In western Floyd County, the historic town of Greenville was famed during the late 19th century for cold mineral springs rich in natural sulphur, iron, and magnesium. Capitalizing on the Victorian sanitarium craze, entrepreneurs erected a multi-story wooden resort hotel and bathhouse.
@@ -373,7 +373,7 @@ object LoreSeedData {
             latitude = 38.3562,
             longitude = -85.6418,
             address = "Ohio River Mile 591, Utica, IN 47130",
-            era = "1840–1890 Ohio River Commerce",
+            era = "Steamboat Era (1800s)",
             accessStatus = "River Overlook & Waterway Access",
             fullStory = """
                 Twelve Mile Island is an island in the Ohio River upstream of Louisville, named for its distance from the Falls of the Ohio. Boatmen of the steamboat era worked around sandbars and snags, and one tradition says boats came to grief near the island. No source found documents wrecks at this island.

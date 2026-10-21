@@ -11,7 +11,7 @@
 - [ ] **Store graphics.** 512 px icon PNG, 1024x500 feature graphic, and phone screenshots (none exist yet).
 - [ ] **Developer account requirements.** Check Google's current rules for new personal accounts, which have required a closed test with a minimum number of testers for a minimum period before production access.
 - [ ] **Content rating questionnaire** and the Data Safety form (draft answers below and in `PLAY_STORE_LISTING.md`).
-- [ ] **Finish fact-checking the lore pack.** Six entries are unchecked and most checked ones are only "Plausible" (see [VERIFICATION_LOG.md](VERIFICATION_LOG.md)); check against archives, and decide whether that is enough, before describing the content as researched in the store listing.
+- [ ] **Finish fact-checking the lore pack.** All 52 entries have been checked against public sources, but most are only "Plausible" and four are "Unverified" (see [VERIFICATION_LOG.md](VERIFICATION_LOG.md)); check against archives, and decide whether that is enough, before describing the content as researched in the store listing.
 
 ## Application Overview
 * **App Name**: `Southern Indiana Lore` (21 characters — compliant with Google Play's 30-character limit)
