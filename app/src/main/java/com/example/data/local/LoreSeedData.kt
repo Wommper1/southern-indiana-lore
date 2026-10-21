@@ -129,18 +129,16 @@ object LoreSeedData {
             era = "1891 – Steam Era",
             accessStatus = "Public Roadway & Nature Greenway Trail",
             fullStory = """
-                Winding through the deep hollows beneath the Silver Hills escarpment, Falling Run Creek was once flanked by the treacherous railbeds of the Monon and Pennsylvania Railroad lines. 
-
-                During severe autumn storms in November 1891, flash floods along Falling Run destabilized timber trestles, causing a freight engine to derail into the muddy gorge. Railroaders and local residents along Falling Run Road maintain that on misty autumn nights when the moon is obscured by cloud cover, a spectral locomotive whistle reverberates between the valley hills.
+                Falling Run Creek runs through New Albany, and an Indiana State Library photograph shows it in flood in March 1933. Local stories say timber railroad trestles once crossed its ravine and that an engine went into the creek during a flood in November 1891. No source found so far confirms the trestles, that flood or a derailment.
             """.trimIndent(),
-            verifiedHistory = "The Monon and Pennsylvania rail spurs traversed Falling Run gorge. Severe flooding in November 1891 caused timber washouts and an engine derailment into the stream bed as reported in municipal records.",
+            verifiedHistory = "The Monon's predecessor, the New Albany & Salem Railroad (chartered 1847), ran out of New Albany. No source found places a trestle over Falling Run or documents an 1891 flood derailment there.",
             folkloreTradition = "Local oral history holds that on misty autumn nights, an echo of a steam locomotive whistle can be heard reverberating between the Knobstone ridges.",
             confidenceLevel = ConfidenceLevel.ORAL_HISTORY.name,
-            sources = "Monon Historical Society Railroad Gazette (1892); New Albany Evening Tribune archives (Nov 1891); 'Ghosts of the Knobstone' by R. Hensley (1974).",
-            sourceNotes = "Monon Historical Society Railroad Gazette (1892); New Albany Evening Tribune archives (Nov 1891).",
+            sources = "Indiana State Library digital collections (Falling Run Creek in flood, 1933); Monon Railroad histories (American-Rails.com; Indiana Historical Bureau, New Albany & Salem Railroad). Original citations not confirmed: New Albany Evening Tribune (Nov 1891); Monon Railroad Historical Technical Society; 'Knobstone Lore' (1974).",
+            sourceNotes = "Checked October 2026 against public sources (see the project's verification log); other citations in this entry are not independently verified.",
             verificationGrade = "Documented Oral Tradition & Historical Rail Records",
             geofenceRadiusMeters = 120,
-            audioNarration = "You are near Falling Run, a secluded ravine cutting beneath the Silver Hills. Listen closely to the valley breeze."
+            audioNarration = "You are near Falling Run, a ravine in New Albany. Local lore speaks of phantom steam whistles on autumn nights; no source confirms the old trestle story."
         ),
         LoreSiteEntity(
             id = "floyd_knobs_ridge_mystery",
@@ -154,13 +152,13 @@ object LoreSeedData {
             era = "1805 – Pioneer Knobstone Frontier",
             accessStatus = "Public Scenic Byway & County Overlook",
             fullStory = """
-                Rising dramatically more than 600 feet above the Ohio River basin, the Knobstone Escarpment forms the rugged backbone of Floyd County. Ancient herds of bison carved the historic Buffalo Trace across these ridges, connecting the Falls of the Ohio with the salt licks of southern Illinois.
+                Rising 400 to 850 feet above the Ohio River floodplain, the Knobstone Escarpment forms the northwestern edge of New Albany. Bison made the Buffalo Trace along its ridges long before settlers arrived.
             """.trimIndent(),
-            verifiedHistory = "The Knobstone Escarpment was traversed by the historic Buffalo Trace, surveyed in 1805 by William Rector. Colonists settled Floyds Knobs in the early 1800s around timber and fruit orchard trades.",
+            verifiedHistory = "The Buffalo Trace ran along the bluff on what is now Paoli Pike, and William Rector surveyed it in 1805. Floyds Knobs was a farming community; James Moore built a gristmill there in 1815, and the town is named for Colonel Davis Floyd.",
             folkloreTradition = "Pioneer folklore describes an ancient lightning-blasted oak on the ridge known as the Witches Tree, where early travelers reported strange glowing marsh gases and erratic compass needles.",
             confidenceLevel = ConfidenceLevel.LEGEND.name,
-            sources = "Floyd County Pioneer Register (1838); WPA Indiana Folklore Survey (1936); Indiana Historical Society Publications Vol. 12.",
-            sourceNotes = "Floyd County Pioneer Register (1838); WPA Indiana Folklore Survey (1936).",
+            sources = "Wikipedia (Floyds Knobs, Indiana; Vincennes Trace). Original citations not confirmed: Floyd County Pioneer Register (1838); WPA Indiana Folklore Survey (1936); Indiana Historical Society Publications.",
+            sourceNotes = "Checked October 2026 against public sources (see the project's verification log); other citations in this entry are not independently verified.",
             verificationGrade = "Pioneer Folklore & Geologic Heritage Site",
             geofenceRadiusMeters = 150,
             audioNarration = "You are atop Floyds Knobs, looking out from the ancient Knobstone Escarpment."
@@ -168,7 +166,7 @@ object LoreSeedData {
         LoreSiteEntity(
             id = "floyd_poor_farm_potters_field",
             title = "Floyd County Asylum & Potter's Field",
-            subtitle = "Lost Almshouse, Limestone Foundations & Unmarked Resting Grounds",
+            subtitle = "Lost Almshouse, Limestone Foundations & The Potter's Field",
             category = LoreCategories.HAUNTED,
             county = "Floyd County",
             latitude = 38.3320,
@@ -177,16 +175,16 @@ object LoreSeedData {
             era = "1878 – Late 19th Century",
             accessStatus = "Public Historical Grounds & Commemorative Area",
             fullStory = """
-                Established in 1878 along Grant Line Road, the Floyd County Poor Farm (often termed the County Infirmary or Asylum) provided shelter for impoverished pioneers, orphaned children, wounded Civil War veterans, and the chronically ill who had no family to care for them.
+                The Floyd County poor farm, later called the County Poor Asylum and the Floyd County Home for Aged, sheltered people who had nowhere else to go. One account dates its beginnings to a log cabin in 1838, with a larger building in 1875 and additions in 1878; a fire in 1916 destroyed much of it and a new building followed.
             """.trimIndent(),
-            verifiedHistory = "Established in 1878 by the Floyd County Commissioners on a 170-acre farmstead along Grant Line Road. Operated as an almshouse and infirmary until the mid-20th century. Deceased residents without funds were buried in the adjacent Potter's Field.",
+            verifiedHistory = "A county poor farm stood on what is now Grantline Road. One community-written source (Asylum Projects) says it closed in 1978 and that residents who died without money were buried on the grounds, including in a marked Potter's Field. The founding date, size and county role given in older versions of this entry could not be confirmed.",
             folkloreTradition = "Night visitors report cold drafts and compass shifts near the remaining limestone springhouse foundations.",
             confidenceLevel = ConfidenceLevel.PROBABLE.name,
-            sources = "Floyd County Commissioner Records (1875–1890); Annual Reports of the Indiana Board of State Charities (1894); New Albany Public Library genealogical records.",
-            sourceNotes = "Floyd County Commissioner Records (1875–1890); Annual Reports of the Indiana Board of State Charities (1894).",
+            sources = "Asylum Projects wiki, Floyd County Infirmary (community-written). Original citations not confirmed: Floyd County Commissioner Records (1875-1890); Annual Reports of the Indiana Board of State Charities (1894).",
+            sourceNotes = "Checked October 2026 against public sources (see the project's verification log); other citations in this entry are not independently verified.",
             verificationGrade = "Documented County Archives & Historical Cemetery Record",
             geofenceRadiusMeters = 110,
-            audioNarration = "This peaceful knoll along Grant Line Road once held the Floyd County Almshouse."
+            audioNarration = "This rolling pasture on Grant Line Road once held the Floyd County poor farm, a county home for people in need."
         ),
         LoreSiteEntity(
             id = "floyd_silver_hills_hermit",
@@ -200,16 +198,16 @@ object LoreSeedData {
             era = "1895–1912 – Early 20th Century",
             accessStatus = "Public Park Trails & Scenic Residential Ridge",
             fullStory = """
-                Rising steeply west of New Albany, the Silver Hills were renowned in the late Victorian period for cool breezes and grand summer cottages. But deeper in the sandstone ravines lived a solitary figure named Heinrich, a master clockmaker who had emigrated from Germany following personal heartbreak.
+                Silver Hills is a community near New Albany. Local legend tells of Heinrich, an eccentric German clockmaker who lived in a stone hillside dugout and wandered the trails with a brass kerosene lantern. No source found confirms that he existed.
             """.trimIndent(),
-            verifiedHistory = "Heinrich lived as a recluse in a stone-lined shelter in the Silver Hills ravine between 1895 and his passing in 1912, earning a modest living repairing timepieces for valley residents.",
-            folkloreTradition = "After 1912, ridge hikers frequently reported seeing an amber lantern light drifting silently among the woods after dusk.",
+            verifiedHistory = "Silver Hills, Indiana, is a real community in Floyd County near New Albany. No source found documents a hermit named Heinrich, his years there, or his clockmaking.",
+            folkloreTradition = "Legend says Heinrich (Henry) lived in a stone-lined shelter in a Silver Hills ravine from 1895 until he died in 1912, fixing clocks and watches for people in the valley. After 1912, ridge hikers are said to have seen an amber lantern light drifting silently among the woods after dusk.",
             confidenceLevel = ConfidenceLevel.LEGEND.name,
-            sources = "Louisville Courier-Journal Sunday Feature Archive (May 18, 1924); Indiana Folklore Archive at Indiana University Bloomington; 'Legends of the Ohio Valley' by C. Roth.",
-            sourceNotes = "Louisville Courier-Journal Sunday Feature Archive (May 18, 1924); Indiana Folklore Archive at Indiana University Bloomington.",
+            sources = "Wikipedia (Silver Hills, Indiana). Original citations not confirmed: Louisville Courier-Journal archives (May 1924); Indiana Folklore Archive; New Albany Ledger obituary files.",
+            sourceNotes = "Checked October 2026 against public sources (see the project's verification log); other citations in this entry are not independently verified.",
             verificationGrade = "Documented Regional Folk Legend",
             geofenceRadiusMeters = 140,
-            audioNarration = "You have reached Silver Hills. More than a century ago, the solitary clockmaker Heinrich walked these forested bluffs."
+            audioNarration = "You are near the wooded trails of Silver Hills. Legend tells of a reclusive clockmaker named Heinrich who walked these bluffs with a brass lantern."
         ),
         LoreSiteEntity(
             id = "floyd_greenville_mineral_springs",
@@ -369,7 +367,7 @@ object LoreSeedData {
         LoreSiteEntity(
             id = "clark_twelve_mile_island_wrecks",
             title = "Twelve Mile Island Steamboat Wrecks",
-            subtitle = "Perilous Ohio River Chute & Flatboat Graveyard",
+            subtitle = "Ohio River Island & Steamboat-Era Tales",
             category = LoreCategories.STEAM_AND_RAIL,
             county = "Clark County",
             latitude = 38.3562,
@@ -378,18 +376,16 @@ object LoreSeedData {
             era = "1840–1890 Ohio River Commerce",
             accessStatus = "River Overlook & Waterway Access",
             fullStory = """
-                Twelve Mile Island, situated twelve miles upriver from the Falls of the Ohio, split the river into treacherous narrow chutes filled with sandbars and submerged timber snags known as 'sawyers'. 
-                
-                During the golden age of steam navigation, dozens of packet boats, keelboats, and timber rafts foundered along this curve. In dense autumn river fogs, pilots navigating by bell and compass frequently struck the submerged gravel shoals. River captains long traded legends of phantom whistle echoes echoing off the Utica limestone bluffs on moonless nights.
+                Twelve Mile Island is an island in the Ohio River upstream of Louisville, named for its distance from the Falls of the Ohio. Boatmen of the steamboat era worked around sandbars and snags, and one tradition says boats came to grief near the island. No source found documents wrecks at this island.
             """.trimIndent(),
-            verifiedHistory = "Documented navigational hazard in U.S. Army Corps of Engineers Ohio River Charts (1881). Historical records from the Western Boatman's Association document multiple groundings and snag collisions between 1845 and 1888.",
+            verifiedHistory = "The name follows the river's habit of counting miles above the Falls of the Ohio, as with Six Mile Island, and a 1900 Filson Historical Society photograph shows boat rentals at the head of Twelve Mile Island. No source found documents groundings, snag collisions or wrecks there, and the 1881 Army Corps of Engineers chart and boatmen's association records cited in older versions of this entry could not be found.",
             folkloreTradition = "Utica boatmen passed down tales of phantom whistle blasts heard across the misty riverbend when no vessel was in sight.",
             confidenceLevel = ConfidenceLevel.PROBABLE.name,
-            sources = "U.S. Army Corps of Engineers Ohio River Historical Charts (1881); Way's Packet Directory; Clark County River Historians Archive.",
-            sourceNotes = "US Army Corps of Engineers Charts 1881; Way's Packet Directory (1848-1983).",
+            sources = "Wikipedia (Six Mile Island State Nature Preserve, on the naming convention); Filson Historical Society photograph, Head of Twelve Mile Island, Ohio River, 1900. Original citations not confirmed: U.S. Army Corps of Engineers Ohio River Historical Charts (1881); Ways Packet Directory; Clark County River Historians Archive.",
+            sourceNotes = "Checked October 2026 against public sources (see the project's verification log); other citations in this entry are not independently verified.",
             verificationGrade = "Archival River Navigation Record",
             geofenceRadiusMeters = 140,
-            audioNarration = "You are overlooking Twelve Mile Island on the Ohio River. In the nineteenth century, these treacherous shoals claimed packet boats and timber rafts braving the river journey."
+            audioNarration = "You are overlooking Twelve Mile Island on the Ohio River. Boatmen of the steamboat era told stories of trouble on these shoals; no source confirms specific wrecks."
         ),
         LoreSiteEntity(
             id = "clark_rose_island_ruins",
@@ -1177,7 +1173,7 @@ object LoreSeedData {
         LoreSiteEntity(
             id = "washington_salem_underground_railroad",
             title = "Salem Underground Railroad & Morgan's Raid Depot",
-            subtitle = "Quaker Freedom Sanctuary & 1863 Confederate Cavalry Depot Plunder",
+            subtitle = "Blue River Quakers & the 1863 Confederate Raid",
             category = LoreCategories.UNDERGROUND_RR,
             county = "Washington County",
             latitude = 38.6044,
@@ -1185,15 +1181,15 @@ object LoreSeedData {
             address = "Main St & Rail Crossing, Salem, IN 47167",
             era = "1863 – Civil War & Abolition Era",
             accessStatus = "Public Historic District / Depot Memorial",
-            fullStory = "Salem was a pivotal crossroads in Southern Indiana history. Beginning in the 1830s, the surrounding Blue River Quaker community established clandestine Underground Railroad depots, receiving freedom seekers coming north from New Albany and Leavenworth and moving them toward Bloomington and Canada. On July 10, 1863, Confederate General John Hunt Morgan's 2,400 cavalrymen invaded Salem after winning the Battle of Corydon. Morgan's men burned the Louisville & New Albany Railroad depot, tore up tracks, torched rail bridges, and famously ransacked local mercantile stores, seizing bolts of calico and ice cream before demanding a $1,000 ransom per mill.",
-            verifiedHistory = "Confederate raid documented July 10, 1863 in the Official Records of the War of the Rebellion. Quaker abolitionist network in Washington County documented by Indiana Historical Bureau.",
-            folkloreTradition = "Town oral history remembers Morgan's troopers riding down Main Street carrying birdcages and lightning rods tied to their saddles.",
+            fullStory = "Salem is the Washington County seat and was home to the Blue River Quaker settlement, whose members came from North Carolina in opposition to slavery; their meetinghouse dates to 1815. Local accounts say Blue River Quakers, including members of the Trueblood and Thompson families, helped freedom seekers from about 1836, though those accounts rest mostly on descendants' later recollections. On July 10, 1863, Confederate General John Hunt Morgan's raiders, about 1,800 men by the time they crossed into Indiana, occupied Salem the day after winning the Battle of Corydon. They burned the railroad depot, the railcars on the track and the railroad bridges on each side of town, looted stores, and collected a \$1,000 ransom from each mill owner.",
+            verifiedHistory = "Indiana Historical Bureau marker 88.1963.1, at the Washington County Courthouse, records that Morgan's raiders occupied Salem on July 10, 1863, looted the town and collected a \$1,000 ransom from each mill owner. The depot and railroad bridges were burned. A separate state marker records the 1815 Quaker meetinghouse. Blue River Friends names Quaker families who aided escaping slaves, but the routes and details of that work are not documented in the sources read.",
+            folkloreTradition = "Town oral history remembers Morgan's troopers riding down Main Street carrying birdcages and lightning rods tied to their saddles. A popular story says they took bolts of calico and ice cream from the stores; the accounts read mention food, goods and whiskey instead.",
             confidenceLevel = ConfidenceLevel.OFFICIAL_SOURCE.name,
-            sources = "War of the Rebellion: Official Records of the Union and Confederate Armies, Series I, Vol. 23; Indiana Historical Bureau marker #88.1963.1; Stevens, 'Centennial History of Washington County'.",
-            sourceNotes = "Indiana Historical Marker #88.1963.1; Official Records Series I, Vol. 23.",
+            sources = "Indiana Historical Bureau marker 88.1963.1 (Morgan's Raid, July 8-13, 1863); Emerging Civil War, 'A Calm Still Morning: Morgan's Raiders at Salem'; Wikipedia (Morgan's Raid; Salem, Indiana); Blue River Friends (blueriverfriends.org). Original citations not confirmed: Official Records Series I, Vol. 23; Stevens, 'Centennial History of Washington County'.",
+            sourceNotes = "Checked October 2026 against public sources (see the project's verification log); other citations in this entry are not independently verified.",
             verificationGrade = "Archivally Verified & Indiana Historical Marker Site",
             geofenceRadiusMeters = 150,
-            audioNarration = "This is historic Salem, where Quaker Underground Railroad conductors harbored freedom seekers, and where Confederate cavalry raiders torched the rail depot in July 1863.",
+            audioNarration = "This is historic Salem, home of a Blue River Quaker settlement that local accounts say aided freedom seekers, and where Confederate raiders burned the rail depot in July 1863.",
             siteType = "LINE",
             radarType = "CROSSING",
             geometryCoordinates = "38.6080,-86.1030;38.6044,-86.1017;38.6000,-86.1005",

@@ -102,7 +102,19 @@ class LorePackHonestyTest {
             "stagecoach pike",
             "Managed entirely by African American staff",
             "160-foot clock tower",
-            "pin-connected Whipple/Pratt"
+            "pin-connected Whipple/Pratt",
+            "Pennsylvania rail spurs",
+            "Railroad records document freight derailments",
+            "fruit orchard trades",
+            "170-acre farmstead",
+            "Established in 1878 by the Floyd County Commissioners",
+            "Heinrich lived as a recluse",
+            "earning a modest living repairing timepieces",
+            "Western Boatmans Association",
+            "dozens of packet boats",
+            "2,400 cavalrymen",
+            "seizing bolts of calico",
+            "Leavenworth and moving them toward Bloomington"
         )
         for (phrase in removed) {
             assertTrue("Removed claim is back in sites.json: '$phrase' (see docs/VERIFICATION_LOG.md)", !raw.contains(phrase))

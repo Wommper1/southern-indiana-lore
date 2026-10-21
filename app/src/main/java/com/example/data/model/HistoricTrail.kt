@@ -72,7 +72,7 @@ object RegionalHistoricTrails {
             title = "Morgan's Great Raid 1863 Route",
             subtitle = "Confederate Cavalry Invasion of Southern Indiana",
             era = "July 8–11, 1863 Civil War",
-            description = "Follow the actual path of Confederate General John Hunt Morgan's 2,400 cavalrymen as they crossed the Ohio River at Mauckport, engaged the Harrison County Home Guard at Corydon, and raided eastward through Salem.",
+            description = "Follow the actual path of Confederate General John Hunt Morgan's raiders (about 1,800 men by the time they crossed into Indiana) as they crossed the Ohio River at Mauckport, engaged the local Indiana Legion militia at Corydon, and raided eastward through Salem.",
             approximateMiles = 42.0,
             pathCoordinates = listOf(
                 Pair(38.0260, -86.2050), // Brandenburg / Mauckport Crossing
