@@ -104,23 +104,16 @@ GitHub runs the same checks automatically through [`.github/workflows/site-ci.ym
 `build_site_data.py --check` (so a forgotten data or offline-list rebuild fails the PR), and runs the Node tests. It
 only checks; it never deploys.
 
-## Publishing (not done yet)
+## Publishing
 
-GitHub Pages on a private repository needs a paid plan, so this waits until the owner makes the repository public.
-Nothing in this branch enables it. When ready:
+The atlas is published with GitHub Pages at <https://wommper1.github.io/southern-indiana-lore/>. Pages is set to
+Source: **GitHub Actions** (Settings, Pages). The workflow `.github/workflows/pages.yml` runs when `site/`, the tests,
+the lore pack, `ConfidenceLevel.kt` or `scripts/build_site_data.py` change on `main` (and has a manual "Run workflow"
+button). It verifies the pack, rebuilds the atlas data, runs the tests, and publishes only `site/`. Everything in
+`site/` uses relative paths, so the sub-folder address works. After a deploy, open it once on a phone while online,
+then try airplane mode.
 
-1. Make the repository public (Settings, General, Danger Zone).
-2. Settings, Pages, Build and deployment, Source: **GitHub Actions**.
-3. Move the workflow into place: `git mv docs/web-atlas/pages.yml .github/workflows/pages.yml`, commit, and push to
-   `main`. (It also has a manual "Run workflow" button.) It verifies the pack, rebuilds the atlas data, runs the
-   tests, and publishes `site/`.
-4. The atlas will appear at `https://<owner>.github.io/<repository>/`. Everything in `site/` uses relative paths, so
-   the sub-folder address works. Open it once on a phone while online, then try airplane mode.
-5. Update the README to link to it, and replace the "on the project's GitHub page" links in
-   `site/js/lib/config.js` if the repository name differs from `Wommper1/southern-indiana-lore`.
-
-The links to the verification log, license and issues on the About page point at the GitHub repository, so they only
-work once it is public.
+If the repository is ever renamed, update the links in `site/js/lib/config.js`.
 
 ## What was and was not tested
 
