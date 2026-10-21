@@ -1,20 +1,28 @@
 # Southern Indiana Lore v1.0.1
 
-> **DRAFT. Do not publish yet.** The sizes and hashes below are placeholders until the signed APK is built. See
-> [RELEASING.md](RELEASING.md) for how to build, sign and check it, then fill in the table and delete this box.
-
 A content update to v1.0.0. The app's features are the same; the lore pack is better checked.
 
 ## Download
 
 | File | Size | SHA-256 |
 | :--- | ---: | :--- |
-| `SouthernIndianaLore-1.0.1-release.apk` | (fill in) | (fill in) |
+| `SouthernIndianaLore-1.0.1-release.apk` | 14.6 MB (14,580,817 bytes) | `89a59316642e42d18ef23be49dbcbdd712742057bc56d831e03d02c41015a8ae` |
 
 Requires Android 7.0 or newer. The APK is signed by **Alex Shade Productions** with the same key as v1.0.0, so it installs
 over v1.0.0. The signer certificate's SHA-256 must be
-`42aa4c27c07c3afbf4e98e048d37f5e3febe061d6a34532d1fb99cecab761a41`, the same as v1.0.0. To check your download, see "Check
-your download" in the [v1.0.0 notes](RELEASE_NOTES_v1.0.0.md); use the hash in the table above.
+`42aa4c27c07c3afbf4e98e048d37f5e3febe061d6a34532d1fb99cecab761a41`, the same as v1.0.0. To check your download, compare its SHA-256 with the table above:
+
+```powershell
+# Windows PowerShell
+Get-FileHash .\SouthernIndianaLore-1.0.1-release.apk -Algorithm SHA256
+```
+
+```bash
+# Linux or macOS
+sha256sum SouthernIndianaLore-1.0.1-release.apk
+```
+
+The [v1.0.0 notes](RELEASE_NOTES_v1.0.0.md) also show how to check the signer with `apksigner`.
 
 ## What changed
 
@@ -46,4 +54,7 @@ are untested.
 ## About this build
 
 - Version 1.0.1 (version code 2), lore pack 1.12.1, application ID unchanged.
-- Fill in after building: commit, Android Gradle Plugin, Gradle and JDK versions, number of tests passed, size and SHA-256.
+- Built on 2026-10-21 from commit `483d1de`.
+- Android Gradle Plugin 9.1.1, Gradle 9.5.0, JDK 25 (Android Studio runtime), compile SDK 36, minimum SDK 24.
+- 64 automated tests passed (unit and Robolectric). Android lint was not re-run for this build.
+- Not minified. Signed with APK signature schemes v2 and v3 (checked with `apksigner`); the signer matches v1.0.0.
