@@ -1,6 +1,6 @@
 # Lore Pack Verification Log
 
-Last updated: October 2026. Pack version 1.11.0.
+Last updated: October 2026. Pack version 1.11.1.
 
 The lore pack in `app/src/main/assets/lorepacks/southern_indiana/` has 52 sites. The citations that came with
 the original data were never independently checked, and when we started checking, many entries turned out to
