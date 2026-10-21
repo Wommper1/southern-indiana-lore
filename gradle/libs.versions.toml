@@ -22,7 +22,7 @@ kotlinxCoroutinesAndroid = "1.10.2"
 kotlinxCoroutinesCore = "1.10.2"
 playServicesLocation = "21.3.0"
 robolectric = "4.16.1"
-roborazzi = "1.59.0"
+roborazzi = "1.76.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
