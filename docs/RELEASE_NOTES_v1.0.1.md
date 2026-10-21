@@ -41,8 +41,9 @@ The [v1.0.0 notes](RELEASE_NOTES_v1.0.0.md) also show how to check the signer wi
 ## Updating from v1.0.0
 
 Install the new APK over the old one. The app replaces only its own lore-pack sites when the pack changes and is built to
-leave your journal entries and custom sites alone. (That behavior comes from reading the code; it has not been tested on a
-phone.) Export a dossier first if you want a backup; the app does not back up your data.
+leave your journal entries and custom sites alone. The owner installed this version over v1.0.0 on a Samsung Galaxy S25
+Ultra on 2026-10-21 and reported that it works; other devices are untested. Export a dossier first if you want a backup; the
+app does not back up your data.
 
 ## Known limitations
 
