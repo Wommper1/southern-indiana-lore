@@ -18,7 +18,7 @@ your download" in the [v1.0.0 notes](RELEASE_NOTES_v1.0.0.md); use the hash in t
 
 ## What changed
 
-- **Lore pack 1.12.0: all 52 entries have now been checked against public sources.** The last six were checked in this round:
+- **Lore pack 1.12.1: all 52 entries have now been checked against public sources.** The last six were checked in this round:
   - *Salem (Morgan's Raid and the Quakers)* is now **Plausible**. The state marker confirms the July 10, 1863 occupation, the
     looting and a $1,000 ransom from each mill owner; the raiders numbered about 1,800, not 2,400. The Underground Railroad
     claims stay but are marked as resting on later recollections.
@@ -26,7 +26,7 @@ your download" in the [v1.0.0 notes](RELEASE_NOTES_v1.0.0.md); use the hash in t
     source supports the trestle derailment or the wrecks.
   - *Floyd County Asylum*, *Floyds Knobs* and *Silver Hills Hermit* were corrected and keep their labels (Probable, Folk Legend,
     Folk Legend). No source was found for the hermit.
-- Three missing apostrophes in the story text were fixed.
+- Three missing apostrophes in the story text were fixed, and entries no source supports no longer show an exact date as their era.
 - The Morgan's Raid trail description now matches the Battle of Corydon entry.
 - Full details: [VERIFICATION_LOG.md](VERIFICATION_LOG.md).
 
@@ -45,5 +45,5 @@ are untested.
 
 ## About this build
 
-- Version 1.0.1 (version code 2), lore pack 1.12.0, application ID unchanged.
+- Version 1.0.1 (version code 2), lore pack 1.12.1, application ID unchanged.
 - Fill in after building: commit, Android Gradle Plugin, Gradle and JDK versions, number of tests passed, size and SHA-256.

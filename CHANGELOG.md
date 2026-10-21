@@ -24,7 +24,8 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 ### Changed
 
-- Lore pack 1.12.0: the last six entries were fact-checked, so all 52 have now been checked against public sources. Salem (Morgan's Raid)
+- Lore pack 1.12.1: the era line no longer shows exact dates for entries no source supports (Falling Run, Silver Hills, Twelve Mile Island,
+  Greenville, the poor farm). Lore pack 1.12.0: the last six entries were fact-checked, so all 52 have now been checked against public sources. Salem (Morgan's Raid)
   is now Plausible, with the $1,000 mill ransom confirmed by the state marker; Falling Run and Twelve Mile Island are now Unverified because
   nothing supported them; the others were corrected and kept their labels. See `docs/VERIFICATION_LOG.md`.
   The released v1.0.0 APK still has the older text; the next app build picks all of this up.
