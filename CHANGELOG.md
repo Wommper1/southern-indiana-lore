@@ -10,10 +10,16 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 - Web atlas (`site/`): a free, offline-capable website version of the lore pack for people who cannot install the
   Android app, with the same trust badges and wording, a schematic SVG map with no tile servers, a foreground-only
-  Near me mode, and no trackers. Not published yet; see `docs/WEB_ATLAS.md`.
+  Near me mode, and no trackers. Published with GitHub Pages at <https://wommper1.github.io/southern-indiana-lore/>; see
+  `docs/WEB_ATLAS.md`.
 - `scripts/build_site_data.py` (regenerates the web atlas data from the pack) and `scripts/serve_site.py` (local preview).
 - `Web atlas CI` workflow: runs the web atlas tests and the data-drift check on pull requests that touch the atlas, the pack, or
   the badge definitions.
+
+### Fixed
+
+- Three missing apostrophes in the lore pack text ("Indiana's" twice, "Morgan's forces"). The lore pack is now version 1.11.1.
+  The released v1.0.0 APK still has the old text; the next app build will pick this up.
 
 ## [1.0.0] - 2026-10-18
 
