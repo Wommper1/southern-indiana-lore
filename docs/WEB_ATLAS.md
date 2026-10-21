@@ -136,6 +136,7 @@ unverified until someone tries it on a device.
 - Near me needs the page open and the screen on. iPhones may keep the sound low until the volume is raised, and may
   ask for a tap before speaking; the page unlocks speech from the Start and checkbox taps.
 - Web GPS is coarser than the app's; automatic read-aloud ignores fixes wider than 150 m.
+- After the atlas is updated, someone who has visited before may need to reload the page once or twice to see the new content. The new offline copy downloads in the background and replaces the old one on a later load; if a download is interrupted, the old copy keeps working and the next visit tries again. First-time visitors always get the newest version.
 - The lore pack's own limits apply: history is only partly verified (see [VERIFICATION_LOG.md](VERIFICATION_LOG.md)).
 
 ## Where things are
