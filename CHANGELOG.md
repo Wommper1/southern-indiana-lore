@@ -6,6 +6,8 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-10-21
+
 ### Added
 
 - Web atlas (`site/`): a free, offline-capable website version of the lore pack for people who cannot install the
