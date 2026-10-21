@@ -1,15 +1,7 @@
-# GitHub Pages deployment for the web atlas. THIS FILE IS NOT ACTIVE.
-#
-# It sits in docs/ on purpose, so GitHub does not run it. Do not enable it until the repository is public
-# (GitHub Pages on a private repository needs a paid plan). To switch it on, see docs/WEB_ATLAS.md, "Publishing":
-#
-#   1. Make the repository public.
-#   2. Settings > Pages > Build and deployment > Source: GitHub Actions.
-#   3. git mv docs/web-atlas/pages.yml .github/workflows/pages.yml   (then commit and push to main)
-#
-# What it does: checks the lore pack hashes, rebuilds site/data and the offline file list from the pack, runs the
-# web atlas tests, and publishes only the site/ folder. Action versions follow the repository's other workflows;
-# Dependabot (see .github/dependabot.yml) will propose newer ones.
+# GitHub Pages deployment for the web atlas. It checks the lore pack hashes, rebuilds site/data and the offline
+# file list from the pack, runs the web atlas tests, and publishes only the site/ folder.
+# Pages must be set to Source: GitHub Actions (Settings > Pages). Action versions follow the repository's other
+# workflows; Dependabot (see .github/dependabot.yml) will propose newer ones.
 
 name: Deploy web atlas
 

@@ -22,6 +22,8 @@ You need an Android 7.0 or newer phone. No account and no internet connection ar
 3. **Demo without leaving your chair.** Open the **Tour** tab in the bottom dock, find **Desk & Tabletop Mode**, and tap **Simulate Route**. The app walks a pretend location through nine New Albany-area sites, about four seconds each, so nearby sites should trigger their alerts and narration as it goes. Tap **Stop Sim** to end it.
 4. **Look around.** The dock has six tabs: Desk, Radar, Tour, Library, Relics, and Pack. Tap any site to see its history, folklore, sources, and a confidence badge showing how thoroughly it has been verified.
 
+**On an iPhone or iPad?** There is no iPhone app. A free web edition, the [Southern Indiana Lore Atlas](https://wommper1.github.io/southern-indiana-lore/), runs in Safari and works offline once opened. It is a beta that has not yet been tried on a real iPhone, and its "Near me" mode only works while the page is open and the screen is on; background drive-by alerts are a feature of the Android app.
+
 ---
 
 ## Key Features

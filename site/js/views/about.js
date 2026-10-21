@@ -74,6 +74,13 @@ export function renderAbout(ctx, params) {
     ),
 
     block(
+      "beta",
+      "Beta: not yet tried on an iPhone",
+      h("p", null, "This web edition is new. It has been tested in desktop Chrome and a phone-size browser window, but not yet on a real iPhone, so Add to Home Screen, spoken narration and the location prompt may behave differently there. Near me only works while the page is open and the screen is on; background drive-by alerts are a feature of the Android app."),
+      h("p", null, externalLink(ISSUES_URL, "Tell us if something looks wrong"), h("span", { class: "fine" }, " (on the project's GitHub page)"))
+    ),
+
+    block(
       "badges",
       "How far to trust each entry",
       h("p", null, "Every site carries a trust badge, and history that is not fully verified is labeled that way on its page. \"Plausible\" does not mean proven. These are the badges in use:"),
