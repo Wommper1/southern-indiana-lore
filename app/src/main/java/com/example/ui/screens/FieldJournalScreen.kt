@@ -598,7 +598,7 @@ fun FieldJournalScreen(
                                         color = GildedGoldBright
                                     )
                                     Text(
-                                        text = "Version 1.0.0 Production Release by Alex Shade Productions",
+                                        text = "Version 1.0.1 Production Release by Alex Shade Productions",
                                         style = MaterialTheme.typography.labelSmall,
                                         color = Color(0xFFD1D5DB)
                                     )
@@ -610,7 +610,7 @@ fun FieldJournalScreen(
                                 shape = RoundedCornerShape(6.dp)
                             ) {
                                 Text(
-                                    text = "v1.0.0",
+                                    text = "v1.0.1",
                                     style = MaterialTheme.typography.labelSmall.copy(
                                         fontWeight = FontWeight.Bold
                                     ),
@@ -706,7 +706,7 @@ fun FieldJournalScreen(
                                 ExpeditionDossierExporter.shareContent(
                                     context = context,
                                     content = dossierMd,
-                                    subject = "Southern Indiana Lore - Expedition Dossier v1.0.0",
+                                    subject = "Southern Indiana Lore - Expedition Dossier v1.0.1",
                                     mimeType = "text/markdown"
                                 )
                             },
@@ -743,7 +743,7 @@ fun FieldJournalScreen(
                                 soundEngine?.playWaxSealBreak()
                                 val gpxXml = ExpeditionDossierExporter.generateGpxTrack(
                                     sites = domainSites,
-                                    trackName = "Southern Indiana Lore Waypoints v1.0.0"
+                                    trackName = "Southern Indiana Lore Waypoints v1.0.1"
                                 )
                                 ExpeditionDossierExporter.shareContent(
                                     context = context,
