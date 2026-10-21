@@ -349,7 +349,7 @@ fun AdventureTopBar(
                         )
                         StatBadge(
                             icon = Icons.Default.CheckCircle,
-                            label = "v1.0.0",
+                            label = "v1.0.1",
                             tint = GildedGoldBright,
                             modifier = Modifier.weight(0.9f)
                         )

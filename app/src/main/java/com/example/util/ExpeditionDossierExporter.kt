@@ -33,7 +33,7 @@ object ExpeditionDossierExporter {
 
         val sb = StringBuilder()
         sb.append("# $title\n\n")
-        sb.append("**Production**: Alex Shade Productions — Southern Indiana Lore v1.0.0  \n")
+        sb.append("**Production**: Alex Shade Productions — Southern Indiana Lore v1.0.1  \n")
         sb.append("**Generated**: $now  \n")
         sb.append("**Total Mapped POIs**: $totalSites  \n")
         sb.append("**Sites Encountered/Visited**: $visitedSites  \n")
@@ -108,7 +108,7 @@ object ExpeditionDossierExporter {
             sb.append("---\n\n")
         }
 
-        sb.append("*(Exported automatically from Southern Indiana Lore v1.0.0 by Alex Shade Productions)*\n")
+        sb.append("*(Exported automatically from Southern Indiana Lore v1.0.1 by Alex Shade Productions)*\n")
         return sb.toString()
     }
 
@@ -123,7 +123,7 @@ object ExpeditionDossierExporter {
         val sb = StringBuilder()
 
         sb.append("""<?xml version="1.0" encoding="UTF-8"?>""").append("\n")
-        sb.append("""<gpx version="1.1" creator="Southern Indiana Lore v1.0.0 - Alex Shade Productions"""")
+        sb.append("""<gpx version="1.1" creator="Southern Indiana Lore v1.0.1 - Alex Shade Productions"""")
         sb.append(""" xmlns="http://www.topografix.com/GPX/1/1"""")
         sb.append(""" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"""")
         sb.append(""" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">""").append("\n")

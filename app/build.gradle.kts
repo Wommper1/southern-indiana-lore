@@ -11,8 +11,8 @@ plugins {
 val uploadKeystore: File? = System.getenv("KEYSTORE_PATH")?.let { file(it) }?.takeIf { it.exists() }
 
 // Single source of truth for the version; also names the output files
-// (e.g. SouthernIndianaLore-1.0.0-debug.apk).
-val appVersionName = "1.0.0"
+// (e.g. SouthernIndianaLore-1.0.1-debug.apk).
+val appVersionName = "1.0.1"
 base { archivesName.set("SouthernIndianaLore-$appVersionName") }
 
 android {
@@ -23,7 +23,7 @@ android {
     applicationId = "com.aistudio.southernindianalore.qvmtzy"
     minSdk = 24
     targetSdk = 36
-    versionCode = 1
+    versionCode = 2
     versionName = appVersionName
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
