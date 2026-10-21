@@ -7,6 +7,8 @@
 [![License](https://img.shields.io/badge/License-MIT%20code%20%2F%20CC%20BY--SA%204.0%20content-blue.svg)](#license)
 [![CI](https://github.com/Wommper1/southern-indiana-lore/actions/workflows/android-ci.yml/badge.svg)](https://github.com/Wommper1/southern-indiana-lore/actions/workflows/android-ci.yml)
 
+**Get it:** [Android app (signed APK)](https://github.com/Wommper1/southern-indiana-lore/releases/latest) | [Web atlas for iPhone and any browser](https://wommper1.github.io/southern-indiana-lore/)
+
 A location-aware, offline-first native Android application by **Alex Shade Productions**. 
 
 Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 52 sites across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. All 52 have been checked against public sources and corrected where they were wrong, though most are only badged Plausible and a few found nothing to support them; each site's badge says how far to trust it (see [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md)). As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
