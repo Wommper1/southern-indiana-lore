@@ -16,8 +16,13 @@ updates:
           - "org.jetbrains.kotlinx*"
           - "com.google.devtools.ksp*"
 
-  # GitHub Actions used by the CI workflow
+  # GitHub Actions used by the CI, atlas and Pages workflows.
+  # All action updates arrive together as one weekly pull request instead of one per action.
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
