@@ -1,5 +1,7 @@
 # Southern Indiana Lore
 
+[Project case study](CASE_STUDY.md) · [Meet Alex Shade](https://github.com/Wommper1) · [The Level Everything Company](https://leveleverythingcompany.github.io/)
+
 [![Platform](https://img.shields.io/badge/Platform-Android-green.svg)](https://android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-2.0+-purple.svg)](https://kotlinlang.org)
 [![Compose](https://img.shields.io/badge/Jetpack_Compose-Material_3-blue.svg)](https://developer.android.com/jetpack/compose)
@@ -118,7 +120,7 @@ southern-indiana-lore/
 │   └── build.gradle.kts                  # App build & dependency specifications
 ├── docs/                                 # Design notes, verification log, map architecture, publishing guide
 ├── scripts/                              # update_pack_manifest.py (lore pack hashes), build_site_data.py and serve_site.py (web atlas)
-├── site/                                 # Web atlas: the lore pack as a plain HTML/CSS/JS website (not hosted yet)
+├── site/                                 # Web atlas: the lore pack as a live plain HTML/CSS/JS website
 ├── tests/site/                           # Node tests for the web atlas
 ├── .github/                              # CI workflow, Dependabot, issue and pull request templates
 ├── CHANGELOG.md                          # What changed in each release
