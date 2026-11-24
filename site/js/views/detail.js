@@ -8,6 +8,8 @@ import {
 import { stop as stopSpeech, speechSupported, onSpeakingChange, isSpeaking, unlock } from "../lib/speech.js";
 import { narrate } from "../lib/personas.js";
 import { narratorPicker } from "./narratorpicker.js";
+import { sharePanel, pageUrl } from "./share.js";
+import { correctionUrl } from "../lib/config.js";
 import { formatMeters } from "../lib/geo.js";
 import { badge, statusCard, section } from "../ui.js";
 import { journalPanel } from "./journalpanel.js";
@@ -166,7 +168,12 @@ export function renderDetail(ctx, id, canGoBack) {
 
   const mine = journalPanel(site);
   const picker = narratorPicker({ compact: true });
-  const sourcePanel = section(HEADING_SOURCES, "panel-sources", paras(sourcesText(site), "small"));
+  const hash = "#/site/" + encodeURIComponent(site.id);
+  const sourcePanel = section(HEADING_SOURCES, "panel-sources", paras(sourcesText(site), "small"),
+    h("p", { class: "fine" }, "Spotted a mistake? ",
+      h("a", { href: correctionUrl(site, pageUrl(hash)), target: "_blank", rel: "noopener noreferrer" }, "Suggest a correction"),
+      " (opens GitHub; needs a free account, and what you write there is public). A source makes a correction much more useful."));
+  const share = sharePanel({ title: site.title, hash, fileName: site.id });
 
   const el = h(
     "article",
@@ -185,7 +192,8 @@ export function renderDetail(ctx, id, canGoBack) {
     contextPanel(site),
     narrative,
     sourcePanel,
-    visiting
+    visiting,
+    share
   );
   const destroy = () => {
     mine.destroy();

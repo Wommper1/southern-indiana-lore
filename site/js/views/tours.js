@@ -10,6 +10,7 @@ import * as tourrun from "../lib/tourrun.js";
 import { unlock, speechSupported } from "../lib/speech.js";
 import { tourToGpx, gpxFileName } from "../lib/gpx.js";
 import { badge } from "../ui.js";
+import { sharePanel } from "./share.js";
 
 export function tourSites(ctx, tour) {
   return tour.stops.map((id) => ctx.byId.get(id)).filter(Boolean);
@@ -206,6 +207,7 @@ export function renderTour(ctx, id) {
     runPanel,
     h("h2", { class: "panel-title section-gap" }, "Stops in order"),
     stopsList,
+    sharePanel({ title: tour.title, hash: "#/tour/" + encodeURIComponent(tour.id), fileName: tour.id }),
     h("section", { class: "panel honest" },
       h("h2", { class: "panel-title" }, "Before you drive"),
       h("ul", { class: "plain" },

@@ -352,3 +352,27 @@ test("all site readings go through the narrator", () => {
     assert.ok(!/speak\(spokenText/.test(text), name + " reads a site without the narrator");
   }
 });
+
+// ---------- sharing and suggestions ----------
+
+test("QR codes are built on the device with a valid size", async () => {
+  const { qrMatrix } = await import(pathToFileURL(join(SITE, "js", "views", "share.js")).href);
+  const m = qrMatrix("https://wommper1.github.io/southern-indiana-lore/#/site/floyd_town_clock_church");
+  assert.ok(m.length >= 21 && (m.length - 17) % 4 === 0, "QR size is 17 + 4 x version");
+  assert.ok(m.every((row) => row.length === m.length));
+  // the three finder patterns' corners are dark
+  assert.ok(m[0][0] && m[0][m.length - 1] && m[m.length - 1][0]);
+});
+
+test("correction and suggestion links pre-fill real issue forms", async () => {
+  const { correctionUrl, suggestSiteUrl, REPO_URL } = await load("config.js");
+  const url = new URL(correctionUrl({ title: "Duncan Tunnel" }, "https://example.test/#/site/x"));
+  assert.ok(url.href.startsWith(REPO_URL + "/issues/new?"));
+  assert.equal(url.searchParams.get("template"), "data_correction.yml");
+  assert.equal(url.searchParams.get("site"), "Duncan Tunnel");
+  assert.equal(new URL(suggestSiteUrl()).searchParams.get("template"), "new_site.yml");
+  for (const [template, ids] of [["data_correction.yml", ["site", "wrong"]], ["new_site.yml", []]]) {
+    const form = readFileSync(join(ROOT, ".github", "ISSUE_TEMPLATE", template), "utf8");
+    for (const id of ids) assert.ok(new RegExp("id: " + id + "\\b").test(form), template + " has no field " + id);
+  }
+});

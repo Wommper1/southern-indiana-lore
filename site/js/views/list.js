@@ -6,6 +6,7 @@ import { distanceMeters, formatDistance } from "../lib/geo.js";
 import * as position from "../lib/position.js";
 import { badge } from "../ui.js";
 import * as journal from "../lib/journal.js";
+import { suggestSiteUrl } from "../lib/config.js";
 
 function readCriteria(params) {
   return {
@@ -179,7 +180,10 @@ export function renderList(ctx, params) {
     h("div", { class: "chips", role: "group", "aria-label": "Filter by trust badge" }, chips),
     h("div", { class: "result-row" }, count, clearButton),
     results,
-    empty
+    empty,
+    h("p", { class: "fine suggest" }, "Know a place that belongs here? ",
+      h("a", { href: suggestSiteUrl(), target: "_blank", rel: "noopener noreferrer" }, "Suggest a site"),
+      " (opens GitHub; needs a free account, and what you write there is public).")
   );
   update();
   let alive = true;

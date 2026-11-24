@@ -1,0 +1,45 @@
+name: Suggest a site
+description: A southern Indiana place, legend or piece of history that should be in the atlas
+labels: ["data", "new site"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Everything you write here is public. Please do not include your home address or
+        anyone's private information, and only suggest places people can see from public land.
+  - type: input
+    id: site
+    attributes:
+      label: Place name
+      description: For example "Old Tunnelton cemetery".
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where is it?
+      description: Town and county, or a public landmark nearby. Coordinates are welcome if you have them.
+    validations:
+      required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: The history or the story
+      description: What happened there, or what people say happened. Say which parts are documented and which are local legend.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Sources
+      description: Links or citations (historical markers, National Register records, newspapers, county histories). Leave blank if it is only oral tradition, and say so above.
+  - type: dropdown
+    id: access
+    attributes:
+      label: Can people see it from public land?
+      options:
+        - Yes, it is public or visible from a public road
+        - Partly or not sure
+        - No, it is on private land
+    validations:
+      required: true

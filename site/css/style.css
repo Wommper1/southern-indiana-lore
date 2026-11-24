@@ -351,3 +351,8 @@ a.btn { display: inline-flex; align-items: center; text-decoration: none; }
 .narrator-desc { display: block; margin-top: 4px; }
 .narrator-compact .field-label { margin-top: 4px; }
 .btn-small { min-height: 44px; padding: 0 14px; font-size: 14px; }
+
+/* ---- share ---- */
+.qr-slot { margin-top: 10px; max-width: 260px; }
+.qr { display: block; width: 100%; height: auto; border-radius: 8px; }
+.suggest { margin-top: 18px; }
