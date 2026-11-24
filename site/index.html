@@ -8,7 +8,7 @@
   <meta name="theme-color" content="#090d16">
   <meta name="color-scheme" content="dark">
   <!-- Only files from this site may load. This is what keeps "no trackers, no third-party requests" true. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
@@ -59,9 +59,17 @@
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.800 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="9.500" r="2.500" fill="currentColor"/></svg>
       <span>Map</span>
     </a>
+    <a href="#/tours" data-tab="tours">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="6" cy="18" r="2.500" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="2.500" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.500 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.500" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2.500 2.500"/></svg>
+      <span>Tours</span>
+    </a>
     <a href="#/near" data-tab="near">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.500" fill="currentColor"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       <span>Near me</span>
+    </a>
+    <a href="#/mine" data-tab="mine">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path d="M6 3h12v18l-6-4-6 4Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      <span>Mine</span>
     </a>
     <a href="#/about" data-tab="about">
       <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v5.500" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7.800" r="1.200" fill="currentColor"/></svg>

@@ -198,10 +198,12 @@ test("external links open safely and are only things a person taps", () => {
   }
 });
 
-test("location is never stored or logged", () => {
+test("location is never stored or logged; only the journal module uses browser storage", () => {
   for (const file of walk(join(SITE, "js"))) {
     const text = readFileSync(file, "utf8");
-    assert.ok(!/(localStorage|sessionStorage|indexedDB|document\.cookie)/.test(text), relative(SITE, file) + " uses browser storage");
+    const name = relative(SITE, file).split("\\").join("/");
+    assert.ok(!/(localStorage|sessionStorage|document\.cookie)/.test(text), name + " uses browser storage");
+    if (name !== "js/lib/journal.js") assert.ok(!/indexedDB/.test(text), name + " uses IndexedDB (only js/lib/journal.js may)");
     assert.ok(!/console\.(log|info|debug)/.test(text), relative(SITE, file) + " logs to the console");
   }
 });
@@ -244,4 +246,33 @@ test("the street map only reads its map file from this site", () => {
   assert.ok(sw.includes('const MAP_CACHE = "atlas-basemap-v1"') && basemap.includes('export const MAP_CACHE = "atlas-basemap-v1"'), "page and worker agree on the saved-map store");
   const precache = readFileSync(join(SITE, "precache.js"), "utf8");
   assert.ok(!/"map\//.test(precache), "the big map file is never saved for every visitor");
+});
+
+test("the journal never stores a position", () => {
+  const text = readFileSync(join(SITE, "js", "lib", "journal.js"), "utf8");
+  assert.ok(!/\b(lat|lon|latitude|longitude|coords)\b/.test(text), "journal.js must not handle coordinates");
+  const panel = readFileSync(join(SITE, "js", "views", "journalpanel.js"), "utf8");
+  assert.ok(/setVisited\(site\.id, true, near\)/.test(panel), "a check-in stores only a yes/no 'near'");
+});
+
+test("journal backups are validated before loading", async () => {
+  globalThis.indexedDB = undefined;
+  const journal = await load("journal.js");
+  assert.equal(journal.validateBackup({ format: "other" }).ok, false);
+  assert.equal(journal.validateBackup({ format: journal.BACKUP_FORMAT, version: 99 }).ok, false);
+  const checked = journal.validateBackup({
+    format: journal.BACKUP_FORMAT,
+    version: 1,
+    sites: [
+      { siteId: "floyd_culbertson_mansion", favorite: true, visitedAt: "2026-05-01T12:00:00Z", note: "x", extra: "<script>" },
+      { siteId: "../../etc", favorite: true },
+      { siteId: "bad_date", visitedAt: "not a date" },
+      null,
+    ],
+    photos: [{ siteId: "a", data: "data:image/jpeg;base64,AAAA" }, { siteId: "b", data: "javascript:alert(1)" }],
+  });
+  assert.ok(checked.ok);
+  assert.deepEqual(checked.sites.map((s) => s.siteId), ["floyd_culbertson_mansion"]);
+  assert.equal(checked.sites[0].extra, undefined, "unknown fields are dropped");
+  assert.equal(checked.photos.length, 1);
 });

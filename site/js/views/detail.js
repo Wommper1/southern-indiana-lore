@@ -8,6 +8,7 @@ import {
 import { speak, stop as stopSpeech, speechSupported, onSpeakingChange, isSpeaking, unlock } from "../lib/speech.js";
 import { formatMeters } from "../lib/geo.js";
 import { badge, statusCard, section } from "../ui.js";
+import { journalPanel } from "./journalpanel.js";
 
 const KARST_DISCLOSURE =
   "Karst survey disclosure: karst conduit pathways and subterranean hydrology are mapped from geological surveys and spring dye traces. Cave protection regulations apply.";
@@ -161,6 +162,7 @@ export function renderDetail(ctx, id, canGoBack) {
     h("p", { class: "safety" }, SAFETY_NOTE)
   );
 
+  const mine = journalPanel(site);
   const sourcePanel = section(HEADING_SOURCES, "panel-sources", paras(sourcesText(site), "small"));
 
   const el = h(
@@ -175,12 +177,14 @@ export function renderDetail(ctx, id, canGoBack) {
     historyPanel,
     folkPanel,
     openQuestions,
+    mine.el,
     contextPanel(site),
     narrative,
     sourcePanel,
     visiting
   );
   const destroy = () => {
+    mine.destroy();
     if (unsubscribe) unsubscribe();
     if (startedHere) stopSpeech(); // leaving the page ends the reading it started
   };

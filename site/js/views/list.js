@@ -5,6 +5,7 @@ import { filterSites, sortSites, countBy } from "../lib/filter.js";
 import { distanceMeters, formatDistance } from "../lib/geo.js";
 import * as position from "../lib/position.js";
 import { badge } from "../ui.js";
+import * as journal from "../lib/journal.js";
 
 function readCriteria(params) {
   return {
@@ -101,6 +102,14 @@ export function renderList(ctx, params) {
     sortSelect.value = criteria.sort;
   }
 
+  let marks = new Map(); // your saves and visits, from this browser only
+  function marksFor(id) {
+    const e = marks.get(id);
+    if (!e) return null;
+    const text = [e.favorite ? "★ Saved" : "", e.visitedAt ? "✓ Visited" : ""].filter(Boolean).join(" · ");
+    return text ? h("span", { class: "card-marks" }, text) : null;
+  }
+
   function update() {
     const dist = distances();
     fillSortOptions(Boolean(dist));
@@ -117,7 +126,7 @@ export function renderList(ctx, params) {
             "a",
             { class: "card", href: "#/site/" + encodeURIComponent(site.id), "data-level": level.id },
             h("div", { class: "card-top" }, badge(level, { compact: true }),
-              dist ? h("span", { class: "card-distance" }, formatDistance(dist.get(site.id))) : null),
+              dist ? h("span", { class: "card-distance" }, formatDistance(dist.get(site.id))) : marksFor(site.id)),
             h("h3", { class: "card-title" }, site.title),
             h("p", { class: "card-sub" }, site.subtitle),
             h("p", { class: "card-meta" }, site.county + " · " + site.era)
@@ -173,5 +182,10 @@ export function renderList(ctx, params) {
     empty
   );
   update();
-  return { el, destroy: unsubscribe, title: "Sites" };
+  let alive = true;
+  journal.all().then((loaded) => {
+    marks = loaded;
+    if (alive && loaded.size) update();
+  });
+  return { el, destroy: () => { alive = false; unsubscribe(); }, title: "Sites" };
 }

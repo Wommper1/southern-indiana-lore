@@ -14,6 +14,7 @@ import { renderDetail } from "./views/detail.js";
 import { renderMap } from "./views/atlasmap.js";
 import { renderNear } from "./views/near.js";
 import { renderAbout } from "./views/about.js";
+import { renderMine } from "./views/mine.js";
 
 const app = document.getElementById("app");
 const main = document.getElementById("main");
@@ -43,7 +44,7 @@ function showError(title, message) {
 }
 
 function setActiveTab(name) {
-  const tab = { list: "list", site: "list", map: "map", near: "near", about: "about" }[name] || "list";
+  const tab = { list: "list", site: "list", map: "map", tours: "tours", tour: "tours", near: "near", mine: "mine", about: "about" }[name] || "list";
   for (const link of document.querySelectorAll(".tabbar a")) {
     const active = link.dataset.tab === tab;
     if (active) link.setAttribute("aria-current", "page");
@@ -61,6 +62,7 @@ function route() {
     else if (name === "map") view = renderMap(ctx, params);
     else if (name === "near") view = renderNear(ctx);
     else if (name === "about") view = renderAbout(ctx, params);
+    else if (name === "mine") view = renderMine(ctx);
     else view = renderList(ctx, params);
   } catch (error) {
     console.error(error);

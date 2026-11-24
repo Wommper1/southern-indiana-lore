@@ -304,3 +304,29 @@ select.input { appearance: none; -webkit-appearance: none; padding-right: 36px;
 progress { width: 100%; height: 10px; margin: 6px 0; accent-color: var(--amber); }
 .map-wrap-street .map-controls { top: 8px; left: 8px; right: auto; bottom: auto; align-items: flex-start; z-index: 2; }
 .map-wrap-street .mpin { width: 26px; height: 26px; }
+
+/* ---- My expedition ---- */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.field-label { display: block; font-weight: 700; font-size: 14px; margin: 12px 0 6px; }
+textarea.input { width: 100%; min-height: 96px; resize: vertical; font: inherit; line-height: 1.45; }
+.panel-journal { border-color: rgba(251, 191, 36, 0.45); }
+.panel-journal .panel-title { color: var(--amber-bright); }
+.panel-journal .btn[aria-pressed="true"] { border-color: var(--amber); color: var(--amber-bright); }
+label.btn { display: inline-flex; align-items: center; }
+.gallery { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; margin: 8px 0; }
+.gallery li { display: flex; flex-direction: column; align-items: center; }
+.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; border: 1px solid var(--border); }
+.gallery .link-button { min-height: 36px; font-size: 13px; }
+.passport-count { font-size: 18px; margin: 0 0 6px; }
+.passport-count strong { font-family: var(--font-head); font-size: 32px; color: var(--amber-bright); }
+.stamps { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 6px; margin: 12px 0 0; }
+.stamp { border: 2px dashed var(--border); border-radius: 50%; aspect-ratio: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 6px; color: var(--muted); }
+.stamp-name { font-family: var(--font-head); font-size: 12px; letter-spacing: 0.04em; line-height: 1.2; }
+.stamp-count { font-size: 12px; margin-top: 4px; }
+.stamp-started { border-style: solid; border-color: #4b6a8f; color: var(--text); }
+.stamp-done { border: 3px double var(--amber); color: var(--amber-bright); background: rgba(245, 158, 11, 0.12); transform: rotate(-6deg); }
+.btn-danger { border-color: #f87171; color: #fecaca; }
+.danger-zone { margin-top: 14px; }
+.danger-zone summary { cursor: pointer; color: #fca5a5; min-height: 44px; display: flex; align-items: center; }
+.card-marks { color: var(--amber-bright); font-size: 13px; font-weight: 700; }
+.section-gap { margin-top: 20px; }
