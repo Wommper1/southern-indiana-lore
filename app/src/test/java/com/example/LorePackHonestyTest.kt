@@ -72,7 +72,8 @@ class LorePackHonestyTest {
             val notes = site.sourceNotes
             assertTrue(
                 "${site.id}: sourceNotes must say the citations were checked or not verified",
-                notes.contains("Checked October 2026") || notes.contains("not been independently verified")
+                notes.contains("Checked October 2026") || notes.contains("Checked November 2026") ||
+                    notes.contains("not been independently verified")
             )
         }
     }

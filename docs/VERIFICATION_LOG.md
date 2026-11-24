@@ -2,18 +2,18 @@
 
 Last updated: November 2026. Pack version 1.13.0.
 
-The lore pack in `app/src/main/assets/lorepacks/southern_indiana/` has 52 sites. The citations that came with
+The lore pack in `app/src/main/assets/lorepacks/southern_indiana/` has 58 sites. The citations that came with
 the original data were never independently checked, and when we started checking, many entries turned out to
 contain details that the sources do not support. This file records what was checked, what was changed, and what
-is still unverified, so the in-app labels are honest. Three rounds of checking have been done: 25 entries first, then 21 more, then the last 6, so **all 52 entries have
-now been checked** against public sources. A fourth round (November 2026) rechecked the four entries that were still Unverified. Checked does not mean confirmed: the labels below say how far each check got.
+is still unverified, so the in-app labels are honest. Three rounds of checking have been done: 25 entries first, then 21 more, then the last 6, so **all 52 original entries
+have been checked** against public sources. A fourth round (November 2026) rechecked the four entries that were still Unverified and added six new sites, each checked before it went in. Checked does not mean confirmed: the labels below say how far each check got.
 
 ## How the labels work
 
 | Label (in app) | Meaning in this pack | Entries |
 | :--- | :--- | ---: |
-| Official Source | An official designation (for example National Historic Landmark) was confirmed against an independent source | 3 |
-| Plausible | Checked against independent sources and corrected where they disagreed; some other details are still unconfirmed | 43 |
+| Official Source | An official designation (for example National Historic Landmark) was confirmed against an independent source | 7 |
+| Plausible | Checked against independent sources and corrected where they disagreed; some other details are still unconfirmed | 45 |
 | Unverified | Not confirmed: either not checked yet, or checked and no supporting source was found | 2 |
 | Folk Legend / Oral History / Probable | The entry's own nature (folklore, oral tradition) or an older label that already admitted incomplete verification. Not re-labeled | 4 |
 
@@ -117,6 +117,24 @@ treat these as one step removed from the pages themselves.
 
 Claims removed from Greenville were added to the Android test that stops removed claims from coming back.
 
+## New sites added (November 2026)
+
+Six sites were added to cover counties the pack barely reached (Spencer County had none). Each is a public landmark
+with an official designation or a state historical marker, and each was checked before it went in, mostly through
+search-result quotations of the pages listed below. Where sources disagree, the entry says so in its open questions.
+
+| Entry | Label | What was confirmed | Disagreements kept in the entry |
+| :--- | :--- | :--- | :--- |
+| West Baden Springs Hotel (Orange) | Official Source | National Register 1974, National Historic Landmark 1987; Lee Wiley Sinclair; rebuilt after a 1901 fire and opened 1902; dome about 195 ft; closed 1932; Indiana Landmarks purchase 1996 | How long the dome was the world's largest (to 1913, or to 1963) |
+| Lincoln Boyhood National Memorial (Spencer) | Official Source | National Park Service unit; family arrived December 1816; Nancy Hanks Lincoln died 1818 of milk sickness; grave marked 1879 from local tradition; authorized 1962, transferred to the NPS 1963 | The grave location rests on 1879 tradition |
+| Angel Mounds (Vanderburgh) | Official Source | Mississippian town about 1000/1100 to 1450 CE; up to about 1,000 residents; National Historic Landmark | Start date (1000 or 1100); landmark year (1964 in most sources, 1962 in one) |
+| Grouseland (Knox) | Plausible | Built 1802-1804 for William Henry Harrison as territorial governor; Treaty of Grouseland 1805; National Register 1966 | Landmark year (1960 in most sources, 2005 in one) |
+| Pigeon Roost Memorial (Scott) | Plausible | Settled 1809; attacked September 3, 1812 (state marker); memorial dedicated 1904; state historic site 1929, now Scott County | Death toll ("over 20" or 24); one account gives September 6; who led the raid and the usual telling are disputed |
+| Lanier Mansion (Jefferson) | Official Source | Francis Costigan for James F. D. Lanier, completed 1844; given to the county historical society 1917, state 1925; National Historic Landmark 1994 | Start of construction (1840 or 1842) |
+
+The new sites were also added to three driving tours on the web atlas: West Baden to Cave Country, Lanier Mansion to
+First Capital & the Road to Freedom, and Lincoln Boyhood and Angel Mounds to Ohio River Road West.
+
 ## Confirmed without changes
 
 - **Cannelton Cotton Mill & Industrial Fortress**: National Register (1975) and National Historic Landmark (1991) status confirmed
@@ -160,6 +178,8 @@ each specific claim (dates, numbers, names), and send the correction with the so
 markers, National Register records, and period newspapers over summaries. See CONTRIBUTING.md.
 
 ## Sources used
+
+- New sites: [NPS, Easements protect West Baden Springs Hotel](https://www.nps.gov/articles/easements-protect-west-baden-springs-hotel.htm), [Library of Congress HABS IN-122](https://www.loc.gov/item/in0122/), [Wikipedia: West Baden Springs Hotel](https://en.wikipedia.org/wiki/West_Baden_Springs_Hotel), [Historic Hotels of America](https://www.historichotels.org/us/hotels-resorts/west-baden-springs-hotel/history), [NPS, Nancy Hanks Lincoln Cemetery](https://www.nps.gov/libo/learn/historyculture/cemetery.htm), [NPS, Lincoln Boyhood cultural landscape](https://www.nps.gov/articles/000/lincoln-boyhood-national-memorial-500583.htm), [NPS, Angel Mounds State Historic Site](https://www.nps.gov/places/angel-mounds-state-historic-site.htm), [Indiana State Museum, Angel Mounds](https://www.indianamuseum.org/historic-sites/angel-mounds/), [Wikipedia: Angel Mounds](https://en.wikipedia.org/wiki/Angel_Mounds), [Wikipedia: Grouseland](https://en.wikipedia.org/wiki/Grouseland), [Discover Indiana History: Grouseland](https://discoverindianahistory.org/items/show/223), [IHB marker: Pigeon Roost](https://www.in.gov/history/state-historical-markers/find-a-marker/pigeon-roost/), [Wikipedia: Pigeon Roost State Historic Site](https://en.wikipedia.org/wiki/Pigeon_Roost_State_Historic_Site), [Indiana State Museum, Lanier Mansion](https://www.indianamuseum.org/historic-sites/lanier-mansion-historic-site/), [Wikipedia: Lanier Mansion](https://en.wikipedia.org/wiki/Lanier_Mansion)
 
 - Fourth round: [Historical Marker Database, Greenville marker](https://www.hmdb.org/m.asp?m=250693), [Simpson Memorial Chapel marker](https://www.hmdb.org/m.asp?m=250695), [Indiana Landmarks, Mineral Springs Hotel (Paoli)](https://www.indianalandmarks.org/endangered-property/mineral-springs-hotel/), [HistoricBridges.org, Crawford County](https://historicbridges.org/b_h_fipsm.php?bsearch=18025), [Bridgehunter.com](https://bridgehunter.com/), [Wikipedia: Greenville, Indiana](https://en.wikipedia.org/wiki/Greenville,_Indiana) (all read through search-result quotations)
 

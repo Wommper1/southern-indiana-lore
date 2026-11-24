@@ -10,7 +10,7 @@ stays in each visitor's own browser.
 
 ## What it does
 
-- **Browse and search** the 52 sites; filter by county and by trust badge; sort by name or county.
+- **Browse and search** the 58 sites; filter by county and by trust badge; sort by name or county.
 - **A page per site** with the trust badge, the history, the folklore, open questions, citations, and visiting notes.
 - **A street map** (OpenStreetMap data packaged by Protomaps, drawn with MapLibre) with every site as a pin that keeps
   its badge colour and shape. The map file is published with the site, so no map company sees where anyone looks.

@@ -14,6 +14,13 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
   unsupported mineral-springs resort story is kept only as a labeled local telling. Twelve Mile Island and Falling Run
   stay Unverified. See `docs/VERIFICATION_LOG.md`, fourth round.
 
+### Added (lore pack 1.13.0)
+
+- Six new sites, bringing the pack to 58 sites in 18 counties: West Baden Springs Hotel (Orange), Lincoln Boyhood
+  National Memorial (Spencer, a new county), Angel Mounds (Vanderburgh), Grouseland (Knox), Pigeon Roost Memorial
+  (Scott) and Lanier Mansion (Jefferson). Four carry Official Source for confirmed national designations; Grouseland
+  and Pigeon Roost are Plausible because sources disagree on details. Three web atlas tours now include them.
+
 ### Added (web atlas)
 
 - Street map: OpenStreetMap data (packaged by Protomaps) drawn on the device with MapLibre, served from the atlas's

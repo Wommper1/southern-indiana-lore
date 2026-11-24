@@ -13,7 +13,7 @@
 
 A location-aware, offline-first native Android application by **Alex Shade Productions**. 
 
-Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 52 sites across 17 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. All 52 have been checked against public sources and corrected where they were wrong, though most are only badged Plausible and a few found nothing to support them; each site's badge says how far to trust it (see [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md)). As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
+Southern Indiana Lore brings folklore, haunted legends, Underground Railroad routes, Monon rail tunnels, early Indiana statehood milestones, and forgotten Ohio River riverboat disasters to life. The bundled pack covers 58 sites across 18 southern Indiana counties, centered on Floyd, Clark, Harrison, Lawrence, and Crawford. All 58 have been checked against public sources and corrected where they were wrong, though most are only badged Plausible and a few found nothing to support them; each site's badge says how far to trust it (see [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md)). As you drive or walk, the background GPS engine detects proximity to historical points of interest and triggers narration and archival accounts.
 
 ---
 
@@ -74,7 +74,7 @@ You need an Android 7.0 or newer phone. No account and no internet connection ar
 This is an early release. Please read these before judging it.
 
 - **Limited device testing.** The automated tests pass, and the owner has tried the app on one real phone, a Samsung Galaxy S25 Ultra, with no problems noted so far. Other phones, tablets, and foldables are untested, so expect rough edges. The layout was designed around that kind of large modern phone.
-- **The history is only partly confirmed.** All 52 entries were compared with public sources (not archival records) and corrected where they were wrong, but most (43) are only badged **Plausible**: the main facts matched, and other details were not confirmed. Two were checked twice without finding anything to support them (badged **Unverified**), and several are folklore. Details can still be wrong. See [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md), and please report mistakes with a source.
+- **The history is only partly confirmed.** All 58 entries were compared with public sources (not archival records) and corrected where they were wrong, but most (45) are only badged **Plausible**: the main facts matched, and other details were not confirmed. Two were checked twice without finding anything to support them (badged **Unverified**), and several are folklore. Details can still be wrong. See [docs/VERIFICATION_LOG.md](docs/VERIFICATION_LOG.md), and please report mistakes with a source.
 - **The map is minimal.** See "On-Device Map" above. It is not a navigation map.
 - **No backup.** Journal entries, custom sites, and voice memos stay on the phone and are lost if you uninstall the app or switch phones. Export a dossier first if you want to keep them.
 - **The Archivist is not an AI.** It looks up hand-written answers for a few well-known sites.
