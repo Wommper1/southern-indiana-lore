@@ -5,6 +5,7 @@ import { h, clear } from "../lib/dom.js";
 import * as journal from "../lib/journal.js";
 import { badge } from "../ui.js";
 import { formatDate } from "./journalpanel.js";
+import { saveFile } from "../lib/savefile.js";
 
 function siteCard(ctx, site, extra) {
   const level = ctx.levelTable[site.confidenceLevel];
@@ -13,15 +14,6 @@ function siteCard(ctx, site, extra) {
       h("div", { class: "card-top" }, badge(level, { compact: true })),
       h("h3", { class: "card-title" }, site.title),
       h("p", { class: "card-meta" }, [site.county, extra].filter(Boolean).join(" · "))));
-}
-
-function download(name, text) {
-  const url = URL.createObjectURL(new Blob([text], { type: "application/json" }));
-  const a = h("a", { href: url, download: name, class: "visually-hidden" }, "download");
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
 
 export function renderMine(ctx) {
@@ -116,8 +108,10 @@ export function renderMine(ctx) {
     try {
       const data = await journal.exportBackup();
       const day = new Date().toISOString().slice(0, 10);
-      download("southern-indiana-lore-backup-" + day + ".json", JSON.stringify(data));
-      backupStatus.textContent = "Backup downloaded (" + data.sites.length + " site(s), " + data.photos.length + " photo(s)). Keep the file somewhere safe, such as your cloud drive.";
+      const how = await saveFile("southern-indiana-lore-backup-" + day + ".json", new Blob([JSON.stringify(data)], { type: "application/json" }));
+      backupStatus.textContent = how === "cancelled"
+        ? "Backup cancelled."
+        : "Backup " + (how === "shared" ? "ready" : "downloaded") + " (" + data.sites.length + " site(s), " + data.photos.length + " photo(s)). Keep the file somewhere safe, such as Files, iCloud Drive or Google Drive.";
     } catch (error) {
       backupStatus.textContent = "The backup could not be made in this browser.";
     }

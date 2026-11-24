@@ -11,6 +11,8 @@ import { unlock, speechSupported } from "../lib/speech.js";
 import { tourToGpx, gpxFileName } from "../lib/gpx.js";
 import { badge } from "../ui.js";
 import { sharePanel } from "./share.js";
+import { saveFile } from "../lib/savefile.js";
+import * as wakelock from "../lib/wakelock.js";
 
 export function tourSites(ctx, tour) {
   return tour.stops.map((id) => ctx.byId.get(id)).filter(Boolean);
@@ -32,15 +34,6 @@ function directionsLinks(site) {
     " · ",
     h("a", { href: "https://maps.apple.com/?daddr=" + ll + "&q=" + encodeURIComponent(site.title), target: "_blank", rel: "noopener noreferrer" }, "Directions in Apple Maps"),
     h("span", { class: "fine" }, " These open another app. Pins are approximate; confirm before you go."));
-}
-
-function download(name, text, type) {
-  const url = URL.createObjectURL(new Blob([text], { type }));
-  const a = h("a", { href: url, download: name, class: "visually-hidden" }, "download");
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 10000);
 }
 
 export function renderTours(ctx) {
@@ -151,7 +144,8 @@ export function renderTour(ctx, id) {
               } }, "I'm here"),
               h("button", { type: "button", class: "btn", onclick: () => tourrun.markReached(next.id) }, "Skip this stop")))
         : h("p", { class: "tour-done" }, "Tour complete. Well driven!"),
-      h("p", { class: "fine" }, locationLine),
+      h("p", { class: "fine" }, locationLine,
+        position.isActive() ? (wakelock.isHeld() ? " The screen will stay on while the tour follows you." : " Keep the screen on: the tour pauses when the phone locks.") : ""),
       h("div", { class: "actions" },
         !position.isActive() || pos.demo
           ? h("button", { type: "button", class: "btn", onclick: () => {
@@ -181,14 +175,14 @@ export function renderTour(ctx, id) {
   gpxBtn.addEventListener("click", () => {
     const base = location.href.split("#")[0];
     const gpx = tourToGpx(tour, sites, (s) => ctx.levelTable[s.confidenceLevel].label, (s) => base + "#/site/" + encodeURIComponent(s.id));
-    download(gpxFileName(tour), gpx, "application/gpx+xml");
+    saveFile(gpxFileName(tour), new Blob([gpx], { type: "application/gpx+xml" }));
   });
 
   const paintAll = () => {
     paintRun();
     paintStops();
   };
-  const unsubscribers = [tourrun.subscribe(paintAll), position.subscribe(paintRun), journal.subscribe(async () => {
+  const unsubscribers = [tourrun.subscribe(paintAll), position.subscribe(paintRun), wakelock.subscribe(paintRun), journal.subscribe(async () => {
     entries = await journal.all();
     paintStops();
   })];

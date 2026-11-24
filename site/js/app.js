@@ -18,6 +18,7 @@ import { renderMine } from "./views/mine.js";
 import { renderTours, renderTour } from "./views/tours.js";
 import * as personas from "./lib/personas.js";
 import { mountBanners } from "./views/banners.js";
+import "./lib/wakelock.js"; // keeps the screen on while Near me or a tour follows you
 
 const app = document.getElementById("app");
 const main = document.getElementById("main");

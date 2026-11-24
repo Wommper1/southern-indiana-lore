@@ -177,7 +177,12 @@ stood in for the real OpenStreetMap extract, which could not be downloaded in th
   spoken text and pitch/rate passed to speech; a tour's simulated drive; the GPX file parsing as XML; the QR code
   decoding back to its page address; the new-version banner; no horizontal scrolling at 320 px.
 
-**Not tested:** the real OpenStreetMap extract and the deploy step that builds it, real iPhone/iOS Safari (home-screen install, iOS speech and location behaviour, safe-area spacing),
+Phone compatibility pass (November 2026): an emulated iPhone 13 (iPhone user agent and screen, in Chromium; no
+Safari engine was available) confirmed the iPhone share-sheet path for backups and GPX, the photo fallback decoder,
+the Add to Home Screen banner and no sideways scrolling. The atlas was also opened on a real Samsung Galaxy S25
+(Android) by the owner. The screen wake lock could not be confirmed in a headless browser, which always refuses it.
+
+**Not tested:** real iPhone/iOS Safari (home-screen install, iOS speech and location behaviour, safe-area spacing),
 a real Android phone, real GPS, audible speech output, or an actual deployment to GitHub Pages. Treat iOS behaviour as
 unverified until someone tries it on a device.
 

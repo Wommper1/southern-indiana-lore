@@ -37,6 +37,10 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 ### Changed (web atlas)
 
+- iPhone and Android: backups, GPX tours and QR codes open the share sheet on iPhone and iPad ("Save to Files"),
+  where downloads are unreliable, especially from the Home Screen; photos that the fast decoder cannot read use a
+  fallback; and the screen stays on while Near me or a tour is following you, where the browser allows it.
+
 - The privacy rule "no browser storage" is now "browser storage only for the visitor's own journal, in one module,
   never holding a position"; tests enforce it. The About page says what is kept and how to delete it.
 - `scripts/serve_site.py` supports HTTP range requests.

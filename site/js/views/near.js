@@ -8,6 +8,7 @@ import * as announcer from "../lib/announcer.js";
 import { stop as stopSpeech, unlock, speechSupported, isSpeaking, onSpeakingChange } from "../lib/speech.js";
 import { narrate } from "../lib/personas.js";
 import { narratorPicker } from "./narratorpicker.js";
+import * as wakelock from "../lib/wakelock.js";
 import { badge } from "../ui.js";
 
 const SHOW_FIRST = 10;
@@ -93,7 +94,8 @@ export function renderNear(ctx) {
       const time = new Date(fix.time).toLocaleTimeString();
       status.textContent = state.demo
         ? "Demo location: this is a pretend position, not where you are."
-        : "Located. Accuracy about " + formatMeters(fix.accuracy) + ". Updated " + time + ".";
+        : "Located. Accuracy about " + formatMeters(fix.accuracy) + ". Updated " + time + "." +
+          (wakelock.isHeld() ? " The screen will stay on while Near me is running." : "");
       const all = ranked(fix);
       const first = all[0];
       if (first.d > FAR_AWAY_M) {
@@ -165,6 +167,7 @@ export function renderNear(ctx) {
     announcer.onAnnounce(refresh),
     onSpeakingChange(syncReadButton),
     picker.destroy,
+    wakelock.subscribe(refresh),
   ];
 
   const el = h(
@@ -176,7 +179,7 @@ export function renderNear(ctx) {
       { class: "panel honest", "aria-label": "How Near me works" },
       h("h2", { class: "panel-title" }, "Read this first"),
       h("ul", { class: "plain" },
-        h("li", null, h("strong", null, "Works only while this page is open and your screen is on."), " A web page cannot run in the background."),
+        h("li", null, h("strong", null, "Works only while this page is open and your screen is on."), " A web page cannot run in the background. On phones that allow it (recent Android and iPhone browsers), the atlas keeps the screen on while Near me or a tour is running."),
         h("li", null, "Background drive-by alerts with the screen off are a feature of the Android app only. They are not possible in an iPhone web page."),
         h("li", null, "Your location is used on this device only. This page never sends it anywhere and never saves it. (Your phone or browser may use network services to work out where you are; that happens outside this page.)"),
         h("li", null, "Pins are approximate and many sites are on private land or near active rail lines. Do not trespass.")

@@ -154,13 +154,33 @@ export async function setPref(key, value) {
 // ---------- photos ----------
 
 /** Shrink a picture and re-encode it as JPEG. Re-encoding drops EXIF data, including any GPS position. */
+async function decodeImage(file) {
+  if (typeof createImageBitmap === "function") {
+    try {
+      return await createImageBitmap(file);
+    } catch (error) {
+      /* some phones and photo formats need the <img> route below */
+    }
+  }
+  const url = URL.createObjectURL(file);
+  try {
+    const img = new Image();
+    img.src = url;
+    await img.decode();
+    return { width: img.naturalWidth, height: img.naturalHeight, source: img };
+  } finally {
+    setTimeout(() => URL.revokeObjectURL(url), 0);
+  }
+}
+
 export async function shrinkPhoto(file) {
-  const bitmap = await createImageBitmap(file);
+  const decoded = await decodeImage(file);
+  const bitmap = decoded.source ? decoded : { width: decoded.width, height: decoded.height, source: decoded, close: () => decoded.close && decoded.close() };
   const scale = Math.min(1, PHOTO_MAX_PX / Math.max(bitmap.width, bitmap.height));
   const canvas = document.createElement("canvas");
   canvas.width = Math.round(bitmap.width * scale);
   canvas.height = Math.round(bitmap.height * scale);
-  canvas.getContext("2d").drawImage(bitmap, 0, 0, canvas.width, canvas.height);
+  canvas.getContext("2d").drawImage(bitmap.source, 0, 0, canvas.width, canvas.height);
   if (bitmap.close) bitmap.close();
   return new Promise((resolve, reject) =>
     canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error("could not encode photo"))), "image/jpeg", 0.85)
