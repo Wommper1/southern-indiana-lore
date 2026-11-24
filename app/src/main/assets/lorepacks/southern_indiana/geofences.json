@@ -310,5 +310,41 @@
     "latitude": 38.8715,
     "longitude": -85.5072,
     "radiusMeters": 150
+  },
+  {
+    "siteId": "orange_west_baden_springs_hotel",
+    "latitude": 38.5672,
+    "longitude": -86.6181,
+    "radiusMeters": 150
+  },
+  {
+    "siteId": "spencer_lincoln_boyhood",
+    "latitude": 38.1183,
+    "longitude": -86.9969,
+    "radiusMeters": 300
+  },
+  {
+    "siteId": "vanderburgh_angel_mounds",
+    "latitude": 37.9425,
+    "longitude": -87.4572,
+    "radiusMeters": 400
+  },
+  {
+    "siteId": "knox_grouseland",
+    "latitude": 38.6856,
+    "longitude": -87.5261,
+    "radiusMeters": 60
+  },
+  {
+    "siteId": "scott_pigeon_roost",
+    "latitude": 38.6172,
+    "longitude": -85.7737,
+    "radiusMeters": 120
+  },
+  {
+    "siteId": "jefferson_lanier_mansion",
+    "latitude": 38.7353,
+    "longitude": -85.3859,
+    "radiusMeters": 80
   }
 ]

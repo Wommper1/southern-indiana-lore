@@ -72,7 +72,8 @@ class LorePackHonestyTest {
             val notes = site.sourceNotes
             assertTrue(
                 "${site.id}: sourceNotes must say the citations were checked or not verified",
-                notes.contains("Checked October 2026") || notes.contains("not been independently verified")
+                notes.contains("Checked October 2026") || notes.contains("Checked November 2026") ||
+                    notes.contains("not been independently verified")
             )
         }
     }
@@ -114,7 +115,10 @@ class LorePackHonestyTest {
             "dozens of packet boats",
             "2,400 cavalrymen",
             "seizing bolts of calico",
-            "Leavenworth and moving them toward Bloomington"
+            "Leavenworth and moving them toward Bloomington",
+            "operated on the site from 1885",
+            "resort hotel that burned in 1904",
+            "natural sulfur spring still discharges"
         )
         for (phrase in removed) {
             assertTrue("Removed claim is back in sites.json: '$phrase' (see docs/VERIFICATION_LOG.md)", !raw.contains(phrase))

@@ -439,7 +439,7 @@ fun RadarMapScreen(
                             item { PresetLocationChip("Clark's Point Overlook", 38.2831, -85.7876, onSetLocation) }
                             item { PresetLocationChip("Floyds Knobs", 38.3315, -85.8755, onSetLocation) }
                             item { PresetLocationChip("Silver Hills", 38.2910, -85.8450, onSetLocation) }
-                            item { PresetLocationChip("Greenville Springs", 38.3718, -85.9860, onSetLocation) }
+                            item { PresetLocationChip("Greenville", 38.3718, -85.9860, onSetLocation) }
                         }
                     }
                 }

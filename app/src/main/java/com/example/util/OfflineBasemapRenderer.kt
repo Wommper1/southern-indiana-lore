@@ -127,7 +127,7 @@ object OfflineBasemapRenderer {
         Pair(38.3300, -85.8750), // Floyds Knobs climb
         Pair(38.3619, -85.9080), // Duncan Tunnel & Edwardsville
         Pair(38.3800, -85.9400), // Georgetown cut
-        Pair(38.3718, -85.9860)  // Greenville Springs
+        Pair(38.3718, -85.9860)  // Greenville
     )
 
     /**

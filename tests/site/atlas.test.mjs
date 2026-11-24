@@ -139,7 +139,7 @@ test("map projection keeps every site inside its box", async () => {
 test("search, county and badge filters", async () => {
   const { filterSites, indexSites, sortSites } = await load("filter.js");
   const sites = indexSites(structuredClone(atlas.sites));
-  assert.equal(filterSites(sites, { q: "", county: "", levels: [] }).length, 52);
+  assert.equal(filterSites(sites, { q: "", county: "", levels: [] }).length, packSites.length);
   const floyd = filterSites(sites, { q: "", county: "Floyd County", levels: [] });
   assert.ok(floyd.length > 0 && floyd.every((site) => site.county === "Floyd County"));
   const unverified = filterSites(sites, { q: "", county: "", levels: ["UNVERIFIED"] });

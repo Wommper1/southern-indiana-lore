@@ -38,7 +38,7 @@
     {
       "id": "cave_country",
       "title": "Cave Country",
-      "summary": "Limestone karst from the Ohio River north: Squire Boone's cave, Wyandotte and Marengo, the Lost River, Spring Mill and Bluespring Caverns.",
+      "summary": "Limestone karst from the Ohio River north: Squire Boone's cave, Wyandotte and Marengo, the Lost River and the domed West Baden Springs Hotel, Spring Mill and Bluespring Caverns.",
       "duration": "A full day",
       "stops": [
         "harrison_squire_boone_caverns",
@@ -46,6 +46,7 @@
         "crawford_wyandotte_marengo_karst",
         "crawford_marengo_cave",
         "orange_lost_river_system",
+        "orange_west_baden_springs_hotel",
         "lawrence_spring_mill_twin_caves",
         "lawrence_bluespring_caverns"
       ]
@@ -53,7 +54,7 @@
     {
       "id": "statehood_and_freedom",
       "title": "First Capital & the Road to Freedom",
-      "summary": "Indiana's first state capitol and its only Civil War battlefield, a pioneer mill, then the Underground Railroad at Salem and Eleutherian College, ending at Madison's steep rail incline.",
+      "summary": "Indiana's first state capitol and its only Civil War battlefield, a pioneer mill, then the Underground Railroad at Salem and Eleutherian College, ending in Madison at its steep rail incline and the Lanier Mansion.",
       "duration": "A full day",
       "stops": [
         "harrison_corydon_capitol",
@@ -61,13 +62,14 @@
         "washington_becks_mill",
         "washington_salem_underground_railroad",
         "jefferson_eleutherian_college",
-        "jefferson_madison_incline_cut"
+        "jefferson_madison_incline_cut",
+        "jefferson_lanier_mansion"
       ]
     },
     {
       "id": "ohio_river_west",
       "title": "Ohio River Road West",
-      "summary": "Downriver along the Ohio: a steamboat disaster, old river courthouses and mills, the Swiss town of Tell City, St. Meinrad, Evansville's wartime factories and utopian New Harmony.",
+      "summary": "Downriver along the Ohio: a steamboat disaster, old river courthouses and mills, the Swiss town of Tell City, St. Meinrad, Lincoln's boyhood home, the ancient town at Angel Mounds, Evansville's wartime factories and utopian New Harmony.",
       "duration": "A full day",
       "stops": [
         "uss_argosy_disaster",
@@ -75,6 +77,8 @@
         "cannelton_cotton_mill",
         "perry_tell_city_swiss_enclave",
         "dubois_st_meinrad_archabbey",
+        "spencer_lincoln_boyhood",
+        "vanderburgh_angel_mounds",
         "evansville_p47_factory",
         "evansville_lincoln_gardens",
         "new_harmony_historic_district"
