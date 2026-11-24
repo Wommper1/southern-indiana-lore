@@ -8,6 +8,11 @@ const { version, files } = self.ATLAS_PRECACHE;
 const CACHE_PREFIX = "si-lore-";
 const CACHE = CACHE_PREFIX + version;
 const SHELL_URLS = ["./"].concat(files); // "./" is the page you get when you open the site's address
+// The street map is too big to save for everyone. It is saved only when a person taps "Save map for offline"
+// (see js/lib/basemap.js), into its own storage that survives atlas updates.
+const MAP_CACHE = "atlas-basemap-v1";
+const MAP_FILE_RE = /\/map\/[^/]+\.pmtiles$/;
+const MAP_INFO_RE = /\/map\/basemap\.json$/;
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -34,7 +39,16 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const request = event.request;
   if (request.method !== "GET") return;
-  if (new URL(request.url).origin !== self.location.origin) return;
+  const url = new URL(request.url);
+  if (url.origin !== self.location.origin) return;
+  if (MAP_FILE_RE.test(url.pathname)) {
+    event.respondWith(mapFile(request));
+    return;
+  }
+  if (MAP_INFO_RE.test(url.pathname)) {
+    event.respondWith(mapInfo(request));
+    return;
+  }
   event.respondWith(
     (async () => {
       const cache = await caches.open(CACHE);
@@ -48,6 +62,39 @@ self.addEventListener("fetch", (event) => {
     })()
   );
 });
+
+// Answer the map's small range requests from the saved copy when there is one, otherwise from the network.
+async function mapFile(request) {
+  const cache = await caches.open(MAP_CACHE);
+  const saved = await cache.match(request, { ignoreSearch: true });
+  if (!saved) return fetch(request);
+  const blob = await saved.blob();
+  const size = blob.size;
+  const headers = { "Content-Type": "application/octet-stream", "Accept-Ranges": "bytes" };
+  const range = /^bytes=(\d+)-(\d*)$/.exec(request.headers.get("range") || "");
+  if (!range) return new Response(blob, { status: 200, headers: Object.assign(headers, { "Content-Length": String(size) }) });
+  const start = Number(range[1]);
+  const end = range[2] ? Math.min(Number(range[2]), size - 1) : size - 1;
+  if (start >= size || end < start) {
+    return new Response(null, { status: 416, headers: { "Content-Range": "bytes */" + size } });
+  }
+  return new Response(blob.slice(start, end + 1), {
+    status: 206,
+    headers: Object.assign(headers, { "Content-Range": "bytes " + start + "-" + end + "/" + size, "Content-Length": String(end - start + 1) }),
+  });
+}
+
+// The map description: fresh from the network when online, else the copy saved with the map.
+async function mapInfo(request) {
+  try {
+    const response = await fetch(request);
+    if (response.ok) return response;
+  } catch (error) {
+    /* offline: fall through */
+  }
+  const cache = await caches.open(MAP_CACHE);
+  return (await cache.match(request, { ignoreSearch: true })) || new Response("null", { status: 404 });
+}
 
 self.addEventListener("message", (event) => {
   if (!event.data || event.data.type !== "status") return;

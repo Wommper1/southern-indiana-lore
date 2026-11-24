@@ -6,6 +6,26 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 ## [Unreleased]
 
+### Added (web atlas)
+
+- Street map: OpenStreetMap data (packaged by Protomaps) drawn on the device with MapLibre, served from the atlas's
+  own address, with "Save map for offline". Built at deploy time by `scripts/build_basemap.sh`; the schematic map
+  remains as a fallback.
+- Driving tours: five routes with a next-stop panel, directions hand-off, arrival detection while open, a simulated
+  drive, GPX 1.1 download, and the route on the map.
+- My expedition (Mine tab): saved sites, visits with a passport and county stamps, private notes and photos, and a
+  backup file to download and restore. Stored in the visitor's own browser only.
+- Six narrator personas for read-aloud, ported from the Android app; the trust level is always spoken.
+- Share sheet / copy link and printable QR codes for sites and tours; "Suggest a correction" and a new
+  "Suggest a site" issue form.
+- Install banner (with iPhone Add to Home Screen steps) and a "new version ready" banner.
+
+### Changed (web atlas)
+
+- The privacy rule "no browser storage" is now "browser storage only for the visitor's own journal, in one module,
+  never holding a position"; tests enforce it. The About page says what is kept and how to delete it.
+- `scripts/serve_site.py` supports HTTP range requests.
+
 ## [1.0.1] - 2026-10-21
 
 ### Added

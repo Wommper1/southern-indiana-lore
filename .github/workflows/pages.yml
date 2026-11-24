@@ -14,7 +14,11 @@ on:
       - "app/src/main/assets/lorepacks/**"
       - "app/src/main/java/com/example/data/model/ConfidenceLevel.kt"
       - "scripts/build_site_data.py"
+      - "scripts/build_basemap.sh"
   workflow_dispatch:
+  # Refresh the street map once a month so road changes eventually show up.
+  schedule:
+    - cron: "17 7 3 * *"
 
 permissions:
   contents: read
@@ -53,6 +57,14 @@ jobs:
 
       - name: Run the web atlas tests
         run: node --test tests/site/atlas.test.mjs
+
+      # The street map (OpenStreetMap data via Protomaps) is cut fresh on every deploy instead of being committed.
+      # If this step fails, the site still publishes and the Map tab falls back to the schematic map.
+      - name: Build the street map
+        continue-on-error: true
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: bash scripts/build_basemap.sh
 
       - name: Configure Pages
         uses: actions/configure-pages@v6

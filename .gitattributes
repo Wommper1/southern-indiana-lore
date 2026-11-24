@@ -19,3 +19,7 @@ site/**/*.webmanifest text eol=lf
 site/**/*.txt text eol=lf
 site/**/*.png binary
 site/**/*.ttf binary
+site/**/*.mjs text eol=lf
+site/**/*.md text eol=lf
+site/**/*.pbf binary
+site/**/*.pmtiles binary

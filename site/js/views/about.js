@@ -76,7 +76,7 @@ export function renderAbout(ctx, params) {
     block(
       "beta",
       "Beta: not yet tried on an iPhone",
-      h("p", null, "This web edition is new. It has been tested in desktop Chrome and a phone-size browser window, but not yet on a real iPhone, so Add to Home Screen, spoken narration and the location prompt may behave differently there. Near me only works while the page is open and the screen is on; background drive-by alerts are a feature of the Android app."),
+      h("p", null, "This web edition is new. It has been tested in Chromium at phone and desktop sizes, but not yet on a real iPhone, so Add to Home Screen, narration voices, photos and the location prompt may behave differently there. Near me and tours only work while the page is open and the screen is on; background drive-by alerts are a feature of the Android app."),
       h("p", null, externalLink(ISSUES_URL, "Tell us if something looks wrong"), h("span", { class: "fine" }, " (on the project's GitHub page)"))
     ),
 
@@ -93,8 +93,8 @@ export function renderAbout(ctx, params) {
       "android",
       "Atlas or Android app?",
       h("ul", { class: "plain" },
-        h("li", null, h("strong", null, "This atlas:"), " browse and search, a schematic map, a Near me list that works while the page is open, and read-aloud."),
-        h("li", null, h("strong", null, "The Android app:"), " all of that plus background drive-by alerts with the screen off, a field journal, an oral-history tape deck, and route simulation. Get it from the project's Releases page.")
+        h("li", null, h("strong", null, "This atlas:"), " browse and search, a street map you can save for offline use, driving tours with GPX downloads, a Near me list, six narrator voices, and your own passport, notes and photos kept in your browser. It all works while the page is open."),
+        h("li", null, h("strong", null, "The Android app:"), " background drive-by alerts with the screen off, an oral-history tape deck, relics and the Archivist. Get it from the project's Releases page.")
       )
     ),
 
@@ -113,12 +113,14 @@ export function renderAbout(ctx, params) {
     block(
       "privacy",
       "Privacy",
-      h("p", null, h("strong", null, "This atlas collects no data.")),
+      h("p", null, h("strong", null, "This atlas collects no data. Nothing you do here is sent to anyone.")),
       h("ul", { class: "plain" },
-        h("li", null, "No analytics, advertising, accounts, or cookies. No fonts, scripts, images, or map tiles come from any other website; the page's security policy only lets it load files from this site."),
+        h("li", null, "No analytics, advertising, accounts, or cookies. No fonts, scripts, images, or map data come from any other website; the page's security policy only lets it load files from this site."),
+        h("li", null, "The street map is one file published with this atlas. Your browser reads the parts it needs from this site, so no map company sees where you look."),
+        h("li", null, "Your passport, saved sites, notes, photos and narrator choice are kept in your browser's storage on this device only. They never leave it unless you download a backup file yourself. Photos are shrunk and stripped of their location data before saving. Check-ins record a date and whether you were at the site, never your position. \"Delete everything\" on the Mine tab removes them."),
         h("li", null, "Near me reads your position in your browser only while you use it. It is never saved, put in a link, or sent anywhere by this page."),
-        h("li", null, "The offline copy is stored in your browser on your device. Clearing the site's data in your browser settings removes it."),
-        h("li", null, "Map and source links open other websites or apps only when you tap them."),
+        h("li", null, "The offline copy (and the street map, if you save it) is stored in your browser on your device. Clearing the site's data in your browser settings removes it, along with your passport and notes."),
+        h("li", null, "Map, directions, source and \"Suggest\" links open other websites or apps (such as GitHub, where posts are public) only when you tap them. Share and QR codes are made on your device."),
         h("li", null, "Read-aloud uses your browser's built-in voices. Some browsers offer online voices; that is the browser's choice, not this page's."),
         h("li", null, "Whatever hosts this site keeps its own standard server logs. This page adds nothing to them.")
       )
@@ -139,7 +141,8 @@ export function renderAbout(ctx, params) {
           ". This atlas reformats the pack for the web without changing its text. If you reuse or adapt it, credit " + OWNER + " and share your version under the same license. The facts come from public records and the cited sources, which keep their own copyrights."),
         h("li", null, h("strong", null, "Code: "), "MIT License, © 2026 " + OWNER + ". ", externalLink(LICENSE_URL, "License text")),
         h("li", null, h("strong", null, "Fonts: "), "Cinzel (© 2020 The Cinzel Project Authors) and Plus Jakarta Sans (© 2020 The Plus Jakarta Sans Project Authors), under the ", externalLink(OFL_URL, "SIL Open Font License 1.1"), ". The fonts and the license are included with this site in the fonts folder."),
-        h("li", null, h("strong", null, "Map: "), "drawn by this page from the pack's coordinates. No OpenStreetMap or other map data is used."),
+        h("li", null, h("strong", null, "Street map: "), "map data © ", externalLink("https://www.openstreetmap.org/copyright", "OpenStreetMap contributors"), ", available under the Open Database License, packaged by ", externalLink("https://protomaps.com", "Protomaps"), ". Drawn with MapLibre GL JS (BSD-3-Clause) and the PMTiles and Protomaps basemaps libraries (BSD-3-Clause); map labels use Noto Sans (SIL Open Font License) and the map icons derive from tangrams/icons (MIT). The schematic map is drawn from the pack's coordinates only."),
+        h("li", null, h("strong", null, "Other libraries: "), "fflate (MIT) and qrcode-generator (MIT). Every library is copied into this site's vendor folder; versions and checksums are listed in vendor/VENDORED.md."),
         h("li", null, "More detail: ", externalLink(NOTICES_URL, "third-party notices"), ".")
       )
     ),

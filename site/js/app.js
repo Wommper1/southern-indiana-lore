@@ -11,9 +11,13 @@ import * as announcer from "./lib/announcer.js";
 import * as offline from "./lib/offline.js";
 import { renderList } from "./views/list.js";
 import { renderDetail } from "./views/detail.js";
-import { renderMap } from "./views/map.js";
+import { renderMap } from "./views/atlasmap.js";
 import { renderNear } from "./views/near.js";
 import { renderAbout } from "./views/about.js";
+import { renderMine } from "./views/mine.js";
+import { renderTours, renderTour } from "./views/tours.js";
+import * as personas from "./lib/personas.js";
+import { mountBanners } from "./views/banners.js";
 
 const app = document.getElementById("app");
 const main = document.getElementById("main");
@@ -43,7 +47,7 @@ function showError(title, message) {
 }
 
 function setActiveTab(name) {
-  const tab = { list: "list", site: "list", map: "map", near: "near", about: "about" }[name] || "list";
+  const tab = { list: "list", site: "list", map: "map", tours: "tours", tour: "tours", near: "near", mine: "mine", about: "about" }[name] || "list";
   for (const link of document.querySelectorAll(".tabbar a")) {
     const active = link.dataset.tab === tab;
     if (active) link.setAttribute("aria-current", "page");
@@ -61,6 +65,9 @@ function route() {
     else if (name === "map") view = renderMap(ctx, params);
     else if (name === "near") view = renderNear(ctx);
     else if (name === "about") view = renderAbout(ctx, params);
+    else if (name === "mine") view = renderMine(ctx);
+    else if (name === "tours") view = renderTours(ctx);
+    else if (name === "tour") view = renderTour(ctx, arg);
     else view = renderList(ctx, params);
   } catch (error) {
     console.error(error);
@@ -115,6 +122,7 @@ async function boot() {
     main.focus();
   });
   wireFooterStatus();
+  mountBanners(document.getElementById("banners"));
   offline.register();
 
   let atlas;
@@ -125,6 +133,15 @@ async function boot() {
   } catch (error) {
     showError("The atlas data could not be loaded", "Check your connection and try again. Once the atlas has loaded once, it works offline.");
     return;
+  }
+
+  // Tours are optional: if their file is missing, the rest of the atlas still works.
+  let tours = [];
+  try {
+    const response = await fetch("data/tours.json");
+    if (response.ok) tours = (await response.json()).tours || [];
+  } catch (error) {
+    tours = [];
   }
 
   const levelOrder = atlas.confidenceLevels;
@@ -139,9 +156,11 @@ async function boot() {
     levelOrder,
     levelTable,
     projection: makeProjection(sites),
+    tours,
   };
 
   announcer.configure(atlas, levelTable);
+  personas.restore();
   position.subscribe((state) => {
     if (state.fix) announcer.handleFix(state.fix);
   });

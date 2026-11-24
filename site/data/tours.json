@@ -1,0 +1,84 @@
+{
+  "note": "Hand-written driving tours for the web atlas. Each stop is a site id from atlas.json, in driving order. Tests check that every id exists.",
+  "tours": [
+    {
+      "id": "new_albany_riverfront",
+      "title": "New Albany & the Falls",
+      "summary": "Steamboats, a Victorian mansion, the Underground Railroad church and the fossil beds at the Falls of the Ohio, along the riverfront from New Albany to Jeffersonville.",
+      "duration": "Half a day",
+      "stops": [
+        "floyd_silver_hills_hermit",
+        "floyd_falling_run_train",
+        "floyd_scribner_house",
+        "floyd_town_clock_church",
+        "floyd_steamboat_eclipse",
+        "floyd_culbertson_mansion",
+        "floyd_ki_bridge",
+        "clark_george_rogers_clark_cabin",
+        "clark_falls_of_the_ohio",
+        "clark_big_four_bridge",
+        "clark_howard_steamboat_museum"
+      ]
+    },
+    {
+      "id": "knobs_and_tunnels",
+      "title": "The Knobs & the Rail Tunnels",
+      "summary": "Up from the river into the Knobstone hills: the Monon line, the old poor farm, the Buffalo Trace, Duncan Tunnel and the small towns of western Floyd County.",
+      "duration": "2 to 3 hours",
+      "stops": [
+        "monon_railroad_corridor",
+        "floyd_poor_farm_potters_field",
+        "floyd_knobs_ridge_mystery",
+        "indiana_buffalo_trace_corridor",
+        "floyd_duncan_tunnel",
+        "floyd_georgetown_historic_district",
+        "floyd_greenville_mineral_springs"
+      ]
+    },
+    {
+      "id": "cave_country",
+      "title": "Cave Country",
+      "summary": "Limestone karst from the Ohio River north: Squire Boone's cave, Wyandotte and Marengo, the Lost River, Spring Mill and Bluespring Caverns.",
+      "duration": "A full day",
+      "stops": [
+        "harrison_squire_boone_caverns",
+        "crawford_wyandotte_saltpeter",
+        "crawford_wyandotte_marengo_karst",
+        "crawford_marengo_cave",
+        "orange_lost_river_system",
+        "lawrence_spring_mill_twin_caves",
+        "lawrence_bluespring_caverns"
+      ]
+    },
+    {
+      "id": "statehood_and_freedom",
+      "title": "First Capital & the Road to Freedom",
+      "summary": "Indiana's first state capitol and its only Civil War battlefield, a pioneer mill, then the Underground Railroad at Salem and Eleutherian College, ending at Madison's steep rail incline.",
+      "duration": "A full day",
+      "stops": [
+        "harrison_corydon_capitol",
+        "harrison_corydon_battlefield",
+        "washington_becks_mill",
+        "washington_salem_underground_railroad",
+        "jefferson_eleutherian_college",
+        "jefferson_madison_incline_cut"
+      ]
+    },
+    {
+      "id": "ohio_river_west",
+      "title": "Ohio River Road West",
+      "summary": "Downriver along the Ohio: a steamboat disaster, old river courthouses and mills, the Swiss town of Tell City, St. Meinrad, Evansville's wartime factories and utopian New Harmony.",
+      "duration": "A full day",
+      "stops": [
+        "uss_argosy_disaster",
+        "perry_rome_courthouse",
+        "cannelton_cotton_mill",
+        "perry_tell_city_swiss_enclave",
+        "dubois_st_meinrad_archabbey",
+        "evansville_p47_factory",
+        "evansville_lincoln_gardens",
+        "new_harmony_historic_district"
+      ]
+    }
+  ]
+}

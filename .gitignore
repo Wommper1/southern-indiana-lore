@@ -68,3 +68,6 @@ Thumbs.db
 *.log
 /_aistudio_archive/
 /.aistudio/
+
+# Web atlas street map: built by scripts/build_basemap.sh during deploy, never committed
+site/map/

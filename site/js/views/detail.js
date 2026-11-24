@@ -2,12 +2,17 @@
 
 import { h } from "../lib/dom.js";
 import {
-  historyHeading, historyText, historyCaveat, showsFolklorePanel, folkloreText, sourcesText, paragraphs, spokenText,
+  historyHeading, historyText, historyCaveat, showsFolklorePanel, folkloreText, sourcesText, paragraphs,
   HEADING_FOLKLORE, HEADING_SOURCES, FOLKLORE_ADVISORY,
 } from "../lib/trust.js";
-import { speak, stop as stopSpeech, speechSupported, onSpeakingChange, isSpeaking, unlock } from "../lib/speech.js";
+import { stop as stopSpeech, speechSupported, onSpeakingChange, isSpeaking, unlock } from "../lib/speech.js";
+import { narrate } from "../lib/personas.js";
+import { narratorPicker } from "./narratorpicker.js";
+import { sharePanel, pageUrl } from "./share.js";
+import { correctionUrl } from "../lib/config.js";
 import { formatMeters } from "../lib/geo.js";
 import { badge, statusCard, section } from "../ui.js";
+import { journalPanel } from "./journalpanel.js";
 
 const KARST_DISCLOSURE =
   "Karst survey disclosure: karst conduit pathways and subterranean hydrology are mapped from geological surveys and spring dye traces. Cave protection regulations apply.";
@@ -108,7 +113,7 @@ export function renderDetail(ctx, id, canGoBack) {
       } else {
         unlock();
         startedHere = true;
-        speak(spokenText(site, level));
+        narrate(site, level);
       }
       refresh();
     });
@@ -161,7 +166,14 @@ export function renderDetail(ctx, id, canGoBack) {
     h("p", { class: "safety" }, SAFETY_NOTE)
   );
 
-  const sourcePanel = section(HEADING_SOURCES, "panel-sources", paras(sourcesText(site), "small"));
+  const mine = journalPanel(site);
+  const picker = narratorPicker({ compact: true });
+  const hash = "#/site/" + encodeURIComponent(site.id);
+  const sourcePanel = section(HEADING_SOURCES, "panel-sources", paras(sourcesText(site), "small"),
+    h("p", { class: "fine" }, "Spotted a mistake? ",
+      h("a", { href: correctionUrl(site, pageUrl(hash)), target: "_blank", rel: "noopener noreferrer" }, "Suggest a correction"),
+      " (opens GitHub; needs a free account, and what you write there is public). A source makes a correction much more useful."));
+  const share = sharePanel({ title: site.title, hash, fileName: site.id });
 
   const el = h(
     "article",
@@ -172,15 +184,20 @@ export function renderDetail(ctx, id, canGoBack) {
     h("p", { class: "meta" }, badge(level), h("span", null, site.county + " · " + site.era + " · " + site.category)),
     statusCard(site, level),
     h("div", { class: "actions" }, speakButton),
+    picker.el,
     historyPanel,
     folkPanel,
     openQuestions,
+    mine.el,
     contextPanel(site),
     narrative,
     sourcePanel,
-    visiting
+    visiting,
+    share
   );
   const destroy = () => {
+    mine.destroy();
+    picker.destroy();
     if (unsubscribe) unsubscribe();
     if (startedHere) stopSpeech(); // leaving the page ends the reading it started
   };
