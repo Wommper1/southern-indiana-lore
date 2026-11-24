@@ -2,10 +2,12 @@
 
 import { h } from "../lib/dom.js";
 import {
-  historyHeading, historyText, historyCaveat, showsFolklorePanel, folkloreText, sourcesText, paragraphs, spokenText,
+  historyHeading, historyText, historyCaveat, showsFolklorePanel, folkloreText, sourcesText, paragraphs,
   HEADING_FOLKLORE, HEADING_SOURCES, FOLKLORE_ADVISORY,
 } from "../lib/trust.js";
-import { speak, stop as stopSpeech, speechSupported, onSpeakingChange, isSpeaking, unlock } from "../lib/speech.js";
+import { stop as stopSpeech, speechSupported, onSpeakingChange, isSpeaking, unlock } from "../lib/speech.js";
+import { narrate } from "../lib/personas.js";
+import { narratorPicker } from "./narratorpicker.js";
 import { formatMeters } from "../lib/geo.js";
 import { badge, statusCard, section } from "../ui.js";
 import { journalPanel } from "./journalpanel.js";
@@ -109,7 +111,7 @@ export function renderDetail(ctx, id, canGoBack) {
       } else {
         unlock();
         startedHere = true;
-        speak(spokenText(site, level));
+        narrate(site, level);
       }
       refresh();
     });
@@ -163,6 +165,7 @@ export function renderDetail(ctx, id, canGoBack) {
   );
 
   const mine = journalPanel(site);
+  const picker = narratorPicker({ compact: true });
   const sourcePanel = section(HEADING_SOURCES, "panel-sources", paras(sourcesText(site), "small"));
 
   const el = h(
@@ -174,6 +177,7 @@ export function renderDetail(ctx, id, canGoBack) {
     h("p", { class: "meta" }, badge(level), h("span", null, site.county + " · " + site.era + " · " + site.category)),
     statusCard(site, level),
     h("div", { class: "actions" }, speakButton),
+    picker.el,
     historyPanel,
     folkPanel,
     openQuestions,
@@ -185,6 +189,7 @@ export function renderDetail(ctx, id, canGoBack) {
   );
   const destroy = () => {
     mine.destroy();
+    picker.destroy();
     if (unsubscribe) unsubscribe();
     if (startedHere) stopSpeech(); // leaving the page ends the reading it started
   };

@@ -5,7 +5,7 @@
 // date plus a yes/no "was near the site when checked in", never coordinates.
 
 const DB_NAME = "si-lore-journal";
-const DB_VERSION = 1;
+const DB_VERSION = 2; // 2 added "prefs" (small settings such as the chosen narrator)
 export const BACKUP_FORMAT = "southern-indiana-lore-journal";
 export const BACKUP_VERSION = 1;
 const PHOTO_MAX_PX = 1600; // photos are shrunk before saving: smaller, and re-encoding drops camera metadata (GPS)
@@ -33,6 +33,7 @@ function open() {
           const photos = db.createObjectStore("photos", { keyPath: "id", autoIncrement: true });
           photos.createIndex("siteId", "siteId");
         }
+        if (!db.objectStoreNames.contains("prefs")) db.createObjectStore("prefs", { keyPath: "key" });
       };
       request.onsuccess = () => resolve(request.result);
       request.onerror = () => reject(request.error);
@@ -130,6 +131,24 @@ export const setFavorite = (siteId, favorite) => update(siteId, { favorite: Bool
 export const setNote = (siteId, note) => update(siteId, { note: String(note || "").slice(0, 20000) });
 export function setVisited(siteId, visited, near) {
   return update(siteId, visited ? { visitedAt: new Date().toISOString(), visitedNear: Boolean(near) } : { visitedAt: null, visitedNear: false });
+}
+
+// ---------- preferences ----------
+
+const PREF_KEYS = new Set(["narrator"]);
+
+export async function getPref(key) {
+  if (!supported() || !PREF_KEYS.has(key)) return null;
+  const { store: s } = await store("prefs", "readonly");
+  const row = await done(s.get(key));
+  return row ? row.value : null;
+}
+
+export async function setPref(key, value) {
+  if (!PREF_KEYS.has(key)) throw new Error("unknown preference " + key);
+  const { tx, store: s } = await store("prefs", "readwrite");
+  s.put({ key, value: String(value) });
+  await txDone(tx);
 }
 
 // ---------- photos ----------
@@ -279,9 +298,10 @@ export async function importBackup(data) {
 export async function clearAll() {
   if (!supported()) return;
   const db = await open();
-  const tx = db.transaction(["sites", "photos"], "readwrite");
+  const tx = db.transaction(["sites", "photos", "prefs"], "readwrite");
   tx.objectStore("sites").clear();
   tx.objectStore("photos").clear();
+  tx.objectStore("prefs").clear();
   await txDone(tx);
   cache = new Map();
   emit();

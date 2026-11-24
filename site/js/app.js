@@ -16,6 +16,7 @@ import { renderNear } from "./views/near.js";
 import { renderAbout } from "./views/about.js";
 import { renderMine } from "./views/mine.js";
 import { renderTours, renderTour } from "./views/tours.js";
+import * as personas from "./lib/personas.js";
 
 const app = document.getElementById("app");
 const main = document.getElementById("main");
@@ -157,6 +158,7 @@ async function boot() {
   };
 
   announcer.configure(atlas, levelTable);
+  personas.restore();
   position.subscribe((state) => {
     if (state.fix) announcer.handleFix(state.fix);
   });

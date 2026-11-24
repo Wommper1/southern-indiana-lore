@@ -343,3 +343,11 @@ label.btn { display: inline-flex; align-items: center; }
 .next-title { font-family: var(--font-head); font-size: 20px; margin: 2px 0 6px; }
 .tour-done { font-family: var(--font-head); font-size: 20px; color: var(--amber-bright); }
 a.btn { display: inline-flex; align-items: center; text-decoration: none; }
+
+/* ---- narrator ---- */
+.narrator { margin: 10px 0; }
+.narrator .toolbar-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.narrator-select { flex: 1 1 200px; }
+.narrator-desc { display: block; margin-top: 4px; }
+.narrator-compact .field-label { margin-top: 4px; }
+.btn-small { min-height: 44px; padding: 0 14px; font-size: 14px; }

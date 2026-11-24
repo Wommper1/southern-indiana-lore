@@ -24,9 +24,16 @@ export function isSpeaking() {
   return speaking;
 }
 
-function pickVoice() {
+function pickVoice(langs) {
   const voices = window.speechSynthesis.getVoices();
   const english = voices.filter((voice) => /^en([-_]|$)/i.test(voice.lang));
+  const norm = (lang) => lang.replace("_", "-").toLowerCase();
+  // A narrator's preferred accents first (on-device voices before online ones), then the usual default.
+  for (const lang of langs || []) {
+    const wanted = english.filter((v) => norm(v.lang) === lang.toLowerCase());
+    const pick = wanted.find((v) => v.localService) || wanted[0];
+    if (pick) return pick;
+  }
   return (
     english.find((v) => v.localService && /^en[-_]US$/i.test(v.lang)) ||
     english.find((v) => v.localService) ||
@@ -64,11 +71,13 @@ function chunk(text) {
   return out;
 }
 
-export function speak(text) {
+/** options (optional): { pitch 0..2, rate 0.5..2, langs: preferred voice languages such as "en-GB" } */
+export function speak(text, options) {
   if (!speechSupported || !text) return;
+  const opts = options || {};
   window.speechSynthesis.cancel();
   const mine = ++generation;
-  const voice = pickVoice();
+  const voice = pickVoice(opts.langs);
   const parts = chunk(text);
   parts.forEach((part, index) => {
     const utterance = new SpeechSynthesisUtterance(part);
@@ -78,7 +87,8 @@ export function speak(text) {
     } else {
       utterance.lang = "en-US";
     }
-    utterance.rate = 0.95;
+    utterance.rate = Math.min(2, Math.max(0.5, (opts.rate || 1) * 0.95));
+    utterance.pitch = Math.min(2, Math.max(0, opts.pitch || 1));
     if (index === parts.length - 1) {
       utterance.onend = () => mine === generation && setSpeaking(false);
     }

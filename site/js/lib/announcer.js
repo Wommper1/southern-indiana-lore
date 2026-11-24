@@ -2,8 +2,8 @@
 // Each site is announced at most once per visit to the page. Nothing is stored.
 
 import { distanceMeters } from "./geo.js";
-import { speak, isSpeaking, speechSupported } from "./speech.js";
-import { spokenText } from "./trust.js";
+import { isSpeaking, speechSupported } from "./speech.js";
+import { narrate } from "./personas.js";
 
 // GPS on the web can be coarse. If the fix is wider than this, we cannot tell which site you are at.
 const MAX_ACCURACY_M = 150;
@@ -50,7 +50,7 @@ export function handleFix(fix) {
   if (!best) return null;
   announced.add(best.site.id);
   lastAnnounced = best.site;
-  speak(spokenText(best.site, levelTable[best.site.confidenceLevel]));
+  narrate(best.site, levelTable[best.site.confidenceLevel]);
   for (const listener of listeners) listener(best.site);
   return best.site;
 }

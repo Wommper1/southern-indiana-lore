@@ -325,3 +325,30 @@ test("the simulated drive passes inside every stop's alert radius, in order", as
     }
   }
 });
+
+// ---------- narrators ----------
+
+test("every narrator keeps the trust level and the not-verified warning", async () => {
+  globalThis.indexedDB = undefined;
+  const { PERSONAS, narrationText } = await load("personas.js");
+  const { spokenText } = await load("trust.js");
+  assert.equal(PERSONAS.length, 6);
+  for (const persona of PERSONAS) {
+    assert.ok(persona.pitch >= 0 && persona.pitch <= 2 && persona.rate >= 0.5 && persona.rate <= 2, persona.id + " voice settings");
+    for (const site of atlas.sites) {
+      const level = levelTable[site.confidenceLevel];
+      const text = narrationText(site, level, persona);
+      assert.ok(text.endsWith(spokenText(site, level)), persona.id + " changes the reading for " + site.id);
+      assert.ok(text.includes("Trust level: " + level.label), persona.id + " drops the trust level");
+    }
+  }
+});
+
+test("all site readings go through the narrator", () => {
+  for (const file of walk(join(SITE, "js"))) {
+    const name = relative(SITE, file).split("\\").join("/");
+    const text = readFileSync(file, "utf8");
+    if (name === "js/lib/personas.js") continue;
+    assert.ok(!/speak\(spokenText/.test(text), name + " reads a site without the narrator");
+  }
+});

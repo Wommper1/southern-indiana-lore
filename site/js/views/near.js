@@ -5,8 +5,9 @@ import { h, clear } from "../lib/dom.js";
 import { distanceMeters, bearingDegrees, cardinal, formatDistance, formatMeters } from "../lib/geo.js";
 import * as position from "../lib/position.js";
 import * as announcer from "../lib/announcer.js";
-import { speak, stop as stopSpeech, unlock, speechSupported, isSpeaking, onSpeakingChange } from "../lib/speech.js";
-import { spokenText } from "../lib/trust.js";
+import { stop as stopSpeech, unlock, speechSupported, isSpeaking, onSpeakingChange } from "../lib/speech.js";
+import { narrate } from "../lib/personas.js";
+import { narratorPicker } from "./narratorpicker.js";
 import { badge } from "../ui.js";
 
 const SHOW_FIRST = 10;
@@ -27,6 +28,7 @@ export function renderNear(ctx) {
   const moreButton = h("button", { type: "button", class: "btn" });
 
   // ---- read aloud controls ----
+  const picker = narratorPicker();
   const autoBox = h("input", { type: "checkbox", id: "auto-read" });
   autoBox.checked = announcer.isEnabled();
   const readNearestButton = h("button", { type: "button", class: "btn" }, "Read nearest aloud");
@@ -37,7 +39,8 @@ export function renderNear(ctx) {
         h("h2", { class: "panel-title" }, "Read aloud"),
         h("label", { class: "check", for: "auto-read" }, autoBox, h("span", null, "Read a site aloud when I arrive at it (inside its alert radius)")),
         h("p", { class: "fine" }, "Only while this page is open. Each site is read once per visit. Phones may keep the sound low until you raise the volume. The reading always names the site's trust level."),
-        h("div", { class: "actions" }, readNearestButton)
+        h("div", { class: "actions" }, readNearestButton),
+        picker.el
       )
     : h("div", { class: "panel" }, h("h2", { class: "panel-title" }, "Read aloud"), h("p", null, "This browser has no built-in speech, so reading aloud is not available. Near me still works."));
 
@@ -151,7 +154,7 @@ export function renderNear(ctx) {
     }
     unlock();
     const first = ranked(fix)[0].site;
-    speak(spokenText(first, ctx.levelTable[first.confidenceLevel]));
+    narrate(first, ctx.levelTable[first.confidenceLevel]);
   });
   const syncReadButton = () => {
     readNearestButton.textContent = isSpeaking() ? "Stop reading" : "Read nearest aloud";
@@ -161,6 +164,7 @@ export function renderNear(ctx) {
     position.subscribe(refresh),
     announcer.onAnnounce(refresh),
     onSpeakingChange(syncReadButton),
+    picker.destroy,
   ];
 
   const el = h(
