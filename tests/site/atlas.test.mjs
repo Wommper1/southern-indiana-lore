@@ -276,3 +276,52 @@ test("journal backups are validated before loading", async () => {
   assert.equal(checked.sites[0].extra, undefined, "unknown fields are dropped");
   assert.equal(checked.photos.length, 1);
 });
+
+// ---------- tours ----------
+
+const tours = json(join(SITE, "data", "tours.json")).tours;
+const siteById = new Map(atlas.sites.map((s) => [s.id, s]));
+
+test("every tour stop is a real site, with no repeats", () => {
+  assert.ok(tours.length >= 3);
+  const ids = new Set();
+  for (const tour of tours) {
+    assert.ok(/^[a-z0-9_]+$/.test(tour.id) && !ids.has(tour.id), "tour id " + tour.id);
+    ids.add(tour.id);
+    assert.ok(tour.title && tour.summary && tour.duration, tour.id + " needs a title, summary and duration");
+    assert.ok(tour.stops.length >= 3, tour.id + " needs at least three stops");
+    assert.equal(new Set(tour.stops).size, tour.stops.length, tour.id + " repeats a stop");
+    for (const stop of tour.stops) assert.ok(siteById.has(stop), tour.id + ": unknown site " + stop);
+  }
+});
+
+test("GPX export is well-formed and escapes text", async () => {
+  const { tourToGpx, gpxFileName } = await load("gpx.js");
+  const sites = [
+    { title: "A & B <\"quoted\">", latitude: 38.1, longitude: -85.9, county: "Floyd County", subtitle: "x\u0001y" },
+    { title: "C", latitude: 38.2, longitude: -86, county: "Clark County", subtitle: "" },
+  ];
+  const gpx = tourToGpx({ id: "t1", title: "T & T", summary: "S" }, sites, () => "Plausible", (s) => "https://example.test/#/site/" + s.title);
+  assert.ok(gpx.startsWith('<?xml version="1.0" encoding="UTF-8"?>'));
+  assert.equal((gpx.match(/<wpt /g) || []).length, 2);
+  assert.equal((gpx.match(/<rtept /g) || []).length, 2);
+  assert.ok(gpx.includes("1. A &amp; B &lt;&quot;quoted&quot;&gt;"));
+  assert.ok(!gpx.includes("\u0001"), "control characters are removed");
+  assert.ok(gpx.includes('lat="38.100000" lon="-85.900000"'));
+  assert.equal(gpxFileName({ id: "a/b" }), "southern-indiana-lore-a-b.gpx");
+});
+
+test("the simulated drive passes inside every stop's alert radius, in order", async () => {
+  const { simulationPath } = await load("tourrun.js");
+  const { distanceMeters } = await load("geo.js");
+  for (const tour of tours) {
+    const sites = tour.stops.map((id) => siteById.get(id));
+    const path = simulationPath(sites);
+    let cursor = 0;
+    for (const site of sites) {
+      const hit = path.findIndex((p, i) => i >= cursor && distanceMeters(p.lat, p.lon, site.latitude, site.longitude) <= site.geofenceRadiusMeters);
+      assert.ok(hit >= 0, tour.id + ": the simulation never reaches " + site.id);
+      cursor = hit;
+    }
+  }
+});

@@ -15,6 +15,7 @@ import { renderMap } from "./views/atlasmap.js";
 import { renderNear } from "./views/near.js";
 import { renderAbout } from "./views/about.js";
 import { renderMine } from "./views/mine.js";
+import { renderTours, renderTour } from "./views/tours.js";
 
 const app = document.getElementById("app");
 const main = document.getElementById("main");
@@ -63,6 +64,8 @@ function route() {
     else if (name === "near") view = renderNear(ctx);
     else if (name === "about") view = renderAbout(ctx, params);
     else if (name === "mine") view = renderMine(ctx);
+    else if (name === "tours") view = renderTours(ctx);
+    else if (name === "tour") view = renderTour(ctx, arg);
     else view = renderList(ctx, params);
   } catch (error) {
     console.error(error);
@@ -129,6 +132,15 @@ async function boot() {
     return;
   }
 
+  // Tours are optional: if their file is missing, the rest of the atlas still works.
+  let tours = [];
+  try {
+    const response = await fetch("data/tours.json");
+    if (response.ok) tours = (await response.json()).tours || [];
+  } catch (error) {
+    tours = [];
+  }
+
   const levelOrder = atlas.confidenceLevels;
   const levelTable = Object.fromEntries(levelOrder.map((level) => [level.id, level]));
   // Fail closed again in the browser: a level the table does not know becomes Unverified.
@@ -141,6 +153,7 @@ async function boot() {
     levelOrder,
     levelTable,
     projection: makeProjection(sites),
+    tours,
   };
 
   announcer.configure(atlas, levelTable);

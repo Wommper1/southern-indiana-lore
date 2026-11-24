@@ -65,6 +65,17 @@ export function renderMine(ctx) {
               h("span", { class: "stamp-name" }, county.replace(/ County$/, "")),
               h("span", { class: "stamp-count" }, c.seen + "/" + c.total))))),
 
+      (ctx.tours || []).length
+        ? h("section", { class: "panel", "aria-label": "Tours" },
+            h("h2", { class: "panel-title" }, "Tours"),
+            h("ul", { class: "plain tour-progress" }, ctx.tours.map((tour) => {
+              const ids = tour.stops.filter((id) => ctx.byId.has(id));
+              const seen = ids.filter((id) => visitedIds.has(id)).length;
+              return h("li", null, h("a", { href: "#/tour/" + encodeURIComponent(tour.id) }, tour.title), " · ",
+                seen === ids.length ? h("strong", { class: "card-marks" }, "complete ★") : seen + " of " + ids.length + " stops visited");
+            })))
+        : "",
+
       h("h2", { class: "panel-title section-gap" }, "Saved sites (" + saved.length + ")"),
       saved.length
         ? h("ul", { class: "card-list" }, saved.map((e) => siteCard(ctx, known(e.siteId), counts.get(e.siteId) ? counts.get(e.siteId) + " photo(s)" : null)))

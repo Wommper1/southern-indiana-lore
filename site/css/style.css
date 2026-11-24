@@ -330,3 +330,16 @@ label.btn { display: inline-flex; align-items: center; }
 .danger-zone summary { cursor: pointer; color: #fca5a5; min-height: 44px; display: flex; align-items: center; }
 .card-marks { color: var(--amber-bright); font-size: 13px; font-weight: 700; }
 .section-gap { margin-top: 20px; }
+
+/* ---- tours ---- */
+.tour-kicker { font-size: 12px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #7dd3fc; }
+.tour-stops { list-style: none; padding: 0; display: grid; gap: 10px; }
+.tour-stop.is-next .card { border-color: var(--amber); box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.35); }
+.stop-num { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; margin-right: 8px; background: var(--lc); color: #06101c; font-family: var(--font-body); font-size: 14px; font-weight: 800; vertical-align: 2px; }
+.tour-run { border-color: rgba(245, 158, 11, 0.6); }
+.tour-run .panel-title { color: var(--amber-bright); }
+.next-stop { background: var(--surface); border-radius: 10px; padding: 10px 12px; margin-bottom: 10px; }
+.next-stop .fine { margin: 0; }
+.next-title { font-family: var(--font-head); font-size: 20px; margin: 2px 0 6px; }
+.tour-done { font-family: var(--font-head); font-size: 20px; color: var(--amber-bright); }
+a.btn { display: inline-flex; align-items: center; text-decoration: none; }
