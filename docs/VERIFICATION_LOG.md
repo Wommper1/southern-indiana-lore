@@ -1,20 +1,20 @@
 # Lore Pack Verification Log
 
-Last updated: October 2026. Pack version 1.12.1.
+Last updated: November 2026. Pack version 1.13.0.
 
 The lore pack in `app/src/main/assets/lorepacks/southern_indiana/` has 52 sites. The citations that came with
 the original data were never independently checked, and when we started checking, many entries turned out to
 contain details that the sources do not support. This file records what was checked, what was changed, and what
 is still unverified, so the in-app labels are honest. Three rounds of checking have been done: 25 entries first, then 21 more, then the last 6, so **all 52 entries have
-now been checked** against public sources. Checked does not mean confirmed: the labels below say how far each check got.
+now been checked** against public sources. A fourth round (November 2026) rechecked the four entries that were still Unverified. Checked does not mean confirmed: the labels below say how far each check got.
 
 ## How the labels work
 
 | Label (in app) | Meaning in this pack | Entries |
 | :--- | :--- | ---: |
 | Official Source | An official designation (for example National Historic Landmark) was confirmed against an independent source | 3 |
-| Plausible | Checked against independent sources and corrected where they disagreed; some other details are still unconfirmed | 41 |
-| Unverified | Not confirmed: either not checked yet, or checked and no supporting source was found | 4 |
+| Plausible | Checked against independent sources and corrected where they disagreed; some other details are still unconfirmed | 43 |
+| Unverified | Not confirmed: either not checked yet, or checked and no supporting source was found | 2 |
 | Folk Legend / Oral History / Probable | The entry's own nature (folklore, oral tradition) or an older label that already admitted incomplete verification. Not re-labeled | 4 |
 
 Unverified entries still appear in the app and trigger alerts, but they show an "Unverified" badge and rank slightly
@@ -102,6 +102,21 @@ Era lines: entries whose dates no source supports no longer show an exact date a
 Other fixes in this round: the Morgan's Raid trail text said "2,400 cavalrymen" and "the Harrison County Home Guard"; it now says about
 1,800 men and the local Indiana Legion militia, matching the Battle of Corydon entry.
 
+## Fourth round: the Unverified entries rechecked (November 2026)
+
+The four entries still labeled Unverified were searched again. The historical marker and bridge pages could not be
+opened directly from the research environment, so their text was read through search-engine results that quote them;
+treat these as one step removed from the pages themselves.
+
+| Entry | Before | Finding | Source |
+| :--- | :--- | :--- | :--- |
+| Greenville (was "Greenville Mineral Springs & Lost Resort") | A sulphur-spring resort hotel open 1885-1904, burned December 1904; an 1886 state geology report cited | **No source for the springs, the resort or the 1904 fire.** A Greenville historical marker gives the town's founding in May 1816 by Andrew Mundell and Benjamin Haines, its place on the New Albany to Vincennes Turnpike, and a fire that destroyed most of the town on March 26, 1908; a second marker says the Simpson Memorial Chapel (1899) was one of the few buildings untouched. The entry was **renamed "Greenville & the Fire of 1908"** and rewritten around the marker text; the resort is kept only as an unsupported local telling. A likely source of confusion is Paoli's Mineral Springs Hotel (Orange County, 1895-96). **Relabeled Plausible** | Historical Marker Database, markers 250693 and 250695; Indiana Landmarks (Paoli Mineral Springs Hotel) |
+| Milltown Blue River Bridge | 1862 covered bridge, replaced 1913, rebuilt late 1970s (one library caption) | **Confirmed by a second, independent source:** HistoricBridges.org lists the 1862 Milltown Covered Bridge on Main Street (local builders, now lost) and a three-span riveted Warren pony truss built 1913, rehabilitated 1977 and since replaced by a new truss bridge. When the truss was replaced is still unknown. **Relabeled Plausible** | Harrison County Public Library; HistoricBridges.org; Bridgehunter.com |
+| Twelve Mile Island Steamboat Wrecks | Unverified | Searched again; still no record of a wreck at this island. The only "Twelvemile Island" wreck site found is on the Mobile River in Alabama, which is unrelated. **Kept Unverified** | (none new) |
+| Falling Run Phantom Trestle | Unverified | Searched again; still no source for trestles over Falling Run or an 1891 derailment. **Kept Unverified** | (none new) |
+
+Claims removed from Greenville were added to the Android test that stops removed claims from coming back.
+
 ## Confirmed without changes
 
 - **Cannelton Cotton Mill & Industrial Fortress**: National Register (1975) and National Historic Landmark (1991) status confirmed
@@ -110,14 +125,13 @@ Other fixes in this round: the Morgan's Raid trail text said "2,400 cavalrymen" 
 
 ## Checked, but nothing supported the entry
 
-- **Greenville Mineral Springs & Lost Resort**: no independent source found
-- **Milltown Blue River Bridge**: original claims not supported; thin sources
-- **Falling Run Phantom Trestle**: no source for the trestles or the 1891 derailment
-- **Twelve Mile Island Steamboat Wrecks**: the island is real; no source for the wrecks
+- **Falling Run Phantom Trestle**: no source for the trestles or the 1891 derailment (checked twice)
+- **Twelve Mile Island Steamboat Wrecks**: the island is real; no source for the wrecks (checked twice)
+- **Greenville**: the mineral-springs resort part of the old entry has no source; the town history now in the entry does (see the fourth round)
 - **Silver Hills Hermit & Ghost Light**: the place is real; no source for the hermit (kept as a Folk Legend)
 
-For the Greenville entry, searches only turned up a Greenville Springs in Kentucky; the Floyd County resort may be a
-confusion with it. Nothing was removed from that entry yet, but it carries an "unresolved question" in the app.
+For Greenville, the October searches only turned up a Greenville Springs in Kentucky. The November recheck found the
+town's own history instead and rewrote the entry around it (see the fourth round).
 
 ## Not yet checked
 
@@ -146,6 +160,8 @@ each specific claim (dates, numbers, names), and send the correction with the so
 markers, National Register records, and period newspapers over summaries. See CONTRIBUTING.md.
 
 ## Sources used
+
+- Fourth round: [Historical Marker Database, Greenville marker](https://www.hmdb.org/m.asp?m=250693), [Simpson Memorial Chapel marker](https://www.hmdb.org/m.asp?m=250695), [Indiana Landmarks, Mineral Springs Hotel (Paoli)](https://www.indianalandmarks.org/endangered-property/mineral-springs-hotel/), [HistoricBridges.org, Crawford County](https://historicbridges.org/b_h_fipsm.php?bsearch=18025), [Bridgehunter.com](https://bridgehunter.com/), [Wikipedia: Greenville, Indiana](https://en.wikipedia.org/wiki/Greenville,_Indiana) (all read through search-result quotations)
 
 - Third round: [Indiana Historical Bureau, Morgan's Raid July 8-13 1863 marker 88.1963.1](https://www.in.gov/history/state-historical-markers/find-a-marker/morgans-raid-july-8-13-1865/) (the address ends 1865 but the page is the 1863 marker), [Emerging Civil War, Morgan's Raiders at Salem](https://emergingcivilwar.com/2023/12/23/a-calm-still-morning-morgans-raiders-at-salem/), [Wikipedia: Morgan's Raid](https://en.wikipedia.org/wiki/Morgan%27s_Raid), [Salem, Indiana](https://en.wikipedia.org/wiki/Salem,_Indiana), [Floyds Knobs](https://en.wikipedia.org/wiki/Floyds_Knobs,_Indiana), [Vincennes Trace](https://en.wikipedia.org/wiki/Vincennes_Trace), [Silver Hills](https://en.wikipedia.org/wiki/Silver_Hills,_Indiana), [Six Mile Island State Nature Preserve](https://en.wikipedia.org/wiki/Six_Mile_Island_State_Nature_Preserve), [Blue River Friends](https://www.blueriverfriends.org/index.php/salem-indiana-quaker-settlement/about-blue-river-quakers-settlement), [Asylum Projects, Floyd County Infirmary](https://www.asylumprojects.org/index.php/Floyd_County_Infirmary) (community-written), [Filson Historical Society photograph, Head of Twelve Mile Island, 1900](https://filsonhistorical.omeka.net/items/show/1233)
 - Wikipedia: [Duncan Tunnel](https://en.wikipedia.org/wiki/Duncan_Tunnel), [Tulip Viaduct](https://en.wikipedia.org/wiki/Tulip_Viaduct), [Hindostan Falls](https://en.wikipedia.org/wiki/Hindostan_Falls,_Indiana), [Saint Meinrad Archabbey](https://en.wikipedia.org/wiki/Saint_Meinrad_Archabbey), [Eleutherian College](https://en.wikipedia.org/wiki/Eleutherian_College), [New Harmony](https://en.wikipedia.org/wiki/New_Harmony,_Indiana), [Cannelton Cotton Mill](https://en.wikipedia.org/wiki/Cannelton_Cotton_Mill), [Medora Covered Bridge](https://en.wikipedia.org/wiki/Medora_Covered_Bridge), [Culbertson Mansion](https://en.wikipedia.org/wiki/Culbertson_Mansion), [Howard Steamboat Museum](https://en.wikipedia.org/wiki/Howard_Steamboat_Museum), [Squire Boone Caverns](https://en.wikipedia.org/wiki/Squire_Boone_Caverns), [Big Four Bridge](https://en.wikipedia.org/wiki/Big_Four_Bridge_(Louisville)), [K&I Terminal Bridge](https://en.wikipedia.org/wiki/Kentucky_%26_Indiana_Terminal_Bridge), [Beck's Mill](https://en.wikipedia.org/wiki/Beck%27s_Mill), [Tunnelton](https://en.wikipedia.org/wiki/Tunnelton,_Indiana), [Rose Island](https://en.wikipedia.org/wiki/Rose_Island_(amusement_park)), [Wyandotte Caves](https://en.wikipedia.org/wiki/Wyandotte_Caves)

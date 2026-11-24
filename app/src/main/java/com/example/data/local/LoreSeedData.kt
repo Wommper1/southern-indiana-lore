@@ -211,26 +211,26 @@ object LoreSeedData {
         ),
         LoreSiteEntity(
             id = "floyd_greenville_mineral_springs",
-            title = "Greenville Mineral Springs & Lost Resort",
-            subtitle = "Victorian Healing Waters, Sulphur Wells & The Vanished Hotel",
+            title = "Greenville & the Fire of 1908",
+            subtitle = "An 1816 Turnpike Town, Its Great Fire & a Mineral-Springs Tale",
             category = LoreCategories.CURIOSITIES,
             county = "Floyd County",
             latitude = 38.3718,
             longitude = -85.9860,
-            address = "Highway 150 & Historic Springs Branch, Greenville, IN",
-            era = "Victorian Era (unconfirmed)",
-            accessStatus = "Historic Roadside Marker & Country Byway",
+            address = "Clark St, Greenville, IN 47124",
+            era = "1816 founding; 1908 fire",
+            accessStatus = "Town streets & roadside historical markers",
             fullStory = """
-                In western Floyd County, the historic town of Greenville was famed during the late 19th century for cold mineral springs rich in natural sulphur, iron, and magnesium. Capitalizing on the Victorian sanitarium craze, entrepreneurs erected a multi-story wooden resort hotel and bathhouse.
+                Greenville, in western Floyd County, was established in May 1816 according to a local historical marker, and became an early stop on the road west from New Albany to Vincennes. On March 26, 1908, a fire destroyed most of the town. A Victorian mineral-springs resort once described here has no supporting source.
             """.trimIndent(),
-            verifiedHistory = "Described in the 1886 Report of the Indiana Department of Geology. A resort hotel and bathhouse operated on the site from 1885 until destroyed by fire in December 1904. The natural sulfur spring still discharges into the stream bed.",
-            folkloreTradition = "Pioneer settlers believed the bubbling mineral water possessed supernatural rejuvenating powers.",
-            confidenceLevel = ConfidenceLevel.VERIFIED.name,
-            sources = "15th Annual Report of the Indiana Department of Geology and Natural History (1886); Greenville Centennial Historical Album; Floyd County Land Records.",
-            sourceNotes = "15th Annual Report of the Indiana Department of Geology and Natural History (1886); Greenville Centennial Historical Album.",
-            verificationGrade = "Documented Historic Resort & Geological Spring",
+            verifiedHistory = "A Greenville historical marker (as transcribed by the Historical Marker Database) gives the May 1816 founding by Andrew Mundell and Benjamin Haines and a fire that destroyed most of the town on March 26, 1908.",
+            folkloreTradition = "Local tellings describe sulphur and iron springs and a resort hotel that later burned. No source for them has been found.",
+            confidenceLevel = ConfidenceLevel.PLAUSIBLE.name,
+            sources = "Historical Marker Database: Greenville marker (250693) and Simpson Memorial Chapel marker (250695).",
+            sourceNotes = "Checked October 2026 and again November 2026; see the project's verification log.",
+            verificationGrade = "Checked Oct 2026 and again Nov 2026",
             geofenceRadiusMeters = 100,
-            audioNarration = "You are in the rolling hills of western Floyd County near Greenville."
+            audioNarration = "You are entering Greenville, laid out in 1816 on the old road west from New Albany."
         ),
         LoreSiteEntity(
             id = "lawrence_tunnelton_big_tunnel",

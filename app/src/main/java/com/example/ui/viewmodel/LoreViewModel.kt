@@ -925,7 +925,7 @@ class LoreViewModel(application: Application) : AndroidViewModel(application) {
         Pair(38.2910, -85.8450), // Silver Hills Overlook
         Pair(38.3320, -85.8190), // Floyd County Poor Farm
         Pair(38.3315, -85.8755), // Floyds Knobs Skyline Drive
-        Pair(38.3718, -85.9860)  // Greenville Springs
+        Pair(38.3718, -85.9860)  // Greenville
     )
 
     fun startTourSimulation() {

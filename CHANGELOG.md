@@ -6,6 +6,14 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 ## [Unreleased]
 
+### Changed (lore pack 1.13.0)
+
+- Rechecked the four Unverified entries. **Milltown Blue River Bridge** is now Plausible: a second source confirms the
+  1862 covered bridge and the 1913 pony truss (rehabilitated 1977). **Greenville** is renamed "Greenville & the Fire of
+  1908" and rewritten around its historical marker (founded 1816; most of the town burned March 26, 1908); the
+  unsupported mineral-springs resort story is kept only as a labeled local telling. Twelve Mile Island and Falling Run
+  stay Unverified. See `docs/VERIFICATION_LOG.md`, fourth round.
+
 ### Added (web atlas)
 
 - Street map: OpenStreetMap data (packaged by Protomaps) drawn on the device with MapLibre, served from the atlas's
