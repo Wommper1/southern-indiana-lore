@@ -17,6 +17,7 @@ import { renderAbout } from "./views/about.js";
 import { renderMine } from "./views/mine.js";
 import { renderTours, renderTour } from "./views/tours.js";
 import * as personas from "./lib/personas.js";
+import { mountBanners } from "./views/banners.js";
 
 const app = document.getElementById("app");
 const main = document.getElementById("main");
@@ -121,6 +122,7 @@ async function boot() {
     main.focus();
   });
   wireFooterStatus();
+  mountBanners(document.getElementById("banners"));
   offline.register();
 
   let atlas;

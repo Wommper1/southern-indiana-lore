@@ -4,21 +4,32 @@ A free, offline-capable website version of the lore pack, so people who cannot i
 in particular) can still read the sites. It lives in [`site/`](../site/) and needs no build tools: plain HTML, CSS and
 JavaScript that a browser opens directly.
 
-**Status: built and tested locally; not published.** Nothing here is deployed. GitHub Pages is not enabled, and a
-ready-to-use workflow waits in [`docs/web-atlas/pages.yml`](web-atlas/pages.yml) for the day the repository is
-public (see "Publishing" below).
+**Status: published** at <https://wommper1.github.io/southern-indiana-lore/> by `.github/workflows/pages.yml` (see
+"Publishing" below). There is no server and no database: GitHub Pages serves plain files, and everything personal
+stays in each visitor's own browser.
 
 ## What it does
 
 - **Browse and search** the 52 sites; filter by county and by trust badge; sort by name or county.
 - **A page per site** with the trust badge, the history, the folklore, open questions, citations, and visiting notes.
-- **A schematic map** drawn in SVG from the pack's coordinates. No map tiles, no roads or rivers (so nothing
-  unsurveyed is presented as geography), pan and zoom, tap a pin for the site.
+- **A street map** (OpenStreetMap data packaged by Protomaps, drawn with MapLibre) with every site as a pin that keeps
+  its badge colour and shape. The map file is published with the site, so no map company sees where anyone looks.
+  "Save map for offline" keeps it on the device. The older **schematic map** is still one tap away, and is used
+  automatically when there is no map file, no WebGL, or no connection and no saved copy.
+- **Driving tours** (`site/data/tours.json`): five ready-made routes with stops in order, a "next stop" panel with
+  directions handed to Google or Apple Maps, arrival detection while the page is open, a simulated drive, a GPX 1.1
+  download for GPS units, and the route drawn on the street map.
+- **My expedition** (the Mine tab): save sites, mark them visited (a passport with county stamps and tour progress),
+  keep a private note and photos per site, and download/restore a backup file. Kept in IndexedDB on the device only.
+- **Six narrator personas** for read-aloud, ported from the Android app. Every reading still says the trust level.
+- **Share and suggest:** the phone's share sheet or copy link, a printable QR code made on the device, and
+  "Suggest a correction" / "Suggest a site" links that open pre-filled GitHub issue forms.
 - **Near me:** while the page is open and the screen is on, it sorts the sites by distance from you and can read the
   nearest one, or the one you arrive at, aloud. It says plainly that background drive-by alerts with the screen off
   are an Android-app feature and are not possible in an iPhone web page. A demo location lets you try it from a desk.
 - **Installable and offline:** a web manifest and a service worker save every file, so it works with no connection
-  after the first visit and can be added to a home screen.
+  after the first visit and can be added to a home screen. A banner offers to install (or explains Add to Home Screen
+  on iPhone), and another says when a new version is ready to load.
 - **Attribution and privacy** on every page's footer and in full on the About page.
 
 ## Try it on your computer
@@ -78,15 +89,47 @@ Small, deliberate differences from the app (all in the cautious direction):
 
 ## Privacy by construction
 
-- No analytics, no cookies, no accounts, no browser storage; the position is held in memory only.
+- No analytics, no cookies, no accounts; the position is held in memory only and never stored.
+- **Browser storage is used for one thing:** the visitor's own journal (saves, visits, notes, photos, narrator choice)
+  in IndexedDB, in `site/js/lib/journal.js` only. A test fails if any other file touches browser storage, and if the
+  journal ever handles coordinates. A visit is a date plus a yes/no "was at the site". Photos are re-encoded, which
+  drops their EXIF/GPS data. Nothing leaves the device unless the visitor downloads a backup file.
 - The page's Content-Security-Policy (`site/index.html`) only allows files from its own site: no external fonts,
-  scripts, images, tiles or network calls. Fonts are vendored in `site/fonts/`.
+  scripts, images, tiles or network calls (`blob:` images are allowed for the visitor's own photos). Fonts and every
+  library are vendored in `site/fonts/` and `site/vendor/`.
+- The street map is read from `site/map/` on the same site in small HTTP range requests; the saved offline copy is
+  answered by the service worker from its own cache (`atlas-basemap-v1`), which survives atlas updates.
 - External links (map apps, sources) are plain links that open only when a person taps them.
 - Location is never put in a URL, saved, or sent by the page. The honest caveats are stated on the Near me and About
   pages: the phone or browser may use network services to work out a position, and some browsers offer online speech
   voices; those happen outside the page. A host such as GitHub Pages keeps its own server logs.
 - Tests in `tests/site/atlas.test.mjs` fail if a source file gains an external URL, a tracking-style API, browser
   storage, or console logging.
+
+## Street map
+
+`scripts/build_basemap.sh` downloads the `pmtiles` command-line tool, finds the newest daily Protomaps build of
+OpenStreetMap, cuts out southern Indiana (`BASEMAP_BBOX`, default `-88.10,37.75,-85.25,39.25`) up to zoom 13
+(`BASEMAP_MAXZOOM`), and writes `site/map/southern-indiana.pmtiles` plus `site/map/basemap.json`. The map is not
+committed (`site/map/` is git-ignored); the Pages workflow builds it on every deploy and once a month. If that step
+fails, the deploy still succeeds and the Map tab shows the schematic map. Raising the zoom to 14 shows more street
+detail but roughly triples the file size; check the size the workflow log prints before doing that.
+
+To try the street map locally, run `bash scripts/build_basemap.sh` (it needs internet access to github.com and
+build.protomaps.com), then `python scripts/serve_site.py`, which now supports the range requests the map needs.
+
+## Tours
+
+Tours are hand-written in `site/data/tours.json`: an id, title, summary, rough duration, and site ids in driving
+order. Tests check every id exists, no stop repeats, and the simulated drive passes through every stop. After editing,
+run `python scripts/build_site_data.py` so the offline copy picks up the change.
+
+## Vendored libraries
+
+MapLibre GL JS, PMTiles, fflate, Protomaps basemaps, qrcode-generator, and the basemap's label fonts and icons are
+copied into `site/vendor/` by `bash scripts/vendor_web_libs.sh`, which pins versions and checks npm's integrity hashes.
+`site/vendor/VENDORED.md` records each file's SHA-256 and a test checks it. Re-run the script only to upgrade on
+purpose, then rebuild the offline list and run the tests.
 
 ## Tests
 
@@ -109,7 +152,7 @@ only checks; it never deploys.
 The atlas is published with GitHub Pages at <https://wommper1.github.io/southern-indiana-lore/>. Pages is set to
 Source: **GitHub Actions** (Settings, Pages). The workflow `.github/workflows/pages.yml` runs when `site/`, the tests,
 the lore pack, `ConfidenceLevel.kt` or `scripts/build_site_data.py` change on `main` (and has a manual "Run workflow"
-button). It verifies the pack, rebuilds the atlas data, runs the tests, and publishes only `site/`. Everything in
+button). It verifies the pack, rebuilds the atlas data, runs the tests, builds the street map, and publishes only `site/`. It also runs once a month to refresh the map. Everything in
 `site/` uses relative paths, so the sub-folder address works. After a deploy, open it once on a phone while online,
 then try airplane mode.
 
@@ -125,14 +168,28 @@ Tested here (see the pull request for the run log):
   headless Chrome, along with the real geolocation API driven by an emulated position.
 - The Node unit and guard tests above.
 
-**Not tested:** real iPhone/iOS Safari (home-screen install, iOS speech and location behaviour, safe-area spacing),
+Tested for the November 2026 upgrade (headless Chromium, 320x568, 390x844 and 1280x800; a small synthetic map file
+stood in for the real OpenStreetMap extract, which could not be downloaded in the test environment):
+
+- The street map, tour route and pins; saving the map, then reloading offline (street map from the saved copy) and
+  offline without a saved copy (schematic fallback with a notice).
+- Save, visit, note, photo, backup download, delete everything, restore; narrator choice surviving a reload; the
+  spoken text and pitch/rate passed to speech; a tour's simulated drive; the GPX file parsing as XML; the QR code
+  decoding back to its page address; the new-version banner; no horizontal scrolling at 320 px.
+
+**Not tested:** the real OpenStreetMap extract and the deploy step that builds it, real iPhone/iOS Safari (home-screen install, iOS speech and location behaviour, safe-area spacing),
 a real Android phone, real GPS, audible speech output, or an actual deployment to GitHub Pages. Treat iOS behaviour as
 unverified until someone tries it on a device.
 
 ## Known limitations
 
-- Pins and the map are schematic. Overlapping pins in the Floyd/Clark cluster need zooming; the card under the map
-  lists pins that overlap the one you tapped.
+- The street map needs WebGL and, unless saved, a connection; otherwise the schematic map is shown. On the schematic
+  map, overlapping pins in the Floyd/Clark cluster need zooming; the card under the map lists pins that overlap.
+- Tours and arrival detection only run while the page is open and the screen is on, and distances between stops are
+  straight lines.
+- The journal lives in one browser on one device. Safari on iPhone may clear a website's data after about a week
+  without a visit unless the atlas is added to the Home Screen; the Mine tab says so and offers a backup file.
+- "Suggest" links need a GitHub account, and what people write there is public.
 - Near me needs the page open and the screen on. iPhones may keep the sound low until the volume is raised, and may
   ask for a tap before speaking; the page unlocks speech from the Start and checkbox taps.
 - Web GPS is coarser than the app's; automatic read-aloud ignores fixes wider than 150 m.
@@ -149,6 +206,9 @@ unverified until someone tries it on a device.
 | `site/fonts/` | Cinzel and Plus Jakarta Sans with their OFL license text |
 | `site/icons/` | Home-screen icons, cropped from the app's own icon artwork (MIT) |
 | `scripts/build_site_data.py`, `scripts/serve_site.py` | Data build and local preview |
+| `site/data/tours.json` | Hand-written driving tours (CC BY-SA 4.0) |
+| `site/vendor/`, `scripts/vendor_web_libs.sh` | Vendored map, QR and decompression libraries with their checksums |
+| `scripts/build_basemap.sh`, `site/map/` (not committed) | Street map build, run by the Pages workflow |
 | `tests/site/atlas.test.mjs` | Tests |
 | `.github/workflows/site-ci.yml` | Runs the tests and the data-drift check on pull requests (never deploys) |
-| `docs/web-atlas/pages.yml` | Pages workflow template (inactive) |
+| `.github/workflows/pages.yml` | Deploys `site/` to GitHub Pages, building the street map first |

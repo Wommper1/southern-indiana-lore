@@ -135,7 +135,7 @@ export function setVisited(siteId, visited, near) {
 
 // ---------- preferences ----------
 
-const PREF_KEYS = new Set(["narrator"]);
+const PREF_KEYS = new Set(["narrator", "installHint"]);
 
 export async function getPref(key) {
   if (!supported() || !PREF_KEYS.has(key)) return null;

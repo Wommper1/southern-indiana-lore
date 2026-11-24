@@ -356,3 +356,22 @@ a.btn { display: inline-flex; align-items: center; text-decoration: none; }
 .qr-slot { margin-top: 10px; max-width: 260px; }
 .qr { display: block; width: 100%; height: auto; border-radius: 8px; }
 .suggest { margin-top: 18px; }
+
+/* ---- banners ---- */
+.banners { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.banner { display: flex; align-items: center; gap: 10px; margin: 10px 0 0; padding: 10px 12px; border-radius: 12px; background: var(--surface); border: 1px solid var(--amber); }
+.banner p { margin: 0; flex: 1; font-size: 14px; }
+.banner-close { background: none; border: 0; color: var(--muted); font-size: 26px; line-height: 1; min-width: 44px; min-height: 44px; cursor: pointer; }
+
+/* Keep the brand and the "Location on" pill side by side on narrow phones. */
+.topbar { gap: 10px; }
+.brand, .brand-text { min-width: 0; }
+.brand-name, .brand-sub { overflow: hidden; text-overflow: ellipsis; }
+.pill { flex: none; }
+@media (max-width: 400px) {
+  .brand-name { font-size: 13px; }
+}
+/* Six tabs on small phones: slightly tighter labels. */
+@media (max-width: 360px) {
+  .tabbar a { font-size: 11px; }
+}

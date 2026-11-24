@@ -1,7 +1,7 @@
 // Offline support: registers the service worker, reports whether the offline copy is complete,
 // and handles the "install to home screen" prompt on browsers that offer one (Chrome on Android).
 
-let state = { status: "checking", version: "", message: "checking…" };
+let state = { status: "checking", version: "", message: "checking…", updateReady: false };
 let installEvent = null;
 const listeners = new Set();
 
@@ -34,6 +34,17 @@ export async function promptInstall() {
   } catch (error) {
     /* the person closed the prompt; nothing to do */
   }
+}
+
+/** True when the atlas is running as an installed app (from the home screen). */
+export function isStandalone() {
+  return (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || window.navigator.standalone === true;
+}
+
+/** iPhone and iPad Safari have no install prompt; people add the page from the Share menu instead. */
+export function isAppleMobile() {
+  const ua = navigator.userAgent || "";
+  return /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
 }
 
 window.addEventListener("beforeinstallprompt", (event) => {
@@ -69,6 +80,12 @@ export async function register() {
           : { status: "saving", version: data.version, message: "saving…" }
       );
     }
+  });
+  // The worker activates new versions straight away. If this page was already running an older version, say so:
+  // the page's own code is still the old one until it reloads.
+  const hadController = Boolean(navigator.serviceWorker.controller);
+  navigator.serviceWorker.addEventListener("controllerchange", () => {
+    if (hadController) set({ updateReady: true });
   });
   try {
     const registration = await navigator.serviceWorker.register("sw.js", { scope: "./", updateViaCache: "none" });
