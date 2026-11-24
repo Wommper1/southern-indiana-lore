@@ -3,6 +3,7 @@
 
 import { h, svg, clear } from "../lib/dom.js";
 import qrcode from "../../vendor/qrcode-generator/qrcode.mjs";
+import { saveFile } from "../lib/savefile.js";
 
 /** The public address of a page in this atlas, for example #/site/<id>. */
 export function pageUrl(hash) {
@@ -85,10 +86,9 @@ export function sharePanel(options) {
     const matrix = qrMatrix(url);
     const save = h("button", { type: "button", class: "btn btn-small" }, "Download for printing");
     save.addEventListener("click", () => {
-      const a = h("a", { href: qrPng(matrix, 16).toDataURL("image/png"), download: options.fileName + "-qr.png", class: "visually-hidden" }, "download");
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
+      qrPng(matrix, 16).toBlob((blob) => {
+        if (blob) saveFile(options.fileName + "-qr.png", blob);
+      }, "image/png");
     });
     clear(qrSlot);
     qrSlot.append(qrSvg(matrix, "QR code that opens " + options.title + " in the atlas"),
