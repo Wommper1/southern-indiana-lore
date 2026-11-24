@@ -30,9 +30,10 @@ ATLAS_PATH = SITE_DIR / "data" / "atlas.json"
 PRECACHE_PATH = SITE_DIR / "precache.js"
 
 # Text files are fingerprinted with CRLF turned into LF, so the fingerprint is the same on Windows and Linux checkouts.
-TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".webmanifest", ".svg", ".txt", ".md"}
+TEXT_SUFFIXES = {".html", ".css", ".js", ".mjs", ".json", ".webmanifest", ".svg", ".txt", ".md"}
 # Not listed for offline use: the worker itself, the list we are generating, and editor/OS leftovers.
 PRECACHE_SKIP = {"sw.js", "precache.js"}
+PRECACHE_SKIP_DIRS = {"map"}
 
 # Fields the web atlas keeps from each site. Anything else in sites.json (photo paths, custom-site flags,
 # map-evidence notes that the app never shows on a detail screen) is left out on purpose.
@@ -177,6 +178,9 @@ def build_precache(atlas_bytes, pack_version):
     entries = {}
     for path in sorted(SITE_DIR.rglob("*")):
         if not path.is_file() or path.name.startswith(".") or path.name in PRECACHE_SKIP or path.suffix == ".map":
+            continue
+        # The street map is saved only on request (see site/js/lib/basemap.js), never for every visitor.
+        if path.relative_to(SITE_DIR).parts[0] in PRECACHE_SKIP_DIRS:
             continue
         entries[path.relative_to(SITE_DIR).as_posix()] = path
     atlas_rel = ATLAS_PATH.relative_to(SITE_DIR).as_posix()

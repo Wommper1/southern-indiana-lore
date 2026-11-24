@@ -285,3 +285,22 @@ select.input { appearance: none; -webkit-appearance: none; padding-right: 36px;
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
 }
+
+/* ---- street map ---- */
+.map-wrap-street { position: relative; }
+.street-map { width: 100%; height: 100%; }
+.map-switch { margin: 0 0 10px; font-size: 14px; }
+.mpin {
+  width: 30px; height: 30px; border-radius: 50%; padding: 0; cursor: pointer;
+  display: grid; place-items: center; color: var(--lc);
+  background: rgba(9, 13, 22, 0.85); border: 2px solid var(--lc);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+.mpin .mpin-shape { width: 14px; height: 14px; }
+.mpin.selected { outline: 3px solid var(--amber-bright); outline-offset: 2px; z-index: 2; }
+.mpin:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+.mpin-numbered { background: var(--lc); color: #06101c; font-weight: 800; font-size: 14px; }
+.maplibregl-ctrl-attrib { font-size: 11px; }
+progress { width: 100%; height: 10px; margin: 6px 0; accent-color: var(--amber); }
+.map-wrap-street .map-controls { top: 8px; left: 8px; right: auto; bottom: auto; align-items: flex-start; z-index: 2; }
+.map-wrap-street .mpin { width: 26px; height: 26px; }

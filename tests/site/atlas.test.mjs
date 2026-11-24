@@ -211,8 +211,37 @@ test("every file the page needs is in the offline list", () => {
   const listed = new Set(JSON.parse(precache.slice(precache.indexOf("{"), precache.lastIndexOf("}") + 1)).files);
   for (const file of walk(SITE)) {
     const name = relative(SITE, file).split("\\").join("/");
-    if (["sw.js", "precache.js"].includes(name)) continue;
+    if (["sw.js", "precache.js"].includes(name) || name.startsWith("map/")) continue; // the street map is saved on request
     assert.ok(listed.has(name), name + " is not in precache.js (run scripts/build_site_data.py)");
   }
   for (const name of listed) assert.ok(statSync(join(SITE, name)).isFile(), name + " is listed but missing");
+});
+
+test("vendored libraries are exactly the pinned, hashed copies", async () => {
+  const { createHash } = await import("node:crypto");
+  const record = readFileSync(join(SITE, "vendor", "VENDORED.md"), "utf8");
+  const lines = [...record.matchAll(/^([0-9a-f]{64}) {2}\.\/(.+)$/gm)];
+  assert.ok(lines.length > 10, "VENDORED.md lists the vendored files");
+  const listed = new Set();
+  for (const [, hash, name] of lines) {
+    listed.add(name);
+    const actual = createHash("sha256").update(readFileSync(join(SITE, "vendor", name))).digest("hex");
+    assert.equal(actual, hash, "vendor/" + name + " was changed by hand (re-run scripts/vendor_web_libs.sh)");
+  }
+  for (const file of walk(join(SITE, "vendor"))) {
+    const name = relative(join(SITE, "vendor"), file).split("\\").join("/");
+    if (name !== "VENDORED.md") assert.ok(listed.has(name), "vendor/" + name + " is not in VENDORED.md");
+  }
+});
+
+test("the street map only reads its map file from this site", () => {
+  const sw = readFileSync(join(SITE, "sw.js"), "utf8");
+  const basemap = readFileSync(join(SITE, "js", "lib", "basemap.js"), "utf8");
+  const street = readFileSync(join(SITE, "js", "views", "streetmap.js"), "utf8");
+  assert.ok(/MAP_FILE = "map\/southern-indiana\.pmtiles"/.test(basemap), "map file is a relative path on this site");
+  assert.ok(/"pmtiles:\/\/" \+ abs\(info\.file\)/.test(street), "map source resolves against this page");
+  assert.ok(/abs\("vendor\/basemap-assets\/fonts\/"\)/.test(street) && /abs\("vendor\/basemap-assets\/sprites\/dark"\)/.test(street), "fonts and icons are vendored");
+  assert.ok(sw.includes('const MAP_CACHE = "atlas-basemap-v1"') && basemap.includes('export const MAP_CACHE = "atlas-basemap-v1"'), "page and worker agree on the saved-map store");
+  const precache = readFileSync(join(SITE, "precache.js"), "utf8");
+  assert.ok(!/"map\//.test(precache), "the big map file is never saved for every visitor");
 });

@@ -11,7 +11,7 @@ import * as announcer from "./lib/announcer.js";
 import * as offline from "./lib/offline.js";
 import { renderList } from "./views/list.js";
 import { renderDetail } from "./views/detail.js";
-import { renderMap } from "./views/map.js";
+import { renderMap } from "./views/atlasmap.js";
 import { renderNear } from "./views/near.js";
 import { renderAbout } from "./views/about.js";
 

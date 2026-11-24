@@ -24,7 +24,8 @@ function degreesLabel(value, positive, negative, step) {
   return Math.abs(value).toFixed(decimals) + "°" + (value >= 0 ? positive : negative);
 }
 
-export function renderMap(ctx, params) {
+/** The schematic map. `note` (optional) is shown above it, for example why the street map is not in use. */
+export function renderSchematicMap(ctx, params, note) {
   const proj = ctx.projection;
   const world = new Map(ctx.sites.map((site) => [site.id, proj.project(site.latitude, site.longitude)]));
   const hiddenLevels = new Set();
@@ -374,9 +375,9 @@ export function renderMap(ctx, params) {
   const wrap = h("div", { class: "map-wrap" }, mapSvg, controls);
   const el = h(
     "div",
-    { class: "view view-map" },
-    h("h1", { class: "page-title" }, "Atlas map"),
-    h("p", { class: "lede" }, "A schematic pin map. It draws no roads, rivers, or borders and loads no map tiles, so it is not for navigation. Use it to see how the sites are spread out."),
+    { class: "view-map-schematic" },
+    note || null,
+    h("p", { class: "lede" }, "A schematic pin map. It draws no roads, rivers, or borders, so it is not for navigation. Use it to see how the sites are spread out."),
     wrap,
     card,
     h("h2", { class: "panel-title" }, "Pins"),
