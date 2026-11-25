@@ -29,12 +29,12 @@ concurrency:
   group: pages
   cancel-in-progress: false
 
+# Two jobs, as in GitHub's own Pages template: "build" uploads the site, then "deploy" publishes it. Publishing in
+# the same job as the upload sometimes failed with "No artifacts named github-pages were found", because the upload
+# was not registered yet when the publish step looked for it.
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Check out the repository
         uses: actions/checkout@v7
@@ -74,6 +74,13 @@ jobs:
         with:
           path: site
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
