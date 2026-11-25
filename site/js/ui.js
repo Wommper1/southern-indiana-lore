@@ -66,7 +66,7 @@ export function statusCard(site, level) {
     h(
       "div",
       { class: "status-body" },
-      h("p", { class: "status-title" }, "Epistemic confidence: " + level.label),
+      h("p", { class: "status-title" }, "How sure are we? " + level.label),
       h("p", { class: "status-desc" }, level.description),
       site.verificationGrade ? h("p", { class: "status-note" }, h("strong", null, "Verification note: "), site.verificationGrade) : null
     )

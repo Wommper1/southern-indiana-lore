@@ -29,11 +29,14 @@ export function tourLength(sites) {
 
 function directionsLinks(site) {
   const ll = site.latitude + "," + site.longitude;
-  return h("p", { class: "map-links" },
-    h("a", { href: "https://www.google.com/maps/dir/?api=1&destination=" + ll, target: "_blank", rel: "noopener noreferrer" }, "Directions in Google Maps"),
-    " · ",
-    h("a", { href: "https://maps.apple.com/?daddr=" + ll + "&q=" + encodeURIComponent(site.title), target: "_blank", rel: "noopener noreferrer" }, "Directions in Apple Maps"),
-    h("span", { class: "fine" }, " These open another app. Pins are approximate; confirm before you go."));
+  const google = "https://www.google.com/maps/dir/?api=1&destination=" + ll;
+  const appleUrl = "https://maps.apple.com/?daddr=" + ll + "&q=" + encodeURIComponent(site.title);
+  const apple = /iPhone|iPad|iPod|Macintosh/.test(navigator.userAgent);
+  return h("div", { class: "directions" },
+    h("a", { class: "btn btn-big btn-primary", href: apple ? appleUrl : google, target: "_blank", rel: "noopener noreferrer" }, "🧭 Directions"),
+    h("p", { class: "fine" }, "Opens your map app. ",
+      h("a", { href: apple ? google : appleUrl, target: "_blank", rel: "noopener noreferrer" }, apple ? "Use Google Maps instead" : "Use Apple Maps instead"),
+      ". Map pins are approximate; check before you go."));
 }
 
 export function renderTours(ctx) {
@@ -125,7 +128,7 @@ export function renderTour(ctx, id) {
     stampBox.addEventListener("change", () => tourrun.setStampPassport(stampBox.checked));
 
     const locationLine = position.isActive()
-      ? (pos.demo ? (run.simulating ? "Simulated drive: a pretend car is moving between the stops." : "Using a demo location, not your real one.") : fix ? "Following your location." : "Waiting for your location…")
+      ? (pos.demo ? (run.simulating ? "Pretend drive: a make-believe car is moving between the stops." : "Using a demo location, not your real one.") : fix ? "Following your location." : "Waiting for your location…")
       : "Location is off, so the tour cannot notice when you arrive. Turn it on below, or tap \"I'm here\" at each stop.";
 
     runPanel.append(
@@ -155,10 +158,10 @@ export function renderTour(ctx, id) {
             } }, "Use my location")
           : null,
         run.simulating
-          ? h("button", { type: "button", class: "btn", onclick: () => { tourrun.stopSimulation(); position.stop(); } }, "Stop the simulation")
-          : h("button", { type: "button", class: "btn", onclick: () => { unlock(); tourrun.simulate(); } }, "Simulate the drive")),
-      h("label", { class: "check", for: "tour-read" }, readBox, h("span", null, speechSupported ? "Read each stop aloud when I arrive" : "Read aloud is not available in this browser")),
-      h("label", { class: "check", for: "tour-stamp" }, stampBox, h("span", null, "Stamp my passport when I really arrive (never during a simulation)")),
+          ? h("button", { type: "button", class: "btn", onclick: () => { tourrun.stopSimulation(); position.stop(); } }, "Stop the pretend drive")
+          : h("button", { type: "button", class: "btn", onclick: () => { unlock(); tourrun.simulate(); } }, "Try a pretend drive")),
+      h("label", { class: "check", for: "tour-read" }, readBox, h("span", null, speechSupported ? "Read each stop to me when I arrive" : "Read aloud is not available in this browser")),
+      h("label", { class: "check", for: "tour-stamp" }, stampBox, h("span", null, "Stamp my passport when I really arrive (not during a pretend drive)")),
       h("div", { class: "actions" }, h("button", { type: "button", class: "btn btn-danger", onclick: () => {
         tourrun.end();
         if (position.getState().demo) position.stop();
@@ -171,7 +174,7 @@ export function renderTour(ctx, id) {
     tourrun.start(tour, sites, { stampPassport: journal.supported() });
   });
 
-  const gpxBtn = h("button", { type: "button", class: "btn" }, "Download GPX");
+  const gpxBtn = h("button", { type: "button", class: "btn" }, "Send to a GPS device");
   gpxBtn.addEventListener("click", () => {
     const base = location.href.split("#")[0];
     const gpx = tourToGpx(tour, sites, (s) => ctx.levelTable[s.confidenceLevel].label, (s) => base + "#/site/" + encodeURIComponent(s.id));
@@ -196,6 +199,7 @@ export function renderTour(ctx, id) {
     h("a", { class: "back", href: "#/tours" }, "← All tours"),
     h("h1", { class: "page-title" }, tour.title),
     h("p", { class: "lede" }, tour.summary),
+    h("p", { class: "fine" }, "\"Send to a GPS device\" saves a GPX file for Garmin and other GPS units or apps like OsmAnd."),
     h("p", { class: "meta" }, sites.length + " stops · " + tour.duration + " · about " + formatDistance(tourLength(sites)) + " between stops in a straight line"),
     h("div", { class: "actions" }, startBtn, h("a", { class: "btn", href: "#/map?tour=" + encodeURIComponent(tour.id) }, "Show on map"), gpxBtn),
     runPanel,

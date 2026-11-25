@@ -18,6 +18,9 @@ import { renderMine } from "./views/mine.js";
 import { renderTours, renderTour } from "./views/tours.js";
 import * as personas from "./lib/personas.js";
 import { mountBanners } from "./views/banners.js";
+import { renderWelcome } from "./views/welcome.js";
+import { renderHelp } from "./views/help.js";
+import * as prefs from "./lib/prefs.js";
 import "./lib/wakelock.js"; // keeps the screen on while Near me or a tour follows you
 
 const app = document.getElementById("app");
@@ -48,7 +51,7 @@ function showError(title, message) {
 }
 
 function setActiveTab(name) {
-  const tab = { list: "list", site: "list", map: "map", tours: "tours", tour: "tours", near: "near", mine: "mine", about: "about" }[name] || "list";
+  const tab = { list: "list", site: "list", map: "map", tours: "tours", tour: "tours", near: "near", mine: "mine", about: "help", help: "help", welcome: "help" }[name] || "list";
   for (const link of document.querySelectorAll(".tabbar a")) {
     const active = link.dataset.tab === tab;
     if (active) link.setAttribute("aria-current", "page");
@@ -62,7 +65,11 @@ function route() {
   const { name, arg, params } = parseHash();
   let view;
   try {
-    if (name === "site") view = renderDetail(ctx, arg, navigations > 0);
+    // First visit to the front page: show the welcome screen once.
+    const firstVisit = name === "list" && !location.hash && !prefs.get("welcomeSeen");
+    if (name === "welcome" || firstVisit) view = renderWelcome(ctx);
+    else if (name === "help") view = renderHelp(ctx);
+    else if (name === "site") view = renderDetail(ctx, arg, navigations > 0);
     else if (name === "map") view = renderMap(ctx, params);
     else if (name === "near") view = renderNear(ctx);
     else if (name === "about") view = renderAbout(ctx, params);
@@ -123,6 +130,7 @@ async function boot() {
     main.focus();
   });
   wireFooterStatus();
+  await prefs.load();
   mountBanners(document.getElementById("banners"));
   offline.register();
 

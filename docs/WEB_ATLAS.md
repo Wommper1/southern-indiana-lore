@@ -10,6 +10,8 @@ stays in each visitor's own browser.
 
 ## What it does
 
+- **Welcome and Help:** a first-visit welcome screen with three big choices, a plain-English Help tab, and a Larger
+  text switch (saved with the visitor's preferences on the device).
 - **Browse and search** the 58 sites; filter by county and by trust badge; sort by name or county.
 - **A page per site** with the trust badge, the history, the folklore, open questions, citations, and visiting notes.
 - **A street map** (OpenStreetMap data packaged by Protomaps, drawn with MapLibre) with every site as a pin that keeps

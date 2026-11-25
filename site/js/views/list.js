@@ -174,7 +174,7 @@ export function renderList(ctx, params) {
       "p",
       { class: "lede" },
       ctx.sites.length + " sites in " + countyCounts.size + " counties. Every site shows how far its history can be trusted. ",
-      h("a", { href: "#/about?section=badges" }, "What do the badges mean?")
+      h("a", { href: "#/about?section=badges" }, "What do the colored labels mean?")
     ),
     h("div", { class: "toolbar", role: "search" }, search, h("div", { class: "toolbar-row" }, countySelect, sortSelect)),
     h("div", { class: "chips", role: "group", "aria-label": "Filter by trust badge" }, chips),

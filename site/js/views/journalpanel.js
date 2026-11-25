@@ -19,14 +19,13 @@ export function formatDate(iso) {
 export function journalPanel(site) {
   if (!journal.supported()) {
     return {
-      el: h("section", { class: "panel panel-journal" }, h("h2", { class: "panel-title" }, "My expedition"),
+      el: h("section", { class: "panel panel-journal" }, h("h2", { class: "panel-title" }, "My visit"),
         h("p", { class: "fine" }, "This browser is not letting the atlas save anything (private browsing often blocks it), so saving sites, visits, notes and photos is off.")),
       destroy() {},
     };
   }
 
   const urls = [];
-  const saveBtn = h("button", { type: "button", class: "btn", "aria-pressed": "false" });
   const visitBtn = h("button", { type: "button", class: "btn" });
   const visitLine = h("p", { class: "fine" });
   const note = h("textarea", { class: "input note", id: "note-" + site.id, rows: "4", maxlength: "20000", placeholder: "What you saw, who you went with, what to look for next time…" });
@@ -40,12 +39,10 @@ export function journalPanel(site) {
   let destroyed = false;
 
   function paint() {
-    saveBtn.textContent = entry.favorite ? "★ Saved" : "☆ Save this site";
-    saveBtn.setAttribute("aria-pressed", String(entry.favorite));
     visitBtn.textContent = entry.visitedAt ? "Undo visit" : "I've been here";
     visitLine.textContent = entry.visitedAt
       ? "Visited " + formatDate(entry.visitedAt) + (entry.visitedNear ? " · checked in at the site" : "") + "."
-      : "Mark it visited to stamp your passport on the Mine tab.";
+      : "Been here? Tap the button to stamp your passport on the Saved tab.";
   }
 
   async function paintPhotos() {
@@ -67,10 +64,6 @@ export function journalPanel(site) {
     });
   }
 
-  saveBtn.addEventListener("click", async () => {
-    entry = await journal.setFavorite(site.id, !entry.favorite);
-    paint();
-  });
   visitBtn.addEventListener("click", async () => {
     if (entry.visitedAt) {
       if (!confirm("Remove the visit stamp for this site?")) return;
@@ -119,9 +112,9 @@ export function journalPanel(site) {
 
   const el = h(
     "section",
-    { class: "panel panel-journal", "aria-label": "My expedition" },
-    h("h2", { class: "panel-title" }, "My expedition"),
-    h("div", { class: "actions" }, saveBtn, visitBtn),
+    { class: "panel panel-journal", "aria-label": "My visit" },
+    h("h2", { class: "panel-title" }, "My visit"),
+    h("div", { class: "actions" }, visitBtn),
     visitLine,
     h("label", { class: "field-label", for: "note-" + site.id }, "Private note"),
     note,
@@ -130,7 +123,7 @@ export function journalPanel(site) {
     photoStatus,
     gallery,
     h("p", { class: "fine" }, "Kept only in this browser on this device. Photos are shrunk and stripped of their location data before saving. ",
-      h("a", { href: "#/mine" }, "Back up or see everything"), ".")
+      h("a", { href: "#/mine" }, "See everything you've saved"), ".")
   );
   return {
     el,

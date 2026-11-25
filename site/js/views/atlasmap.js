@@ -55,19 +55,19 @@ export function renderMap(ctx, params) {
       if (info && webgl) {
         switcher.appendChild(wantSchematic
           ? h("a", { href: linkFor(null) }, "Switch to the street map")
-          : h("a", { href: linkFor("schematic") }, "Switch to the simple schematic map"));
+          : h("a", { href: linkFor("schematic") }, "Switch to the simple map"));
       }
       if (wantSchematic) return schematic(null);
       if (!info) return schematic(navigator.onLine === false
-        ? "You are offline and the street map is not saved on this device, so this is the simple schematic map."
+        ? "You are offline and the street map is not saved on this device, so this is the simple map."
         : null);
-      if (!webgl) return schematic("This browser cannot draw the street map (it needs WebGL), so this is the simple schematic map.");
+      if (!webgl) return schematic("This browser can't draw the street map, so this is the simple map. It still shows where every place is.");
       if (navigator.onLine === false && !(await basemap.isSaved())) {
-        return schematic("You are offline and the street map is not saved on this device, so this is the simple schematic map. Next time you are online, open the street map and tap \"Save map for offline\".");
+        return schematic("You are offline and the street map is not saved on this device, so this is the simple map. Next time you are online, open the street map and tap \"Save map for offline\".");
       }
       show(renderStreetMap(ctx, params, info, {
         tour,
-        onSchematic: () => schematic("The street map could not start in this browser, so this is the simple schematic map."),
+        onSchematic: () => schematic("The street map could not start in this browser, so this is the simple map."),
       }));
     },
     destroy() {

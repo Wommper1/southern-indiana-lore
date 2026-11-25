@@ -324,7 +324,7 @@ export function renderSchematicMap(ctx, params, note) {
   // ---- controls and legend ----
   const zoomIn = h("button", { type: "button", class: "map-btn", "aria-label": "Zoom in", onclick: () => zoomAt(1.6, W / 2, H / 2) }, "+");
   const zoomOut = h("button", { type: "button", class: "map-btn", "aria-label": "Zoom out", onclick: () => zoomAt(1 / 1.6, W / 2, H / 2) }, "−");
-  const fitBtn = h("button", { type: "button", class: "map-btn map-btn-wide", onclick: () => { fit(); draw(); } }, "Fit all");
+  const fitBtn = h("button", { type: "button", class: "map-btn map-btn-wide", onclick: () => { fit(); draw(); } }, "Show all");
   const meBtn = h("button", { type: "button", class: "map-btn map-btn-wide", onclick: () => {
     const fix = position.getState().fix;
     if (!fix) return;
@@ -334,7 +334,7 @@ export function renderSchematicMap(ctx, params, note) {
     view.scale = Math.max(view.scale, fitScale * 6);
     clampView();
     draw();
-  } }, "Center on me");
+  } }, "Show me");
   const controls = h("div", { class: "map-controls" }, zoomIn, zoomOut, fitBtn, meBtn);
 
   const levelCounts = new Map();
@@ -377,7 +377,7 @@ export function renderSchematicMap(ctx, params, note) {
     "div",
     { class: "view-map-schematic" },
     note || null,
-    h("p", { class: "lede" }, "A schematic pin map. It draws no roads, rivers, or borders, so it is not for navigation. Use it to see how the sites are spread out."),
+    h("p", { class: "lede" }, "A simple map that only shows where the places are. It has no roads, so use the Directions buttons to get somewhere."),
     wrap,
     card,
     h("h2", { class: "panel-title" }, "Pins"),
