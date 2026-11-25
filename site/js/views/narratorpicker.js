@@ -29,9 +29,9 @@ export function narratorPicker(options) {
   const unsubscribe = personas.subscribe(sync);
   sync();
   const el = h("div", { class: "narrator" + (options && options.compact ? " narrator-compact" : "") },
-    h("label", { for: id, class: "field-label" }, "Narrator"),
+    h("label", { for: id, class: "field-label" }, "Voice"),
     h("div", { class: "toolbar-row" }, select, sample),
     desc,
-    options && options.compact ? null : h("p", { class: "fine" }, "Every narrator still says each site's trust level first. Voices come from your device, so they vary by phone and browser."));
+    options && options.compact ? null : h("p", { class: "fine" }, "Every voice still says how sure we are about each place. Voices come from your phone, so they sound different on different phones."));
   return { el, destroy: unsubscribe };
 }

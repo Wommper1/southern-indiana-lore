@@ -375,3 +375,97 @@ a.btn { display: inline-flex; align-items: center; text-decoration: none; }
 @media (max-width: 360px) {
   .tabbar a { font-size: 11px; }
 }
+
+/* ---- Larger text (the switch on the Welcome and Help pages). Generated from the sizes above, 25% larger. ---- */
+html.large-text body { font-size: 20px; }
+html.large-text .tabbar a { font-size: 13px; }
+html.large-text .badge { font-size: 13px; }
+html.large-text .badge-compact { font-size: 12px; }
+html.large-text .btn { min-height: 52px; font-size: 18px; line-height: 50px; }
+html.large-text .page-title { font-size: 32px; }
+html.large-text .subtitle { font-size: 19px; }
+html.large-text .fine { font-size: 16px; }
+html.large-text .small { font-size: 18px; }
+html.large-text .meta { font-size: 18px; }
+html.large-text .site-footer { font-size: 16px; }
+html.large-text .result-count { font-size: 18px; }
+html.large-text .card-distance { font-size: 18px; }
+html.large-text .card-title { font-size: 22px; }
+html.large-text .card-sub { font-size: 18px; }
+html.large-text .card-meta { font-size: 16px; }
+html.large-text .status-title { font-size: 15px; }
+html.large-text .status-note { font-size: 18px; }
+html.large-text .panel-title { font-size: 16px; }
+html.large-text .more summary { font-size: 16px; }
+html.large-text .ctx h3 { font-size: 18px; }
+html.large-text .kv dt { font-size: 18px; }
+html.large-text .safety { font-size: 18px; }
+html.large-text .map-btn-wide { font-size: 18px; }
+html.large-text .map-card-title { font-size: 22px; }
+html.large-text .legend-count { font-size: 16px; }
+html.large-text .page-title { font-size: 38px; }
+html.large-text .map-switch { font-size: 18px; }
+html.large-text .field-label { font-size: 18px; }
+html.large-text .gallery .link-button { font-size: 16px; }
+html.large-text .passport-count { font-size: 22px; }
+html.large-text .passport-count strong { font-size: 40px; }
+html.large-text .card-marks { font-size: 16px; }
+html.large-text .tour-kicker { font-size: 15px; }
+html.large-text .next-title { font-size: 25px; }
+html.large-text .tour-done { font-size: 25px; }
+html.large-text .btn-small { font-size: 18px; }
+html.large-text .banner p { font-size: 18px; }
+
+/* ---- easier to use: big buttons, welcome, help ---- */
+.btn-big { min-height: 56px; line-height: 54px; font-size: 17px; padding: 0 20px; }
+.quick-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+.quick-actions .btn-big { padding: 8px 10px; font-size: 16px; line-height: 1.25; display: flex; align-items: center; justify-content: center; }
+.quick-actions > :first-child { grid-column: 1 / -1; }
+.quick-actions .btn[aria-pressed="true"] { border-color: var(--amber); color: var(--amber-bright); }
+.quick-actions > :only-child { grid-column: 1 / -1; }
+.voice-choice { margin: 0 0 12px; }
+.voice-choice summary { cursor: pointer; color: var(--muted); font-size: 14px; min-height: 44px; display: flex; align-items: center; text-decoration: underline; }
+.more-details > summary { font-size: 14px; }
+.more-part { margin-top: 14px; }
+.more-h { font-size: 16px; color: var(--amber-bright); margin-bottom: 6px; }
+.directions .btn-big { width: 100%; }
+.directions .fine { margin-top: 6px; }
+
+.view-welcome { max-width: 560px; margin: 0 auto; }
+.welcome-lede { font-size: 18px; }
+.welcome-ask { font-weight: 800; font-size: 18px; margin: 18px 0 10px; }
+.big-choices { display: grid; gap: 12px; }
+.big-choice {
+  display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; cursor: pointer;
+  padding: 16px; min-height: 84px; border-radius: 16px; font: inherit; color: var(--text);
+  background: var(--surface); border: 2px solid var(--border);
+}
+.big-choice:hover, .big-choice:focus-visible { border-color: var(--amber); }
+.big-choice-icon { font-size: 32px; line-height: 1; flex: none; }
+.big-choice-text { display: flex; flex-direction: column; gap: 2px; }
+.big-choice-text strong { font-size: 19px; color: var(--amber-bright); }
+.big-choice-text span { color: var(--muted); font-size: 15px; }
+.welcome-foot { margin-top: 16px; font-size: 16px; }
+
+.text-size { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 16px 0 8px; }
+.text-size-label { font-weight: 700; }
+.seg { min-height: 48px; padding: 0 18px; border-radius: 12px; font: inherit; font-weight: 700; cursor: pointer; color: var(--text); background: var(--surface); border: 2px solid var(--border); }
+.seg[aria-pressed="true"] { border-color: var(--amber); color: var(--amber-bright); background: rgba(245, 158, 11, 0.12); }
+
+.qa-list { display: grid; gap: 10px; margin: 14px 0; }
+.qa { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: var(--radius); }
+.qa summary { cursor: pointer; padding: 14px 16px; min-height: 52px; font-weight: 700; font-size: 17px; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.qa summary::-webkit-details-marker { display: none; }
+.qa summary::after { content: "+"; font-size: 24px; color: var(--amber-bright); flex: none; }
+.qa[open] summary::after { content: "−"; }
+.qa-body { padding: 0 16px 14px; }
+.steps { padding-left: 22px; }
+.steps li { margin: 6px 0; }
+.help-about { margin-top: 18px; }
+html.large-text .big-choice-text strong { font-size: 23px; }
+html.large-text .big-choice-text span, html.large-text .welcome-lede, html.large-text .welcome-ask { font-size: 19px; }
+html.large-text .qa summary { font-size: 20px; }
+html.large-text .quick-actions .btn-big { font-size: 19px; line-height: 1.25; }
+@media (max-width: 340px) {
+  .quick-actions { grid-template-columns: 1fr; }
+}

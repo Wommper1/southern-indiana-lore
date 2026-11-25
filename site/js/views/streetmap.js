@@ -169,11 +169,11 @@ export function renderStreetMap(ctx, params, info, options) {
   }
 
   const fitSites = () => (tour ? tour.stops.map((id) => ctx.byId.get(id)).filter(Boolean) : ctx.sites);
-  const fitBtn = h("button", { type: "button", class: "map-btn map-btn-wide", onclick: () => map && map.fitBounds(bounds(fitSites()), { padding: 40 }) }, tour ? "Whole tour" : "Fit all");
+  const fitBtn = h("button", { type: "button", class: "map-btn map-btn-wide", onclick: () => map && map.fitBounds(bounds(fitSites()), { padding: 40 }) }, tour ? "Whole tour" : "Show all");
   const meBtn = h("button", { type: "button", class: "map-btn map-btn-wide", onclick: () => {
     const fix = position.getState().fix;
     if (fix && map) map.flyTo({ center: [fix.lon, fix.lat], zoom: Math.max(map.getZoom(), 14) });
-  } }, "Center on me");
+  } }, "Show me");
   meBtn.hidden = !position.getState().fix;
   const controls = h("div", { class: "map-controls" }, fitBtn, meBtn);
 
@@ -241,7 +241,7 @@ export function renderStreetMap(ctx, params, info, options) {
     "div",
     { class: "view-map-street" },
     h("p", { class: "lede" },
-      tour ? "The stops of " + tour.title + " on the street map." : "Street map with every lore site. Pins are approximate, so confirm before you go.",
+      tour ? "The stops of " + tour.title + " on the street map." : "Every place on a street map. Tap a pin to read about it. Pins are approximate.",
       " The map is served from this site; no map company sees where you look."),
     h("div", { class: "map-wrap map-wrap-street" }, container, controls),
     statusLine,

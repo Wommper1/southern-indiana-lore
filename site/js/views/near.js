@@ -22,7 +22,7 @@ export function renderNear(ctx) {
 
   const status = h("p", { class: "near-status", role: "status", "aria-live": "polite" });
   const announceNote = h("p", { class: "fine", role: "status", "aria-live": "polite" });
-  const startButton = h("button", { type: "button", class: "btn btn-primary" }, "Start Near me");
+  const startButton = h("button", { type: "button", class: "btn btn-primary" }, "📍 Find places near me");
   const stopButton = h("button", { type: "button", class: "btn" }, "Stop");
   const nearest = h("div", { class: "near-nearest" });
   const list = h("ol", { class: "near-list" });
@@ -32,18 +32,18 @@ export function renderNear(ctx) {
   const picker = narratorPicker();
   const autoBox = h("input", { type: "checkbox", id: "auto-read" });
   autoBox.checked = announcer.isEnabled();
-  const readNearestButton = h("button", { type: "button", class: "btn" }, "Read nearest aloud");
+  const readNearestButton = h("button", { type: "button", class: "btn" }, "🔊 Read the closest place to me");
   const speechControls = speechSupported
     ? h(
         "div",
         { class: "panel" },
-        h("h2", { class: "panel-title" }, "Read aloud"),
-        h("label", { class: "check", for: "auto-read" }, autoBox, h("span", null, "Read a site aloud when I arrive at it (inside its alert radius)")),
+        h("h2", { class: "panel-title" }, "Read to me"),
+        h("label", { class: "check", for: "auto-read" }, autoBox, h("span", null, "Read each place to me when I arrive")),
         h("p", { class: "fine" }, "Only while this page is open. Each site is read once per visit. Phones may keep the sound low until you raise the volume. The reading always names the site's trust level."),
         h("div", { class: "actions" }, readNearestButton),
         picker.el
       )
-    : h("div", { class: "panel" }, h("h2", { class: "panel-title" }, "Read aloud"), h("p", null, "This browser has no built-in speech, so reading aloud is not available. Near me still works."));
+    : h("div", { class: "panel" }, h("h2", { class: "panel-title" }, "Read to me"), h("p", null, "This browser has no built-in speech, so reading aloud is not available. Near me still works."));
 
   // ---- demo location ----
   const demoSelect = h(
@@ -51,7 +51,7 @@ export function renderNear(ctx) {
     { class: "input", id: "demo-site", "aria-label": "Pretend to be near this site" },
     DEMO_SITE_IDS.filter((id) => ctx.byId.has(id)).map((id) => h("option", { value: id }, ctx.byId.get(id).title))
   );
-  const demoButton = h("button", { type: "button", class: "btn" }, "Use demo location");
+  const demoButton = h("button", { type: "button", class: "btn" }, "Pretend I'm there");
 
   function ranked(fix) {
     return ctx.sites
@@ -75,7 +75,7 @@ export function renderNear(ctx) {
         h("div", { class: "card-top" }, badge(level, { compact: true }),
           h("span", { class: "card-distance" }, formatDistance(entry.d) + " " + cardinal(entry.bearing))),
         h("h3", { class: "card-title" }, entry.site.title),
-        h("p", { class: "card-meta" }, entry.site.county + (inside ? " · you are inside its alert radius" : ""))
+        h("p", { class: "card-meta" }, entry.site.county + (inside ? " · you're here" : ""))
       )
     );
   }
@@ -93,7 +93,7 @@ export function renderNear(ctx) {
       const fix = state.fix;
       const time = new Date(fix.time).toLocaleTimeString();
       status.textContent = state.demo
-        ? "Demo location: this is a pretend position, not where you are."
+        ? "Pretend location: the page is acting as if you were here."
         : "Located. Accuracy about " + formatMeters(fix.accuracy) + ". Updated " + time + "." +
           (wakelock.isHeld() ? " The screen will stay on while Near me is running." : "");
       const all = ranked(fix);
@@ -111,7 +111,7 @@ export function renderNear(ctx) {
       }
       readNearestButton.disabled = false;
     } else {
-      status.textContent = state.message || (state.status === "off" ? "Near me is off. Nothing is being read from your device." : "");
+      status.textContent = state.message || (state.status === "off" ? "Tap the button above to find the closest places. Nothing is read from your phone until you do." : "");
       readNearestButton.disabled = true;
     }
     const last = announcer.lastSite();
@@ -159,7 +159,7 @@ export function renderNear(ctx) {
     narrate(first, ctx.levelTable[first.confidenceLevel]);
   });
   const syncReadButton = () => {
-    readNearestButton.textContent = isSpeaking() ? "Stop reading" : "Read nearest aloud";
+    readNearestButton.textContent = isSpeaking() ? "⏹ Stop reading" : "🔊 Read the closest place to me";
   };
 
   const unsubscribers = [
@@ -190,14 +190,14 @@ export function renderNear(ctx) {
     nearest,
     speechControls,
     announceNote,
-    h("h2", { class: "panel-title" }, "Sites by distance"),
+    h("h2", { class: "panel-title" }, "Closest places"),
     list,
     h("div", { class: "actions" }, moreButton),
     h(
       "section",
       { class: "panel" },
-      h("h2", { class: "panel-title" }, "No GPS handy? Try a demo"),
-      h("p", { class: "fine" }, "Pretend to stand next to a site. This uses no real location."),
+      h("h2", { class: "panel-title" }, "Just looking? Pretend you're at a place"),
+      h("p", { class: "fine" }, "Pick a place and the page will act as if you were standing there. It doesn't use your real location."),
       h("div", { class: "toolbar-row" }, demoSelect, demoButton)
     )
   );

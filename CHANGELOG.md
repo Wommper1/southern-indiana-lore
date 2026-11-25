@@ -37,6 +37,13 @@ app follows [Semantic Versioning](https://semver.org/). The lore pack has its ow
 
 ### Changed (web atlas)
 
+- Easier for everyone: a welcome screen on the first visit with three big choices (near me, a driving tour, browse);
+  a plain-English Help tab (home screen install steps, location, privacy, labels, tours, backups); site pages lead
+  with big Directions, Read it to me and Save buttons and fold background and sources into "More details"; everyday
+  wording throughout ("How sure are we?", "Try a pretend drive", "Send to a GPS device"); and a Larger text switch
+  remembered on the device. Tabs are now Places, Map, Tours, Near me, Saved and Help. Trust label names and the
+  history headings are unchanged, so they still match the Android app.
+
 - iPhone and Android: backups, GPX tours and QR codes open the share sheet on iPhone and iPad ("Save to Files"),
   where downloads are unreliable, especially from the Home Screen; photos that the fast decoder cannot read use a
   fallback; and the screen stays on while Near me or a tour is following you, where the browser allows it.

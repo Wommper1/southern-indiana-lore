@@ -71,7 +71,7 @@ export function renderMine(ctx) {
       h("h2", { class: "panel-title section-gap" }, "Saved sites (" + saved.length + ")"),
       saved.length
         ? h("ul", { class: "card-list" }, saved.map((e) => siteCard(ctx, known(e.siteId), counts.get(e.siteId) ? counts.get(e.siteId) + " photo(s)" : null)))
-        : h("p", { class: "empty" }, "Nothing saved yet. Tap \"Save this site\" on any site page."),
+        : h("p", { class: "empty" }, "Nothing saved yet. Tap ☆ Save on any place."),
 
       h("h2", { class: "panel-title section-gap" }, "Visited (" + visited.length + ")"),
       visited.length
@@ -102,7 +102,7 @@ export function renderMine(ctx) {
     );
   }
 
-  const backupButton = h("button", { type: "button", class: "btn btn-primary" }, "Download backup");
+  const backupButton = h("button", { type: "button", class: "btn btn-primary" }, "💾 Save a backup copy");
   backupButton.addEventListener("click", async () => {
     backupStatus.textContent = "Preparing your backup…";
     try {
@@ -136,12 +136,12 @@ export function renderMine(ctx) {
   const el = h(
     "div",
     { class: "view view-mine" },
-    h("h1", { class: "page-title" }, "My expedition"),
+    h("h1", { class: "page-title" }, "Saved places & visits"),
     journal.supported()
       ? body
       : h("p", { class: "notice" }, "This browser is not letting the atlas save anything (private browsing often blocks it). Open the atlas in a normal window to keep a passport, notes and photos.")
   );
   const unsubscribe = journal.subscribe(paint);
   if (journal.supported()) paint();
-  return { el, title: "Mine", destroy() { destroyed = true; unsubscribe(); } };
+  return { el, title: "Saved", destroy() { destroyed = true; unsubscribe(); } };
 }
